@@ -188,6 +188,83 @@ monkey路径Monkey程序是Android系统自..." />
         <h1 id="monkey-理论"><a href="#monkey-理论" class="headerlink" title="monkey 理论"></a>monkey 理论</h1><h2 id="monkey定义"><a href="#monkey定义" class="headerlink" title="monkey定义"></a>monkey定义</h2><p>andriod自动化测试工具，对被测程序进行压力测试，检查和评估被测程序的稳定性。</p>
 <p><a target="_blank" rel="noopener" href="http://www.android-doc.com/tools/help/monkey.html">monkey官方文档</a></p>
 <h2 id="monkey路径"><a href="#monkey路径" class="headerlink" title="monkey路径"></a>monkey路径</h2><p>Monkey程序是Android系统自带的，其启动脚本是位于Android系统的/system/bin目录的Monkey文件，其jar包是位于Android系统的/system/framework目录的Monkey.jar文件。用户主要是通过adb命令来启动Monkey的，Monkey在运行时，会根据命令行参数的配置，生成伪随机的事件流，并在Android设备上执行对应的测试事件。</p>
+<h2 id="monkey-启动步骤"><a href="#monkey-启动步骤" class="headerlink" title="monkey 启动步骤"></a>monkey 启动步骤</h2><ol>
+<li><p>连接模拟器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb connect 127.0.0.1:62001#连接</span><br><span class="line">adb devices#检查设备连接情况</span><br></pre></td></tr></table></figure></li>
+<li><p>连接成功后输入命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="进入到指定目录"><a href="#进入到指定目录" class="headerlink" title="进入到指定目录"></a>进入到指定目录</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /system/bin</span><br></pre></td></tr></table></figure>
+
+<p>输入monkey 命令看到一串信息提示就是成功，没有报错即可。</p>
+<h2 id="强制关闭-monkey"><a href="#强制关闭-monkey" class="headerlink" title="强制关闭 monkey"></a>强制关闭 monkey</h2><ol>
+<li><p>adb shell ps 查看全部在运行的进程</p>
+</li>
+<li><p>查找出com.android.commands.monkey 进程PID</p>
+</li>
+<li><p>adb shell kill pid 杀掉monkey进程</p>
+</li>
+</ol>
+<h2 id="monkey-命令"><a href="#monkey-命令" class="headerlink" title="monkey 命令"></a>monkey 命令</h2><p>monkey命令格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell monkey [options] &lt;event-count&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>·</strong> <strong>[options]</strong> 是指monkey可传入的参数，是可选项（如果不指定options，Monkey将以无反馈模式启动，并把事件任意发送到安装在目标环境中的全部包）</p>
+<p><strong>·</strong> <event-count>是指随机发送事件数。如：输入100就是执行100个伪随机事件，为必选项。</p>
+<h2 id="monkey-参数"><a href="#monkey-参数" class="headerlink" title="monkey 参数"></a>monkey 参数</h2><h3 id="参数分类"><a href="#参数分类" class="headerlink" title="参数分类"></a>参数分类</h3><p><strong>· 常规类参数</strong></p>
+<p><strong>· 事件类参数</strong></p>
+<p><strong>· 约束类参数</strong></p>
+<p><strong>· 调试类参数</strong></p>
+<h3 id="1-常规类参数"><a href="#1-常规类参数" class="headerlink" title="1.常规类参数"></a>1.常规类参数</h3><p>常规类参数包括帮助参数和日志信息参数。</p>
+<p>1.帮助类参数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">monkey -h</span><br></pre></td></tr></table></figure>
+
+<p>2.日志级别</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell monkey -v &lt;event-count&gt;</span><br></pre></td></tr></table></figure>
+
+<p>-v：打印出日志信息，每个-v将增加反馈信息的级别。-v越多日志信息越详细，不过目前最多支持3个-v</p>
+<h3 id="2-事件类参数"><a href="#2-事件类参数" class="headerlink" title="2.事件类参数"></a>2.事件类参数</h3><p>1.执行指定脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell monkey -f &lt;scriptfile&gt; &lt;event-count&gt;</span><br><span class="line"></span><br><span class="line">eg：</span><br><span class="line">$ adb shell monkey -f /mnt/sdcard/test1</span><br></pre></td></tr></table></figure>
+
+<p>2.伪随机数生成种子值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell monkey -s &lt;seed&gt; &lt;event-count&gt;</span><br><span class="line"></span><br><span class="line">eg:</span><br><span class="line">$ adb shell monkey -s 666 100</span><br></pre></td></tr></table></figure>
+
+<p>3.设置间隔 如果你希望在每一个指令之间加上固定的间隔时间，可以用–throttle（注意，前面是–）命令。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell monkey --throttle &lt;milliseconds&gt;</span><br><span class="line">eg:</span><br><span class="line">$ adb shell monkey --throttle 3000  5</span><br></pre></td></tr></table></figure>
+
+<p>–throttle：后面接时间，单位为ms（<milliseconds>），表示事件之间的固定延迟（即执行每一个指令间隔的时间），若不接该选项，monkey将不会延迟。</p>
+<p>4.调整触摸事件百分比</p>
+<p>如果你希望调整触摸事件的百分比，记住使用–pct-touch。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell monkey --pct-touch</span><br><span class="line">eg:</span><br><span class="line">$ adb shell monkey -v -v --pct-touch 100 200</span><br></pre></td></tr></table></figure>
+
+<p>注意：触摸事件不单单是按键，它泛指发生在某一位置的一个down-up事件</p>
+<p>5.调整手势事件百分比</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell monkey --pct-motion</span><br><span class="line">eg:</span><br><span class="line">$ adb shell monkey -v -v --pct-motion 100 200</span><br></pre></td></tr></table></figure>
+
+<p>6.调整应用启动事件的百分比</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell monkey --pct-appswtich &lt;percent&gt;</span><br></pre></td></tr></table></figure>
+
+<p>7.调整屏幕旋转事件百分比</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell monkey --pct-rotation &lt;percent&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="约束类参数"><a href="#约束类参数" class="headerlink" title="约束类参数"></a>约束类参数</h3><p>1.包约束</p>
+<p>-p：后面接一个或多个包名（&lt;”allowed-package-name”&gt;），如果应用需要访问其他包里的Activity，那相关的包也需要在此同时指定。如果不指定任何包，monkey将允许系统启动全部包里的Activity。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell monkey -p &lt;allowed-package-name&gt; &lt;event-count&gt;</span><br><span class="line">eg：</span><br><span class="line">$ adb shell monkey -p com.tal.kaoyan 500</span><br><span class="line"></span><br><span class="line">$ adb shell monkey -p com.tal.kaoyan -p com.tencent.mm 500</span><br></pre></td></tr></table></figure>
+
+<p>2.activity类约束</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell monkey -c &lt;main-category&gt; &lt;event-count&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="调试类参数"><a href="#调试类参数" class="headerlink" title="调试类参数"></a>调试类参数</h3><p>1.应用程序崩溃后继续发送时间</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell monkey --ignore-crashes &lt;event-count&gt; </span><br></pre></td></tr></table></figure>
+
+<p>2.超时错误继续发送事件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell monkey --ignore-timeouts</span><br></pre></td></tr></table></figure>
+
+<p>3.应用程序权限错误发生后继续发送事件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb shell monkey --ignore-security-exceptions</span><br></pre></td></tr></table></figure>
+
+<p>测试命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">adb shell monkey -p com.tal.kaoyan</span><br><span class="line">--pct-touch 40 --pct-motion 25 </span><br><span class="line">--pct-appswitch 10</span><br><span class="line">--pct-rotation 5</span><br><span class="line">-s 1666 --throttle 400</span><br><span class="line">--ignore-crashes</span><br><span class="line">--ignore-timeouts</span><br><span class="line">-v -v  200</span><br></pre></td></tr></table></figure>
+
 
     </div>
     
@@ -264,7 +341,7 @@ monkey路径Monkey程序是Android系统自..." />
             Table of Contents
         </h3>
         
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#monkey-%E7%90%86%E8%AE%BA"><span class="toc-text">monkey 理论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#monkey%E5%AE%9A%E4%B9%89"><span class="toc-text">monkey定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#monkey%E8%B7%AF%E5%BE%84"><span class="toc-text">monkey路径</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#monkey-%E7%90%86%E8%AE%BA"><span class="toc-text">monkey 理论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#monkey%E5%AE%9A%E4%B9%89"><span class="toc-text">monkey定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#monkey%E8%B7%AF%E5%BE%84"><span class="toc-text">monkey路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#monkey-%E5%90%AF%E5%8A%A8%E6%AD%A5%E9%AA%A4"><span class="toc-text">monkey 启动步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95"><span class="toc-text">进入到指定目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%BA%E5%88%B6%E5%85%B3%E9%97%AD-monkey"><span class="toc-text">强制关闭 monkey</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#monkey-%E5%91%BD%E4%BB%A4"><span class="toc-text">monkey 命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#monkey-%E5%8F%82%E6%95%B0"><span class="toc-text">monkey 参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E5%88%86%E7%B1%BB"><span class="toc-text">参数分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%B8%B8%E8%A7%84%E7%B1%BB%E5%8F%82%E6%95%B0"><span class="toc-text">1.常规类参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BA%8B%E4%BB%B6%E7%B1%BB%E5%8F%82%E6%95%B0"><span class="toc-text">2.事件类参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%A6%E6%9D%9F%E7%B1%BB%E5%8F%82%E6%95%B0"><span class="toc-text">约束类参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E8%AF%95%E7%B1%BB%E5%8F%82%E6%95%B0"><span class="toc-text">调试类参数</span></a></li></ol></li></ol></li></ol>
         
     </div>
 </aside>
