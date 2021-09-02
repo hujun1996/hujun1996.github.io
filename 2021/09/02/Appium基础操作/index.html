@@ -40,8 +40,6 @@
     Hero
 </title>
 
-<link rel="alternate" href="/atom.xml" title="Hero" type="application/atom+xml">
-
 
 <link rel="icon" href="/favicon.ico">
 
@@ -76,7 +74,7 @@
 <![endif]-->
 <body>
     <header class="main-header"  style="background-image:url(
-    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner.jpg)"
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner3.jpg)"
      >
     <div class="main-header-box">
         <a class="header-avatar" href="/" title='hujun'>
@@ -85,7 +83,9 @@
         <div class="branding">
             <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-            <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            <h2>
+                生活如此简单有趣
+            </h2>
             
         </div>
     </div>
@@ -107,21 +107,6 @@
                         <li role="presentation" class="text-center">
                             <a href="/"><i class="fa "></i>
                                 Home</a>
-                        </li>
-                        
-                        <li role="presentation" class="text-center">
-                            <a href="/categories/前端/"><i class="fa "></i>
-                                前端</a>
-                        </li>
-                        
-                        <li role="presentation" class="text-center">
-                            <a href="/categories/后端/"><i class="fa "></i>
-                                后端</a>
-                        </li>
-                        
-                        <li role="presentation" class="text-center">
-                            <a href="/categories/工具/"><i class="fa "></i>
-                                工具</a>
                         </li>
                         
                         <li role="presentation" class="text-center">
@@ -170,6 +155,11 @@
         <i class="fa fa-clock-o"></i>
         <span class="date-meta">
             2021/09/02</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
     </span>
     
     
@@ -331,7 +321,7 @@
         <div>
             
             转载声明：
-            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">hujun</a>
             
             
         </div>
@@ -354,20 +344,27 @@
 <div id="comments">
     
     
-<div class="utteranc">
-  
-  <script
-    src='https://utteranc.es/client.js'
-    repo='hujun/snippet-comment'
-    issue-term='pathname'
-    issue-number=''
-    theme='github-light'
-    label=''
-    crossorigin='anonymous'
-    async
-  ></script>
-</div>
+<div id="vcomments" class="valine"></div>
 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+<script>
+    new Valine({
+        av: AV,
+        el: '#vcomments',
+        appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+        appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+        placeholder: '说点什么吧',
+        notify: false,
+        verify: true,
+        avatar: 'mm',
+        meta: 'nick,mail'.split(','),
+        pageSize: '10',
+        path: window.location.pathname,
+        lang: 'en'.toLowerCase()
+    })
+    </script>
 
 
 </div>
@@ -403,6 +400,16 @@
             <div class="col-sm-12">
                 <div class="busuanzi">
     
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
 </div>
             </div>
             <div class="col-sm-12">
@@ -422,6 +429,8 @@
 </div>
 
 
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 <script src="/js/app.js?rev=@@hash.js"></script>
