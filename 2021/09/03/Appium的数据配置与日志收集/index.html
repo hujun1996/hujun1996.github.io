@@ -1,0 +1,558 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="HERO">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://example.com">
+    <!--SEO-->
+
+<meta name="keywords" content="appium的数据配置与日志手机" />
+
+
+<meta name="description" content="一、yaml概述1） yaml 简介
+YAML 是一种简洁的非标记语言。YAML以数据为中心，使用空白，缩进，分行组织数据，从而使得表示更加简洁易读。
+YAML特别适合在脚本语言中使用，列一下现..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    Appium的数据配置与日志收集 |
+    
+    HERO
+</title>
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner3.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='hujun'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                生活如此简单有趣
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://example.com">
+                        HERO</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Appium的数据配置与日志收集">
+            
+            Appium的数据配置与日志收集
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/appium%E7%9A%84%E6%95%B0%E6%8D%AE%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%97%A5%E5%BF%97%E6%89%8B%E6%9C%BA/" rel="tag">appium的数据配置与日志手机</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2021/09/03</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="一、yaml概述"><a href="#一、yaml概述" class="headerlink" title="一、yaml概述"></a>一、yaml概述</h1><p><strong>1） yaml 简介</strong></p>
+<p>YAML 是一种简洁的非标记语言。YAML以数据为中心，使用空白，缩进，分行组织数据，从而使得表示更加简洁易读。</p>
+<p>YAML特别适合在脚本语言中使用，列一下现有的语言实现：Ruby，Java，Perl，Python，PHP，JavaScript等。</p>
+<p>YAML 是专门用来写配置文件的语言，非常简洁和强大，远比 JSON 格式方便。比如同一段数据Josn和Yaml的表示分别如下：</p>
+<p><strong>jason</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; name: &#x27;Tom Smith&#x27;,age: 37,spouse: &#123; name: &#x27;Jane Smith&#x27;, age: 25 &#125;,children: [ &#123; name: &#x27;Jimmy Smith&#x27;, age: 15 &#125;,&#123; name: &#x27;Jenny Smith&#x27;, age: 12 &#125; ] &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>yaml</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">name: Tom Smith</span><br><span class="line">age: 37</span><br><span class="line">spouse:</span><br><span class="line">    name: Jane Smith</span><br><span class="line">    age: 25</span><br><span class="line">children:</span><br><span class="line">  name: Jimmy Smith</span><br><span class="line">   age: 15</span><br><span class="line">  name: Jenny Smith</span><br><span class="line">   age: 12</span><br></pre></td></tr></table></figure>
+
+<p><strong>2）语法特点【注意】</strong></p>
+<p>· 大小写敏感</p>
+<p>· 使用缩进表示层级关系</p>
+<p>· 缩进时不允许使用Tab键，只允许使用空格。</p>
+<p>· 缩进的空格数目不重要，只要相同层级的元素左侧对齐即可</p>
+<p><strong>3）yaml下载安装</strong></p>
+<p><a target="_blank" rel="noopener" href="http://pyyaml.org/wiki/PyYAML">官网</a></p>
+<p>· 下载安装：cmd 输入pip install pyyaml或者pip3 install pyyaml</p>
+<p>· 安装完成后在python引入yaml检测是否安装成功。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">C:\Windows\System32&gt;python</span><br><span class="line">Python 3.6.6 (v3.6.6:4cf1f54eb7, Jun 27 2018, 03:37:03) [MSC v.1900 64 bit (AMD64)] on win32</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">&gt;&gt;&gt; import yaml</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="二、yaml数据支持类型"><a href="#二、yaml数据支持类型" class="headerlink" title="二、yaml数据支持类型"></a>二、yaml数据支持类型</h1><p><strong>1.支持数据类型</strong></p>
+<p><strong>1.</strong> **纯量(scalars)**：单个的、不可再分的值</p>
+<p><strong>2.</strong> <strong>数组</strong>：一组按次序排列的值，又称为序列（sequence） / 列表（list）</p>
+<p><strong>3.</strong> <strong>对象</strong>：键值对的集合，又称为映射（mapping）/ 哈希（hashes） / 字典（dictionary）</p>
+<p><strong>2.纯量</strong></p>
+<p>数据最小的单位，不可以再分割。类似于Python中单个变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.list数组</strong></p>
+<p>与Python的list结构类似，数组元素使用“-”开头，也可以根据缩进进行数组嵌套。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- Jack</span><br><span class="line">- Harry</span><br><span class="line">- Sunny</span><br><span class="line"></span><br><span class="line"># 也可以写成一行</span><br><span class="line">[Jack,Harry,Sunny]</span><br></pre></td></tr></table></figure>
+
+<p>对应到python的list写法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;Jack&#x27;,&#x27;Harry&#x27;,&#x27;Sunny&#x27;]</span><br></pre></td></tr></table></figure>
+
+<p><strong>4.对象</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">platformName: Android</span><br><span class="line">platformVersion: 7.1.2</span><br><span class="line"></span><br><span class="line"># Yaml 也允许另一种写法，将所有键值对写成一个行内对象。</span><br><span class="line">&#123;platformName: Android,platformVersion: 7.1.2&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：冒号后面一定要有空格！对应到python字典的写法如下：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#x27;platformName&#x27;: &#x27;Android&#x27;, &#x27;platformVersion&#x27;: &#x27;6.0.1&#x27;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>数据嵌套</strong></p>
+<p>yaml数据嵌套表示可以将上面的各类数据根据实际场景进行组合嵌套。</p>
+<p>数据场景：</p>
+<p>Tom Smith 37岁，他有一个妻子叫 Jane Smith，35岁。 另外他有2个孩子，一个叫Jimmy Smith，15岁；另外一个叫Jenny Smith ，12岁。</p>
+<p>yaml语法表示如下：</p>
+<p><strong>familyInfo.yaml</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">name: Tom Smith</span><br><span class="line">age: 37</span><br><span class="line">spouse:</span><br><span class="line">    name: Jane Smith</span><br><span class="line">    age: 35</span><br><span class="line">children:</span><br><span class="line"> - name: Jimmy Smith</span><br><span class="line">   age: 15</span><br><span class="line"> - name: Jenny Smith</span><br><span class="line">   age: 12</span><br></pre></td></tr></table></figure>
+
+<p>转化为Python的写法为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#x27;name&#x27;:&#x27;Tom Smith&#x27;,&#x27;age&#x27;:37,&#x27;spouse&#x27;:&#123;&#x27;name&#x27;:&#x27;Jane Smith&#x27;,&#x27;age&#x27;:25&#125;,&#x27;childern&#x27;:[&#123;&#x27;name&#x27;:&#x27;Jimmy Smith&#x27;,&#x27;age&#x27;:15&#125;,&#123;&#x27;name&#x27;:&#x27;Jenny Smith&#x27;,&#x27;age&#x27;:12&#125;]&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="三、yaml数据操作"><a href="#三、yaml数据操作" class="headerlink" title="三、yaml数据操作"></a>三、yaml数据操作</h1><h2 id="1-数据读取"><a href="#1-数据读取" class="headerlink" title="1.数据读取"></a>1.数据读取</h2><p><strong>1）测试场景</strong></p>
+<p>· 读取配置中的所有信息</p>
+<p>· 读取yaml数据表中Tom Smith的姓名、年龄、信息</p>
+<p>· 单独读取配偶的姓名和年龄信息</p>
+<p>· 分别读取两个孩子的姓名、年龄信息</p>
+<p><strong>2）load方法</strong></p>
+<p>load(stream, Loader=Loader) 解析文件流中的第一个YAML文档并生成相应的Python对象。</p>
+<p><strong>3）代码实现</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">mport yaml</span><br><span class="line">file=open(&#x27;runtest.yaml&#x27;,&#x27;r&#x27;)</span><br><span class="line">data=yaml.load(file)</span><br><span class="line"></span><br><span class="line">print(data)</span><br><span class="line"></span><br><span class="line">print(data[&#x27;name&#x27;])</span><br><span class="line">print(data[&#x27;age&#x27;])</span><br><span class="line"></span><br><span class="line">print(data[&#x27;spouse&#x27;])</span><br><span class="line">print(data[&#x27;spouse&#x27;][&#x27;name&#x27;])</span><br><span class="line">print(data[&#x27;spouse&#x27;][&#x27;age&#x27;])</span><br><span class="line"></span><br><span class="line">print(data[&#x27;children&#x27;])</span><br><span class="line">print(data[&#x27;children&#x27;][0][&#x27;name&#x27;])</span><br><span class="line">print(data[&#x27;children&#x27;][0][&#x27;age&#x27;])</span><br><span class="line"></span><br><span class="line">print(data[&#x27;children&#x27;][1][&#x27;name&#x27;])</span><br><span class="line">print(data[&#x27;children&#x27;][1][&#x27;age&#x27;])</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-数据修改"><a href="#2-数据修改" class="headerlink" title="2.数据修改"></a>2.数据修改</h2><p>如果想改变某个数据，可以使用如下方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import yaml</span><br><span class="line">file=open(&#x27;runTest.yaml&#x27;,&#x27;r&#x27;)</span><br><span class="line">data=yaml.load(file)</span><br><span class="line">data[&#x27;name&#x27;]=&#x27;Test123&#x27;</span><br><span class="line">print(data[&#x27;name&#x27;])</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：此处只是变量类型的数据变更，不会真正修改到yaml配置表中的数据。</strong></p>
+<h2 id="3-数据转化"><a href="#3-数据转化" class="headerlink" title="3.数据转化"></a>3.数据转化</h2><p>方法：dump()可以将Python对象序列化成YAML流。如果stream为None，则返回生成的字符串。</p>
+<p><strong>1）测试场景</strong></p>
+<p>将下面python数据类型转化为yaml数据类型</p>
+<p><strong>2）代码实践</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import yaml</span><br><span class="line"></span><br><span class="line">city=[&#x27;changsha&#x27;,&#x27;wuhan&#x27;,&#x27;beijing&#x27;]</span><br><span class="line">person=&#123;&#x27;tom&#x27;:&#x27;18&#x27;&#125;</span><br><span class="line"></span><br><span class="line">#python data</span><br><span class="line">print(city)</span><br><span class="line">print(person)</span><br><span class="line">#yaml data</span><br><span class="line">print(yaml.dump(city))</span><br><span class="line">print(yaml.dump(person))</span><br></pre></td></tr></table></figure>
+
+<p><strong>运行结果：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;changsha&#x27;, &#x27;wuhan&#x27;, &#x27;beijing&#x27;]</span><br><span class="line">&#123;&#x27;tom&#x27;: &#x27;18&#x27;&#125;</span><br><span class="line">- changsha</span><br><span class="line">- wuhan</span><br><span class="line">- beijing</span><br><span class="line"></span><br><span class="line">tom: &#x27;18&#x27;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-Capability配置数据分离"><a href="#4-Capability配置数据分离" class="headerlink" title="4.Capability配置数据分离"></a>4.Capability配置数据分离</h2><p><strong>1）测试场景</strong></p>
+<p>将capability的各项参数值与代码进行分离。</p>
+<p><strong>2）场景分析</strong></p>
+<p>我们可以把之前capability中各项写死的配置信息来抽离出来，存放在一个yaml配置文件中，使用 对象数据类型来存储数据；然后调用load()方法读取数据，从而实现数据和代码的分离。</p>
+<p><strong>3）代码实践</strong></p>
+<ol>
+<li>参数配置表：desired_caps.yaml</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">platformName: Android</span><br><span class="line">platformVersion: 7.1.2</span><br><span class="line">deviceName: 127.0.0.1:62025</span><br><span class="line">app: D\kaoyan3.1.0.apk</span><br><span class="line">noReset: False</span><br><span class="line">appPackage: com.tal.kaoyan</span><br><span class="line">appActivity: com.tal.kaoyan.ui.activity.SplashActivity</span><br><span class="line">ip: 127.0.0.1</span><br><span class="line">port: 4723</span><br></pre></td></tr></table></figure>
+
+<p>Python脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">from appium import webdriver</span><br><span class="line">import yaml</span><br><span class="line"></span><br><span class="line">file=open(&#x27;desired_caps.yaml&#x27;,&#x27;r&#x27;)</span><br><span class="line">data=yaml.load(file)</span><br><span class="line"></span><br><span class="line">desired_caps=&#123;&#125;</span><br><span class="line">desired_caps[&#x27;platformName&#x27;]=data[&#x27;platformName&#x27;]</span><br><span class="line"></span><br><span class="line">desired_caps[&#x27;platformVersion&#x27;]=data[&#x27;platformVersion&#x27;]</span><br><span class="line">desired_caps[&#x27;deviceName&#x27;]=data[&#x27;deviceName&#x27;]</span><br><span class="line"></span><br><span class="line">desired_caps[&#x27;app&#x27;]=data[&#x27;app&#x27;]</span><br><span class="line">desired_caps[&#x27;noReset&#x27;]=data[&#x27;noReset&#x27;]</span><br><span class="line"></span><br><span class="line">desired_caps[&#x27;appPackage&#x27;]=data[&#x27;appPackage&#x27;]</span><br><span class="line">desired_caps[&#x27;appActivity&#x27;]=data[&#x27;appActivity&#x27;]</span><br><span class="line"></span><br><span class="line">driver = webdriver.Remote(&#x27;http://&#x27;+str(data[&#x27;ip&#x27;])+&#x27;:&#x27;+str(data[&#x27;port&#x27;])+&#x27;/wd/hub&#x27;, desired_caps)</span><br></pre></td></tr></table></figure>
+
+<p><strong>报错分析</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yaml.scanner.ScannerError: mapping values are not allowed here</span><br></pre></td></tr></table></figure>
+
+<p>该报错说明map对象数据类型写法错误，一般为“：”后面没有留空格。如：</p>
+<p>platformName:Android</p>
+<h1 id="四、日志概述"><a href="#四、日志概述" class="headerlink" title="四、日志概述"></a>四、日志概述</h1><p><strong>1）日志作用</strong></p>
+<p>不管是在项目开发还是测试过程中，项目运行一旦出现问题日志信息就非常重要了。日志是定位问题的重要手段，就像侦探人员要根据现场留下的线索来推断案情。</p>
+<p><strong>2）日志级别</strong></p>
+<p>脚本运行会有很多的情况，比如调试信息、报错异常信息等。日志要根据这些不同的情况来继续分级管理，不然对于排查问题的筛选会有比较大的干扰。 。日志一般定位的级别如下：</p>
+<table>
+<thead>
+<tr>
+<th>级别</th>
+<th>何时使用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DEBUG</td>
+<td>调试信息，也是最详细的日志信息。</td>
+</tr>
+<tr>
+<td>INFO</td>
+<td>证明事情按预期工作。</td>
+</tr>
+<tr>
+<td>WARNING</td>
+<td>表明发生了一些意外，或者不久的将来会发生问题（如‘磁盘满了’）。软件还是在正常工作。</td>
+</tr>
+<tr>
+<td>ERROR</td>
+<td>由于更严重的问题，软件已不能执行一些功能了。</td>
+</tr>
+<tr>
+<td>CRITICAL</td>
+<td>严重错误，表明软件已不能继续运行了。</td>
+</tr>
+</tbody></table>
+<p>首先我们日志需要按照info、debug、error等级别来进行区分的。当然这个级别可以自己去设置。在一般的情况下我们普通的输出我们直接用info类型，调试的时候用debug类型，如果预计有错误时那么我们就需要用error类型的日志，一般情况去info级别最为合适。</p>
+<p><strong>3）日志格式</strong></p>
+<p>日志格式化是为了提高日志的可阅读性，比如：<strong>时间+模块+行数+日志具体信息</strong> 的内容格式。如果日志信息杂乱无章的全部输出来，这样也不利于定位问题。</p>
+<p><strong>4）日志位置</strong></p>
+<p>一个项目中会有很多的日志采集点，而日志采集点必须结合业务属性来设置。<strong>比如在登录代码执行前可以插入“准备登录..”日志信息</strong>,如果登录完成之后，再设置登录的提示日志就会给人造成误解，无法判断到底是登录之前的问题还是登录之后的问题，因此日志采集点的位置很重要。</p>
+<h1 id="五、logging-模块"><a href="#五、logging-模块" class="headerlink" title="五、logging 模块"></a>五、logging 模块</h1><p><strong>1）简介</strong></p>
+<p>Python的logging模块提供了通用的日志系统，这个模块提供不同的日志级别，并可以采用不同的方式记录日志，比如文件，HTTP GET/POST，SMTP，Socket等，甚至可以自己实现方式记录日志。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#导入logging模块</span><br><span class="line">import logging</span><br></pre></td></tr></table></figure>
+
+<p><strong>2）logging构成</strong></p>
+<p>logging模块包括<strong>logger，Handler，Filter，Formatter</strong>四个部分。</p>
+<p>· Logger 记录器，用于设置日志采集。</p>
+<p>· Handler 处理器，将日志记录发送至合适的路径。</p>
+<p>· Filter 过滤器，提供了更好的粒度控制，它可以决定输出哪些日志记录。</p>
+<p>· Formatter 格式化器，指明了最终输出中日志的格式。</p>
+<p><strong>3）logger 记录器</strong></p>
+<p>Logger是一个树形层级结构，在使用接口debug，info，warn，error，critical；使用之前必须创建Logger实例，即创建一个记录器，如果没有显式的进行创建，则默认创建一个root logger，并应用默认的日志级别(WARN)，Handler和Formatter。</p>
+<p><strong>方法：</strong></p>
+<p>basicConfig(参数) 为日志记录系统做基本配置。</p>
+<p><strong>部分参数</strong></p>
+<p><strong>filename</strong> 指定日志文件名称</p>
+<p><strong>filemode</strong> 指定打开文件的模式，如果指定了filename（如果文件模式未指定，则默认为’a）</p>
+<p>文件读写模式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">w 以写方式打开，</span><br><span class="line"></span><br><span class="line">W 文件若存在，首先要清空，然后（重新）创建</span><br><span class="line"></span><br><span class="line">a 以追加模式打开 (从 EOF 开始, 必要时创建新文件)</span><br><span class="line"></span><br><span class="line">r+ 以读写模式打开</span><br><span class="line"></span><br><span class="line">w+ 以读写模式打开 (参见 w )</span><br><span class="line"></span><br><span class="line">a+ 以读写模式打开 (参见 a )</span><br></pre></td></tr></table></figure>
+
+<p><strong>format</strong> 为处理程序使用指定的格式字符串</p>
+<p>datefmt 使用指定的日期/时间格式。样式如果指定了格式字符串，则使用它来指定 格式字符串的类型.</p>
+<p><strong>level</strong> 将根记录器级别设置为指定级别</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import logging</span><br><span class="line">logging.basicConfig(level=logging.DEBUG)</span><br><span class="line">logging.basicConfig(level=logging.INFO)</span><br><span class="line">logging.debug(&#x27;debug info&#x27;)</span><br><span class="line">logging.info(&#x27;hello tom！&#x27;)</span><br><span class="line">logging.warning(&#x27;warning info&#x27;)</span><br><span class="line">logging.error(&#x27;error info&#x27;)</span><br><span class="line">logging.critical(&#x27;critical info&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>4）haddler 处理器</strong></p>
+<p>Handler 处理器，将日志记录发送至合适的路径,Handler处理器类型有很多种，比较常用的有三个：</p>
+<p><strong>1.streamhandler</strong></p>
+<p>将日志记录输出发送到诸如sys.stdout，sys.stderr或任何类似文件流的对象。</p>
+<p><strong>2.filehandler</strong></p>
+<p>将日志记录输出发送到磁盘文件。 它继承了StreamHandler的输出功能。</p>
+<p><strong>3.nullhandler</strong></p>
+<p><strong>5）formatter</strong></p>
+<p>使用Formatter对象设置日志信息最后的规则、结构和内容，默认的时间格式为%Y-%m-%d %H:%M:%S。</p>
+<table>
+<thead>
+<tr>
+<th><em><strong>*格式*</strong></em></th>
+<th><em><strong>*描述*</strong></em></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%(levelno)s</td>
+<td>打印日志级别的数值</td>
+</tr>
+<tr>
+<td>%(levelname)s</td>
+<td>打印日志级别名称</td>
+</tr>
+<tr>
+<td>%(pathname)s</td>
+<td>打印当前执行程序的路径</td>
+</tr>
+<tr>
+<td>%(filename)s</td>
+<td>打印当前执行程序名称</td>
+</tr>
+<tr>
+<td>%(funcName)s</td>
+<td>打印日志的当前函数</td>
+</tr>
+<tr>
+<td>%(lineno)d</td>
+<td>打印日志的当前行号</td>
+</tr>
+<tr>
+<td>%(asctime)s</td>
+<td>打印日志的时间</td>
+</tr>
+<tr>
+<td>%(thread)d</td>
+<td>打印线程id</td>
+</tr>
+<tr>
+<td>%(threadName)s</td>
+<td>打印线程名称</td>
+</tr>
+<tr>
+<td>%(process)d</td>
+<td>打印进程ID</td>
+</tr>
+<tr>
+<td>%(message)s</td>
+<td>打印日志信息</td>
+</tr>
+</tbody></table>
+<p>使用方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import logging</span><br><span class="line">logging.basicConfig(filename=&#x27;runlog.log&#x27;,level=logging.DEBUG,</span><br><span class="line">format=&#x27;%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s&#x27;)</span><br><span class="line">logging.debug(&#x27;debug info&#x27;)</span><br><span class="line">logging.info(&#x27;hello tom！&#x27;)</span><br><span class="line">logging.warning(&#x27;warning info&#x27;)</span><br><span class="line">logging.error(&#x27;error info&#x27;)</span><br><span class="line">logging.critical(&#x27;critical info&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<p>2021-09-02 11:50:20,094 ��־.py[line:5] DEBUG debug info<br>2021-09-02 11:50:41,359 ��־.py[line:5] DEBUG debug info<br>2021-09-02 11:50:41,360 ��־.py[line:6] INFO hello tom��<br>2021-09-02 11:50:41,360 ��־.py[line:7] WARNING warning info<br>2021-09-02 11:50:41,360 ��־.py[line:8] ERROR error info<br>2021-09-02 11:50:41,360 ��־.py[line:9] CRITICAL critical info</p>
+<h1 id="六、logging实践操作"><a href="#六、logging实践操作" class="headerlink" title="六、logging实践操作"></a>六、logging实践操作</h1><p><strong>1）测试场景</strong></p>
+<p>将前面所学的启动考研帮App的脚本增加log采集功能，设置指定的日志格式输出，并将日志保存到指定文件。</p>
+<p><strong>2）代码实现</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">from appium import webdriver</span><br><span class="line">import yaml</span><br><span class="line">from selenium.common.exceptions import NoSuchElementException</span><br><span class="line">import logging</span><br><span class="line"></span><br><span class="line">file=open(&#x27;desired_caps.yaml&#x27;,&#x27;r&#x27;)</span><br><span class="line">data=yaml.load(file)</span><br><span class="line"></span><br><span class="line">logging.basicConfig(level=logging.INFO,filename=&#x27;runlog.log&#x27;,</span><br><span class="line">                    format=&#x27;%(asctime)s %(filename)s[line:%(lineno)d]%(levelname)s%(message)s&#x27;)</span><br><span class="line"></span><br><span class="line">desired_caps=&#123;&#125;</span><br><span class="line">desired_caps[&#x27;platformName&#x27;]=data[&#x27;platformName&#x27;]</span><br><span class="line">desired_caps[&#x27;platformVersion&#x27;]=data[&#x27;platformVersion&#x27;]</span><br><span class="line">desired_caps[&#x27;deviceName&#x27;]=data[&#x27;deviceName&#x27;]</span><br><span class="line"></span><br><span class="line">desired_caps[&#x27;app&#x27;]=data[&#x27;app&#x27;]</span><br><span class="line">desired_caps[&#x27;appPackage&#x27;]=data[&#x27;appPackage&#x27;]</span><br><span class="line">desired_caps[&#x27;appActivity&#x27;]=data[&#x27;appActivity&#x27;]</span><br><span class="line">desired_caps[&#x27;noReset&#x27;]=data[&#x27;noReset&#x27;]</span><br><span class="line"></span><br><span class="line">logging.info(&#x27;start app...&#x27;)</span><br><span class="line">driver=webdriver.Remote(&#x27;http://&#x27;+str(data[&#x27;ip&#x27;])+&#x27;:&#x27;+str(data[&#x27;port&#x27;])+&#x27;/wd/hub&#x27;,desired_caps)</span><br><span class="line"></span><br><span class="line">def check_cancelBtn():</span><br><span class="line">    logging.info(&#x27;check cancelBtn&#x27;)</span><br><span class="line"></span><br><span class="line">    try:</span><br><span class="line">        cancelBtn = driver.find_element_by_id(&#x27;android:id/button2&#x27;)</span><br><span class="line">    except NoSuchElementException:</span><br><span class="line">        logging.info(&#x27;no cancelBtn&#x27;)</span><br><span class="line">    else:</span><br><span class="line">        cancelBtn.click()</span><br><span class="line"></span><br><span class="line">def check_skipBtn():</span><br><span class="line">    logging.info(&#x27;check skipBtn&#x27;)</span><br><span class="line"></span><br><span class="line">    try:</span><br><span class="line">        skipBtn = driver.find_element_by_id(&#x27;com.tal.kaoyan:id/tv_skip&#x27;)</span><br><span class="line">    except NoSuchElementException:</span><br><span class="line">        logging.info(&#x27;no skipBtn&#x27;)</span><br><span class="line">    else:</span><br><span class="line">        skipBtn.click()</span><br><span class="line"></span><br><span class="line">check_cancelBtn()</span><br><span class="line">check_skipBtn()</span><br></pre></td></tr></table></figure>
+
+<p><strong>3）日志格式配置</strong></p>
+<p>将log输出格式，输出路径等参数抽离出来作为一个配置表，如下所示：</p>
+<p><strong>log.conf</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">[loggers]</span><br><span class="line">keys=root,infoLogger</span><br><span class="line"></span><br><span class="line">[logger_root]</span><br><span class="line">level=DEBUG</span><br><span class="line">handlers=consoleHandler,fileHandler</span><br><span class="line"></span><br><span class="line">[logger_infoLogger]</span><br><span class="line">handlers=consoleHandler,fileHandler</span><br><span class="line">qualname=infoLogger</span><br><span class="line">propagate=0</span><br><span class="line"></span><br><span class="line">[handlers]</span><br><span class="line">keys=consoleHandler,fileHandler</span><br><span class="line"></span><br><span class="line">[handler_consoleHandler]</span><br><span class="line">class=StreamHandler</span><br><span class="line">level=INFO</span><br><span class="line">formatter=form02</span><br><span class="line">args=(sys.stdout,)</span><br><span class="line"></span><br><span class="line">[handler_fileHandler]</span><br><span class="line">class=FileHandler</span><br><span class="line">level=INFO</span><br><span class="line">formatter=form01</span><br><span class="line">args=(&#x27;runlog.log&#x27;, &#x27;a&#x27;)</span><br><span class="line"></span><br><span class="line">[formatters]</span><br><span class="line">keys=form01,form02</span><br><span class="line"></span><br><span class="line">[formatter_form01]</span><br><span class="line">format=%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s</span><br><span class="line"></span><br><span class="line">[formatter_form02]</span><br><span class="line">format=%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s</span><br></pre></td></tr></table></figure>
+
+<p>在需要调用的模块增加如下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import logging</span><br><span class="line">import logging.config</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">CON_LOG=&#x27;log.conf&#x27;</span><br><span class="line">logging.config.fileConfig(CON_LOG)</span><br><span class="line">logging=logging.getLogger()</span><br></pre></td></tr></table></figure>
+
+<p>方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fileConfig(fname, defaults=None, disable_existing_loggers=True)</span><br></pre></td></tr></table></figure>
+
+<p>该放在作用是从ConfigParser格式的文件中读取日志配置，同时如果当前脚本有配置log参数，则覆盖当前log配置选项。</p>
+<p><strong>6）代码实现</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">from appium import webdriver</span><br><span class="line">import yaml</span><br><span class="line">from selenium.common.exceptions import NoSuchElementException</span><br><span class="line"></span><br><span class="line">import logging</span><br><span class="line">import logging.config</span><br><span class="line"></span><br><span class="line">stream=open(&#x27;desired_caps.yaml&#x27;,&#x27;r&#x27;)</span><br><span class="line">data=yaml.load(stream)</span><br><span class="line"></span><br><span class="line">CON_LOG=&#x27;log.conf&#x27;</span><br><span class="line">logging.config.fileConfig(CON_LOG)</span><br><span class="line">logging=logging.getLogger()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">desired_caps=&#123;&#125;</span><br><span class="line">desired_caps[&#x27;platformName&#x27;]=data[&#x27;platformName&#x27;]</span><br><span class="line"></span><br><span class="line">desired_caps[&#x27;platformVersion&#x27;]=data[&#x27;platformVersion&#x27;]</span><br><span class="line">desired_caps[&#x27;deviceName&#x27;]=data[&#x27;deviceName&#x27;]</span><br><span class="line"></span><br><span class="line">desired_caps[&#x27;app&#x27;]=data[&#x27;app&#x27;]</span><br><span class="line">desired_caps[&#x27;noReset&#x27;]=data[&#x27;noReset&#x27;]</span><br><span class="line"></span><br><span class="line">desired_caps[&#x27;appPackage&#x27;]=data[&#x27;appPackage&#x27;]</span><br><span class="line">desired_caps[&#x27;appActivity&#x27;]=data[&#x27;appActivity&#x27;]</span><br><span class="line"></span><br><span class="line">driver = webdriver.Remote(&#x27;http://&#x27;+str(data[&#x27;ip&#x27;])+&#x27;:&#x27;+str(data[&#x27;port&#x27;])+&#x27;/wd/hub&#x27;, desired_caps)</span><br><span class="line"></span><br><span class="line">def check_updateBtn():</span><br><span class="line">    logging.info(&quot;check_pdateBtn&quot;)</span><br><span class="line"></span><br><span class="line">    try:</span><br><span class="line">        element = driver.find_element_by_id(&#x27;android:id/button2&#x27;)</span><br><span class="line">    except NoSuchElementException:</span><br><span class="line">        logging.info(&#x27;update element is not found!&#x27;)</span><br><span class="line">    else:</span><br><span class="line">        element.click()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def check_skipBtn():</span><br><span class="line">    logging.info(&quot;check_skipBtn&quot;)</span><br><span class="line">    try:</span><br><span class="line">        element = driver.find_element_by_id(&#x27;com.tal.kaoyan:id/tv_skip&#x27;)</span><br><span class="line">    except NoSuchElementException:</span><br><span class="line">        logging.info(&#x27;skipBtn element is not found!&#x27;)</span><br><span class="line">    else:</span><br><span class="line">        element.click()</span><br><span class="line"></span><br><span class="line">check_updateBtn()</span><br><span class="line">check_skipBtn()</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="C:\hexo\themes\hexo-theme-snippet-master\source\img\33.jpg"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="C:\hexo\themes\hexo-theme-snippet-master\source\img\12.jpg"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        赞赏是不耍流氓的鼓励
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">hujun</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+    <a href="/2021/09/02/Appium%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" class="next-post btn btn-default" title='Appium基础操作'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            Appium基础操作</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+    
+<div id="vcomments" class="valine"></div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+<script>
+    new Valine({
+        av: AV,
+        el: '#vcomments',
+        appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+        appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+        placeholder: '说点什么吧',
+        notify: false,
+        verify: true,
+        avatar: 'mm',
+        meta: 'nick,mail'.split(','),
+        pageSize: '10',
+        path: window.location.pathname,
+        lang: 'en'.toLowerCase()
+    })
+    </script>
+
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81yaml%E6%A6%82%E8%BF%B0"><span class="toc-text">一、yaml概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81yaml%E6%95%B0%E6%8D%AE%E6%94%AF%E6%8C%81%E7%B1%BB%E5%9E%8B"><span class="toc-text">二、yaml数据支持类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81yaml%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C"><span class="toc-text">三、yaml数据操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96"><span class="toc-text">1.数据读取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E4%BF%AE%E6%94%B9"><span class="toc-text">2.数据修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%95%B0%E6%8D%AE%E8%BD%AC%E5%8C%96"><span class="toc-text">3.数据转化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Capability%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%88%86%E7%A6%BB"><span class="toc-text">4.Capability配置数据分离</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%97%A5%E5%BF%97%E6%A6%82%E8%BF%B0"><span class="toc-text">四、日志概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81logging-%E6%A8%A1%E5%9D%97"><span class="toc-text">五、logging 模块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81logging%E5%AE%9E%E8%B7%B5%E6%93%8D%E4%BD%9C"><span class="toc-text">六、logging实践操作</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
