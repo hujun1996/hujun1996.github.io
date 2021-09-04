@@ -153,7 +153,7 @@
     <span class="fa-wrap">
         <i class="fa fa-clock-o"></i>
         <span class="date-meta">
-            2021/09/04</span>
+            2021/08/10</span>
     </span>
     
     <span class="fa-wrap">
@@ -223,10 +223,8 @@
 <p>实际上这 个过程是浏览器向网站所在的服务器发送了一个 Request，即请求，网站服 </p>
 <p>务器接收到这个 Request 之后进行处 理和解析，然后返回对应的一个 Response，即响 </p>
 <p>应，然后传回给浏览器，Response 里面就包含了页面的源代码等内容，浏览器再对其进行解析便将网页呈现了出来。 </p>
-<p><img src="C:\Users\hccz\AppData\Roaming\Typora\typora-user-images\image-20210904140931788.png" alt="image-20210904140931788"></p>
 <p>例子：使用火狐浏览器，打开百度，查看页面的请求过程</p>
 <p><a target="_blank" rel="noopener" href="https://zhidao.baidu.com/question/428894531624967852.html">点击呈现详细步骤</a></p>
-<p><img src="C:\Users\hccz\AppData\Roaming\Typora\typora-user-images\image-20210904141108420.png" alt="image-20210904141108420"></p>
 <h2 id="1）请求的四部分"><a href="#1）请求的四部分" class="headerlink" title="1）请求的四部分"></a>1）请求的四部分</h2><p>•Request Method: 请求方式 </p>
 <p>•Request URL: 请求链接 </p>
 <p>•Request Headers: 请求头 </p>
@@ -245,8 +243,7 @@
 <p><strong>post请求：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">一般来说，网站登录验证的时候，需要提交用户名密码，这里包含了敏感信息，使用 </span><br><span class="line">GET 方式请求的话密码就会 暴露在 URL 里面，造成密码泄露，所以这里最好以 POST 方 </span><br><span class="line">式发送。文件的上传时，由于文件内容比较大，也会 选用 POST 方式。比如百度账户登 </span><br><span class="line">录，如下图所示： </span><br></pre></td></tr></table></figure>
 
-<p>列如：使用火狐浏览器抓用户名和密码</p>
-<p><img src="C:\Users\hccz\AppData\Roaming\Typora\typora-user-images\image-20210904141457387.png" alt="image-20210904141457387"></p>
+<p>例如：使用火狐浏览器抓用户名和密码</p>
 <p><strong>当然也可以使用fiddler抓包</strong></p>
 <h2 id="3）请求网址（url）"><a href="#3）请求网址（url）" class="headerlink" title="3）请求网址（url）"></a>3）请求网址（url）</h2><p>Request URL </p>
 <p>就是请求的网址，即统一资源定位符，用 URL 可以唯一确定我们想请求的资源。</p>
@@ -263,7 +260,30 @@
 <p>Postman看</p>
 <p>只有设 置 Content-Type 为 application/x-www-form-urlencoded 才会以 Form Data 形式提交，另外我们也可以 将 Content-Type 设置为 application/json 来 提交 Json 数据，或者设置为 multipart/form-data 来上传文件。</p>
 <p>常用 Content-Type 和 POST 提交数据方式的关系：</p>
-<p><img src="C:\Users\hccz\AppData\Roaming\Typora\typora-user-images\image-20210904143121162.png" alt="image-20210904143121162"></p>
+<table>
+<thead>
+<tr>
+<th><strong>Content-Type</strong></th>
+<th align="center"><strong>提交数据方式</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>application/x-www-form-urlencoded</strong></td>
+<td align="center"><strong>Form表单提交</strong></td>
+</tr>
+<tr>
+<td><strong>multipart/form-data</strong></td>
+<td align="center"><strong>表单文件上传提交</strong></td>
+</tr>
+<tr>
+<td><strong>application/jason</strong></td>
+<td align="center"><strong>序列化Json数据提交</strong></td>
+</tr>
+<tr>
+<td><strong>text/html</strong></td>
+<td align="center"><strong>XML数据提交</strong></td>
+</tr>
+</tbody></table>
 <h1 id="三、http的响应"><a href="#三、http的响应" class="headerlink" title="三、http的响应"></a>三、http的响应</h1><h2 id="1）响应的三部分"><a href="#1）响应的三部分" class="headerlink" title="1）响应的三部分"></a>1）响应的三部分</h2><p>上述内容讲述的 http 协议的请求，接着描述 http 协议的响应。</p>
 <p><strong>Response，即响应，由服务端返回给客户端。Response 可以划分为三部分:</strong> </p>
 <p>• Response Status Code ：响应状态码</p>
@@ -333,12 +353,12 @@
 </article>
 <div class="article-nav prev-next-wrap clearfix">
     
-    
-    <a href="/2021/09/03/Appium%E7%9A%84%E6%95%B0%E6%8D%AE%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86/" class="next-post btn btn-default" title='Appium的数据配置与日志收集'>
-        <span class="hidden-lg">下一篇</span>
+    <a href="/2021/08/27/hello-world/" class="pre-post btn btn-default" title='Hello World'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
         <span class="hidden-xs">
-            Appium的数据配置与日志收集</span><i class="fa fa-angle-right fa-fw"></i>
+            Hello World</span>
     </a>
+    
     
 </div>
 
