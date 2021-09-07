@@ -696,106 +696,231 @@ Python 最常用的应该就是写爬虫..." />
 <td>传入无效的参数</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>UnicodeError</td>
+<td>Unicode相关的错误</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>UnicodeDecodeError</td>
+<td>Unicode 解码时的错误</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>UnicodeEncodeError</td>
+<td>Unicode 编码时错误</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>UnicodeTranslateError</td>
+<td>Unicode 转换时错误</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>Warning</td>
+<td>警告的基类</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>DeprecationWarning</td>
+<td>关于被弃用的特征的警告</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>FutureWarning</td>
+<td>关于构造将来语义会有改变的警告</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>OverflowWarning</td>
+<td>旧的关于自动提升为长整型(long)的警告</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>PendingDeprecationWarning</td>
+<td>关于特性将会被废弃的警告</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>RuntimeWarning</td>
+<td>可疑的运行时行为(runtime behavior)的警告</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>SyntaxWarning</td>
+<td>可疑的语法的警告</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
+<td>UserWarning</td>
+<td>用户代码生成的警告</td>
 </tr>
 </tbody></table>
+<h1 id="十六、Python-的文件处理"><a href="#十六、Python-的文件处理" class="headerlink" title="十六、Python 的文件处理"></a>十六、Python 的文件处理</h1><p><strong>1.打开文件</strong></p>
+<p>使用 Python 内置的方法 open（）可以打开文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file object = open(file_name [, access_mode][,buffering])</span><br></pre></td></tr></table></figure>
+
+
+
+<p>file_name：file_name 变量是一个包含了你要访问的文件名称的字符串值。</p>
+<p>access_mode：access_mode 决定了打开文件的模式：只读，写入，追加等。所有可取值见如下的完全列表。这个参数是非强制的，默认文件访问模式为只读(r)。 </p>
+<p>buffering:如果 buffering 的值被设为 0，就不会有寄存。如果 buffering 的值取 1,访问文件时会寄存行。如果将 buffering 的值设为大于 1 的整数，表明了这就是的寄存区的缓冲大小。如果取负值，寄存区的缓冲大小则为系统默认。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f=open(&#x27;stu_info.txt&#x27;,&#x27;r&#x27;) f=open(&#x27;E:\\test\\stu_info.txt&#x27;,&#x27;r&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>常用文件打开模式</strong></p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r</td>
+<td>以只读方式打开文件。</td>
+</tr>
+<tr>
+<td>rb</td>
+<td>以二进制格式打开一个文件用于只读。</td>
+</tr>
+<tr>
+<td>w</td>
+<td>打开一个文件只用于写入。</td>
+</tr>
+<tr>
+<td>a</td>
+<td>打开一个文件用于追加。新的内容将会被写入到已有内容之后。如果该文件</td>
+</tr>
+</tbody></table>
+<p><strong>2.文件的读取</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">line=f.read() </span><br><span class="line">line1=f.readline() </span><br><span class="line">line2=f.readlines()</span><br></pre></td></tr></table></figure>
+
+<p>read() 每次读取整个文件，它通常用于将文件内容放到一个字符串变量中。 </p>
+<p>readline() 每次只读取一行 </p>
+<p>readlines()一次性读取文件所有行 自动将文件内容分析成一个行的列表，该列表可以由 Python 的 for … in … 结构进行处理。</p>
+<p><strong>3.关闭文件</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.close（）</span><br></pre></td></tr></table></figure>
+
+<p><strong>读取</strong> <strong>txt</strong> <strong>文件</strong></p>
+<p>案例：读取 stu_info.txt 文件内容，并将所有文件中学生名称显示出来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f=open(&#x27;stu_info.txt&#x27;,&#x27;r&#x27;)</span><br><span class="line">lines=f.readlines()</span><br><span class="line">print(lines) </span><br><span class="line">for line in lines: </span><br><span class="line">	print(line.split(&#x27;,&#x27;)[0])</span><br></pre></td></tr></table></figure>
+
+<p><strong>split()方法语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.split(str=&quot;&quot;, num=string.count(str)).</span><br></pre></td></tr></table></figure>
+
+<p>参数</p>
+<p>str – 分隔符，默认为所有的空字符，包括空格、换行(\n)、制表符(\t)等。 </p>
+<p>num – 分割次数</p>
+<p><strong>4.</strong> <strong>读写</strong> <strong>csv</strong> <strong>文件</strong></p>
+<p>csv 即为逗号分隔值（Comma-Separated Values，CSV），有时也称为字符分隔值，因为分隔字符也可以不是逗号），其文件以纯文本形式存储表格数据（数字和文本）。</p>
+<p><strong>csv</strong> <strong>文件读取</strong></p>
+<p>案例：读取 Stu_info.csv 文件里所有学生信息。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import csv csv_file=csv.reader(open(&#x27;Stu_info.csv&#x27;,&#x27;r&#x27;)) </span><br><span class="line">for stu in csv_file:</span><br><span class="line">	print(stu)</span><br></pre></td></tr></table></figure>
+
+<p><strong>csv</strong> <strong>文件写入</strong></p>
+<p>对 Stu_info.csv 文件追加写入两个学生信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">stu=[&#x27;Marry&#x27;,28,&#x27;Changsha&#x27;] </span><br><span class="line">stu1=[&#x27;Rom&#x27;,23,&#x27;Chengdu&#x27;] out=open(&#x27;Stu_info.csv&#x27;,&#x27;a&#x27;,newline=&#x27;&#x27;) csv_write=csv.writer(out,dialect=&#x27;excel&#x27;) csv_write.writerow(stu)</span><br><span class="line">csv_write.writerow(stu1)</span><br><span class="line">print(&quot;Write File Over!&quot;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="十七、python的xml的处理"><a href="#十七、python的xml的处理" class="headerlink" title="十七、python的xml的处理"></a>十七、python的xml的处理</h1><p><strong>1.</strong> <strong>什么是</strong> <strong>xml</strong> <strong>文件？</strong></p>
+<p>xml 即<strong>可扩展标记语言</strong>，它可以用来标记数据、定义数据类型，是一种允许用户对自己 </p>
+<p>的标记语言进行定义的源语言。 </p>
+<p>从结构上，很像 HTML 超文本标记语言。但他们被设计的目的是不同的，具体如下：</p>
+<p>XML 被设计用来传输和存储数据。 </p>
+<p>HTML 被设计用来显示数据。 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; </span><br><span class="line">&lt;note&gt; </span><br><span class="line">	&lt;to id=&#x27;001&#x27;&gt;George&lt;/to&gt; </span><br><span class="line">	&lt;from&gt;John&lt;/from&gt;</span><br><span class="line">	&lt;heading&gt;Reminder&lt;/heading&gt; </span><br><span class="line">	&lt;body&gt;Don&#x27;t forget the meeting!&lt;/body&gt;</span><br><span class="line">&lt;/note&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2. Xml</strong> <strong>的特征？</strong> </p>
+<p>它是有标签对组成，<aa></aa> </p>
+<p>标签可以有属性：<aa id='123'></aa> </p>
+<p>标签对可以嵌入数据：<aa>abc</aa> </p>
+<p>标签可以嵌入子标签（具有层级关系） </p>
+<p><strong>3. Xml</strong> <strong>的文件结构</strong> </p>
+<p>XML 文档形成了一种树结构，它从“根部”开始，然后扩展到“枝叶”。 </p>
+<p>第一行是 XML 声明。它定义 XML 的版本 (1.0) 和所使用的编码 </p>
+<p><note>是根元素,也称为根节点。 </p>
+<p><to><from><heading><body>是子元素（子节点） </p>
+<p>XML 文档必须包含根元素。该元素是所有其他元素的父元素 </p>
+<p><strong>4. DOM</strong> <strong>的文档对象模型</strong> </p>
+<p><strong>文档对象模型</strong>（Document Object Model，简称 DOM），DOM 就是针对 HTML 和 </p>
+<p>XML 提供的一个 API。什么意思？就是说为了能以编程的方法操作这个 HTML 的内容（比 </p>
+<p>如添加某些元素、修改元素的内容、删除某些元素），我们把这个 HTML 或 xml 看做一个测试系列课程——新睿教学部刘波 </p>
+<p>对象树（DOM 树），它本身和里面的所有东西比如 <div></div> 这些标签都看做一个 </p>
+<p>对象，每个对象都叫做一个节点（node）。 </p>
+<p><strong>5. DOM</strong> <strong>有什么用？</strong> </p>
+<p>就是为了操作 HTML 或 xml 中的元素，比如说我们要通过 JS 把这个网页的标题改了，直接这样就可以了： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.title = &#x27;baidu&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>6.</strong> <strong>创建</strong> <strong>XML</strong> <strong>文件</strong> </p>
+<p>创建一个 xml 文件 Class_info.xml 用来存储班级学生（姓名，年龄，城市），老师（姓名， 年龄，城市）、教务账号（学生和老师的账号，密码）等信息。 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;Class&gt;</span><br><span class="line">	&lt;student&gt; </span><br><span class="line">		&lt;name &gt;Jack&lt;/name&gt; </span><br><span class="line">		&lt;age&gt;28&lt;/age&gt; </span><br><span class="line">		&lt;city&gt;Beijing&lt;/city&gt; </span><br><span class="line">	&lt;/student&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;student&gt; </span><br><span class="line">    	&lt;name &gt;Bob&lt;/name&gt;</span><br><span class="line">        &lt;age&gt;25&lt;/age&gt;</span><br><span class="line">        &lt;city&gt;Shanghai&lt;/city&gt; </span><br><span class="line">     &lt;/student&gt; </span><br><span class="line">     </span><br><span class="line">     &lt;student&gt; </span><br><span class="line">     	&lt;name&gt;Harry&lt;/name&gt;</span><br><span class="line">        &lt;age&gt;23&lt;/age&gt; </span><br><span class="line">        &lt;city&gt;ShenZhen&lt;/city&gt; </span><br><span class="line">      &lt;/student&gt;</span><br><span class="line">	  &lt;teacher&gt;</span><br><span class="line">      	&lt;name&gt;Marry&lt;/name&gt;</span><br><span class="line">        &lt;age&gt;23&lt;/age&gt; </span><br><span class="line">        &lt;city&gt;Changsha&lt;/city&gt; </span><br><span class="line">       &lt;/teacher&gt;</span><br><span class="line">       </span><br><span class="line">       &lt;account&gt; </span><br><span class="line">       		&lt;login username=&quot;student&quot; password=&quot;123456&quot;/&gt;</span><br><span class="line">            &lt;login username=&quot;teacher&quot; password=&quot;888888&quot;/&gt; </span><br><span class="line">        &lt;/account&gt;</span><br><span class="line">&lt;/Class&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>7.Xml</strong> <strong>文件的读取案例</strong> </p>
+<p><strong>1)</strong> <strong>xml</strong> <strong>的节点</strong> </p>
+<p>xml 文件节点一般包含 3 类： </p>
+<ol>
+<li><p>元素节点 </p>
+</li>
+<li><p>文本节点 </p>
+</li>
+<li><p>属性节点 </p>
+</li>
+</ol>
+<p>每个节点都拥有包含着关于节点某些信息的属性。这些属性是：  </p>
+<p>nodeName（节点名称） </p>
+<p>nodeValue（节点值） </p>
+<p>nodeType（节点类型）</p>
+<p><strong>2)</strong> <strong>读取元素的节点</strong> </p>
+<p>案例：查看 Class_info.xml 文件里 Class 节点的属性（结点名称，节点的值、节点类型） </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from xml.dom import minidom </span><br><span class="line">#加载 xml 文件 </span><br><span class="line">dom=minidom.parse(&#x27;Class_info.xml&#x27;) </span><br><span class="line">#加载 dom 对象元素 </span><br><span class="line">root=dom.documentElement </span><br><span class="line">#打印节点信息 </span><br><span class="line">print(root.nodeName)</span><br><span class="line">print(root.nodeValue) </span><br><span class="line">print(root.nodeType)</span><br></pre></td></tr></table></figure>
+
+<p>nodeName 节点名称 </p>
+<p>nodeValue 返回文本节点的值 </p>
+<p>nodeType 属性返回以数字值返回指定节点的节点类型。 </p>
+<ol>
+<li><p>如果节点是元素节点，则nodeType 属性将返回 1。 </p>
+</li>
+<li><p>如果节点是属性节点，则nodeType 属性将返回 2。 </p>
+</li>
+</ol>
+<p><strong>3)</strong> <strong>读取文本节点的值</strong> </p>
+<p>案例：分别打印出 Class_info.xml 里的学生和老师的详细信息（姓名，年龄、城市）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">from xml.dom import minidom </span><br><span class="line">#获取标签对的值 </span><br><span class="line">#打开文件</span><br><span class="line">dom=minidom.parse(&#x27;Class_info.xml&#x27;) </span><br><span class="line">#获取文档对象元素 </span><br><span class="line">root=dom.documentElement </span><br><span class="line">#根据标签名称获取标签对象</span><br><span class="line">names=root.getElementsByTagName(&#x27;name&#x27;) ages=root.getElementsByTagName(&#x27;age&#x27;) citys=root.getElementsByTagName(&#x27;city&#x27;) </span><br><span class="line">#分别打印显示 xml 文档标签对里面的内容</span><br><span class="line">for i in range(4):</span><br><span class="line">	print(names[i].firstChild.data) 		  		print(ages[i].firstChild.data) 					print(citys[i].firstChild.data)</span><br></pre></td></tr></table></figure>
+
+<p><strong>4)</strong> <strong>读取属性节点的值</strong> </p>
+<p>案例：分别读取打印老师和学生的账号密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from xml.dom import minidom dom=minidom.parse(&#x27;Class_info.xml&#x27;) root=dom.documentElement logins=root.getElementsByTagName(&#x27;login&#x27;)</span><br><span class="line">#获取 login 标签的 username 属性 </span><br><span class="line">for i in range(2): 									username=logins[i].getAttribute(&#x27;username&#x27;) 	print(username) 								password=logins[i].getAttribute(&#x27;password&#x27;) 	print(password)</span><br></pre></td></tr></table></figure>
+
+<p><strong>5)</strong> <strong>读取子节点信息</strong> </p>
+<p>读取子节点<student>相关属性 </p>
+<p>nodeName（节点名称） </p>
+<p>nodeValue（节点值） </p>
+<p>nodeType（节点类型）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from xml.dom import minidom </span><br><span class="line">#加载 xml 文件 </span><br><span class="line">dom=minidom.parse(&#x27;Class_info.xml&#x27;)</span><br><span class="line"></span><br><span class="line">root=dom.documentElement tags=root.getElementsByTagName(&#x27;student&#x27;) print(tags[0].nodeName) </span><br><span class="line">print(tags[0].tagName) </span><br><span class="line">print(tags[0].nodeType)</span><br><span class="line">print(tags[0].nodeValue)</span><br></pre></td></tr></table></figure>
+
+<p><strong>十八、Python</strong> <strong>的单线程与多线程</strong> </p>
+<p><strong>1)</strong> <strong>什么是进程？</strong> </p>
+<p>是计算机中的程序关于某数据集合上的一次运行活动，是系统进行资源分配和调度的基本单位，是操作系统结构的基础。 </p>
+<p><strong>2)</strong> <strong>什么是线程？</strong> </p>
+<p>有时被称为轻量级进程(Lightweight Process，LWP），是程序执行流的最小单元。 线程是进程中的一个实体，是被系统独立调度和分派的基本单位，<strong>一个进程可以包含多个线程，</strong> <strong>但是线程不能包含多个进程。</strong>线程自己不拥有系统资源 ，在单个程序中同时运行多个线程完成不同的工作，称为多线程。 </p>
+<p><strong>3)</strong> <strong>线程与进程的区别？</strong> </p>
+<p>线程和进程的区别在于，子进程和父进程有不同的代码和数据空间，而多个线程则共享数据空间，每个线程有自己的执行堆栈和程序计数器为其执行上下文。</p>
+<p>提示： </p>
+<p>LoadRunner 和 Jmeter 等性能测试工具也利用了<strong>多线程和多进程</strong>来构造多个并发用户来执行性能测试。 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">线程与进程图文解释 http://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html</span><br></pre></td></tr></table></figure>
+
+<p><strong>4)</strong> <strong>单线程</strong> </p>
+<p>单线程在程序执行时，所走的程序路径按照连续顺序排下来，前面的必须处理好，后面的才会执行。 </p>
+<p>案例：一个学生先用2 秒说话，接着用 3 秒写字，最后结束。 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">from time import ctime,sleep </span><br><span class="line">def talk(): </span><br><span class="line">	print(&quot;Start talk %r&quot; %ctime()) </span><br><span class="line">	sleep(2)</span><br><span class="line">def write(): </span><br><span class="line">	print(&quot;Start Write! %r&quot; %ctime())</span><br><span class="line">    sleep(3) </span><br><span class="line"> if __name__==&quot;__main__&quot;:</span><br><span class="line"> 	talk() </span><br><span class="line"> 	write() </span><br><span class="line"> 	print(&quot;All end %r&quot; %ctime())</span><br></pre></td></tr></table></figure>
+
+<p>if <strong>name</strong>==”<strong>main</strong>“: 表示如果当前模块是被直接运行的，则该语句之后代码块被运 行，如果模块是被导入的，则代码块不被运行</p>
+<p><strong>5)</strong> <strong>多线程：</strong> </p>
+<p><strong>多线程（MultiThreading）是指从软件或者硬件上实现多个线程并发执行的技术。</strong> </p>
+<p>案例：让学生同时进行说和写操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">from time import ctime,sleep </span><br><span class="line">import threading</span><br><span class="line">def talk(content,loop): </span><br><span class="line">	for i in range(loop):</span><br><span class="line">    	print(&quot;Start Talk %s %s&quot; %(content,ctime())) </span><br><span class="line">    	sleep(3)</span><br><span class="line">def write(content,loop): </span><br><span class="line">	for i in range(loop): </span><br><span class="line">		print(&quot;Start Write %s %s&quot; %(content,ctime())) </span><br><span class="line">		sleep(5) </span><br><span class="line">threads=[] </span><br><span class="line">t1=threading.Thread(target=talk,args=(&#x27;Speak: Hello&#x27;,2)) </span><br><span class="line">threads.append(t1) t2=threading.Thread(target=write,args=(&#x27;Write: Life is Short You need Python!&#x27;,2)) </span><br><span class="line">threads.append(t2) </span><br><span class="line">if __name__==&#x27;__main__&#x27;: </span><br><span class="line">	for t in threads: </span><br><span class="line">		t.start()</span><br><span class="line">    for t in threads:</span><br><span class="line">    	t.join()</span><br><span class="line">    print(&quot;All the End %r&quot; %ctime())</span><br></pre></td></tr></table></figure>
+
+<p><strong>6)</strong> <strong>多进程</strong> </p>
+<p>与多线程相比，多进程就是 import multiprocessing </p>
+<p>然后替换相应的方法 multiprocessing.Process（） </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">from time import sleep,ctime</span><br><span class="line">import multiprocessing </span><br><span class="line">def talk(content,loop):	</span><br><span class="line">	for i in range(loop):</span><br><span class="line">    	print(&quot;Talk: %s %s&quot; %(content,ctime())) 		sleep(2) </span><br><span class="line">def write(content,loop): </span><br><span class="line">	for i in range(loop):</span><br><span class="line">    	print(&quot;Write: %s %s&quot;%(content,ctime())) 		sleep(3)</span><br><span class="line">process=[] p1=multiprocessing.Process(target=talk,args=(&#x27;hello&#x27;,2)) </span><br><span class="line">process.append(p1) p2=multiprocessing.Process(target=write,args=(&#x27;Python&#x27;,2)) process.append(p2) </span><br><span class="line">if __name__==&#x27;__main__&#x27;: </span><br><span class="line">	for p in process: </span><br><span class="line">		p.start() </span><br><span class="line">	for p in process:</span><br><span class="line">    	p.join() </span><br><span class="line">    print(&quot;All process is Run %s&quot; %ctime())</span><br></pre></td></tr></table></figure>
+
+<p><strong>十九、Python</strong> <strong>的爬虫案例</strong> </p>
+<p>从网页页面上批量下载 jpg 格式图片，并按照数字递增命名保存到指定的文件夹。 </p>
+<p>Web 地址：<a target="_blank" rel="noopener" href="http://p.weather.com.cn/2017/06/2720826.shtml#p=1">http://p.weather.com.cn/2017/06/2720826.shtml#p=1</a> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import urllib </span><br><span class="line">import urllib.request</span><br><span class="line">import re #正则表达式 </span><br><span class="line">#解析页面 </span><br><span class="line">def load_page(url): 		</span><br><span class="line">	request=urllib.request.Request(url) #发送网络请求 	response=urllib.request.urlopen(request)#根据 url 打开页面 </span><br><span class="line">	data=response.read() #获取页面响应数据</span><br><span class="line">	return data </span><br><span class="line">#下载图片 </span><br><span class="line">def get_image(html): </span><br><span class="line">	regx=r&#x27;http://[\S]*jpg&#x27; #定义正则表达式，匹配页面图片元素</span><br><span class="line">    pattern=re.compile(regx) #编译表达式构造匹配模式 </span><br><span class="line">    get_image=re.findall(pattern,repr(html)) #进行正则匹配并返回结果 </span><br><span class="line">    num = 1 </span><br><span class="line">    #遍历获取的图片</span><br><span class="line">    for img in get_image: </span><br><span class="line">    	image=load_page(img) </span><br><span class="line">    	#将图片存入到指定文件夹</span><br><span class="line">        with open(&#x27;E:\\Photo\\%s.jpg&#x27; %num,&#x27;wb&#x27;) as </span><br><span class="line">        	fb: fb.write(image) </span><br><span class="line">        	print(&quot;正在下载第 %s 张图片&quot; %num) </span><br><span class="line">        	num = num + 1 </span><br><span class="line">     print(&quot;下载完成！&quot;) url=&#x27;http://p.weather.com.cn/2017/06/2720826.shtml#p=1&#x27;</span><br><span class="line">html=load_page(url)</span><br><span class="line">get_image(html)</span><br></pre></td></tr></table></figure>
+
+<p>正则表达式相关知识： </p>
+<p><a target="_blank" rel="noopener" href="https://deerchao.net/tutorials/regex/regex.htm">https://deerchao.net/tutorials/regex/regex.htm</a></p>
 
     </div>
     
@@ -885,7 +1010,7 @@ Python 最常用的应该就是写爬虫..." />
             Table of Contents
         </h3>
         
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81Python-%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-text">一、Python 的介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81python%E8%A7%A3%E9%87%8A%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-text">二、python解释器的安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81python%E7%9A%84%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA"><span class="toc-text">三、python的输入和输出</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81python%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">四、python的数据类型与运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81Python-%E7%9A%84%E5%AE%B9%E5%99%A8%E4%B8%80%EF%BC%9A%E5%88%97%E8%A1%A8%E3%80%81%E5%85%83%E7%BB%84"><span class="toc-text">五、Python 的容器一：列表、元组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81Pycharm%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">六、Pycharm工具的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83%E3%80%81Python-%E7%9A%84%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84"><span class="toc-text">七、Python 的选择结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AB%E3%80%81Python%E7%9A%84%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="toc-text">八、Python的循环结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B9%9D%E3%80%81python%E7%9A%84%E5%AE%B9%E5%99%A8%E4%BA%8C%EF%BC%9A%E5%AD%97%E5%85%B8"><span class="toc-text">九、python的容器二：字典</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E3%80%81Python-%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8"><span class="toc-text">十、Python 的迭代器与生成器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%B8%80%E3%80%81python%E7%9A%84%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0"><span class="toc-text">十一、python的内置函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81Python-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><span class="toc-text">十二、Python 的自定义函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%B8%89%E3%80%81Python%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="toc-text">十三、Python的面向对象：类与对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E5%9B%9B%E3%80%81python-%E7%9A%84%E6%A8%A1%E5%9D%97%E5%BA%94%E7%94%A8"><span class="toc-text">十四、python 的模块应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%BA%94%E3%80%81python%E7%9A%84%E5%BC%82%E5%B8%B8"><span class="toc-text">十五、python的异常</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81Python-%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-text">一、Python 的介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81python%E8%A7%A3%E9%87%8A%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-text">二、python解释器的安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81python%E7%9A%84%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA"><span class="toc-text">三、python的输入和输出</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81python%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">四、python的数据类型与运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81Python-%E7%9A%84%E5%AE%B9%E5%99%A8%E4%B8%80%EF%BC%9A%E5%88%97%E8%A1%A8%E3%80%81%E5%85%83%E7%BB%84"><span class="toc-text">五、Python 的容器一：列表、元组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81Pycharm%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">六、Pycharm工具的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83%E3%80%81Python-%E7%9A%84%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84"><span class="toc-text">七、Python 的选择结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AB%E3%80%81Python%E7%9A%84%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="toc-text">八、Python的循环结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B9%9D%E3%80%81python%E7%9A%84%E5%AE%B9%E5%99%A8%E4%BA%8C%EF%BC%9A%E5%AD%97%E5%85%B8"><span class="toc-text">九、python的容器二：字典</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E3%80%81Python-%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8"><span class="toc-text">十、Python 的迭代器与生成器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%B8%80%E3%80%81python%E7%9A%84%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0"><span class="toc-text">十一、python的内置函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81Python-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><span class="toc-text">十二、Python 的自定义函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%B8%89%E3%80%81Python%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="toc-text">十三、Python的面向对象：类与对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E5%9B%9B%E3%80%81python-%E7%9A%84%E6%A8%A1%E5%9D%97%E5%BA%94%E7%94%A8"><span class="toc-text">十四、python 的模块应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%BA%94%E3%80%81python%E7%9A%84%E5%BC%82%E5%B8%B8"><span class="toc-text">十五、python的异常</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E5%85%AD%E3%80%81Python-%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-text">十六、Python 的文件处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%B8%83%E3%80%81python%E7%9A%84xml%E7%9A%84%E5%A4%84%E7%90%86"><span class="toc-text">十七、python的xml的处理</span></a></li></ol>
         
     </div>
 </aside>
