@@ -1,0 +1,949 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="HERO">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://example.com">
+    <!--SEO-->
+
+<meta name="keywords" content="python" />
+
+
+<meta name="description" content="一、Python 的介绍python 定义及其作用
+def: 是一种面向对象、解释型计算机程序设计语言
+特点：
+代码量小 
+维护成本低 
+编程效率高
+作用：
+Python 最常用的应该就是写爬虫..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    python |
+    
+    HERO
+</title>
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner3.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='hujun'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                生活如此简单有趣
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://example.com">
+                        HERO</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="python">
+            
+            python
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/python/" rel="tag">python</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2021/09/04</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="一、Python-的介绍"><a href="#一、Python-的介绍" class="headerlink" title="一、Python 的介绍"></a>一、Python 的介绍</h1><p><strong>python 定义及其作用</strong></p>
+<p><strong>def:</strong> 是一种面向对象、解释型计算机程序设计语言</p>
+<p><strong>特点：</strong></p>
+<p>代码量小 </p>
+<p>维护成本低 </p>
+<p>编程效率高</p>
+<p><strong>作用：</strong></p>
+<p>Python 最常用的应该就是写爬虫了吧，比较简单的应用就是爬取 web 网站的资源（图片，文字、链接等） </p>
+<p>有些资深股民都是用 Python 抓取财经网站数据、并进行处理，然后输出可视化图表来帮助做决策。 </p>
+<p>人工智能机器学习方面应用，python 有很多库很方便做人工智能，比如 numpy, scipy 做数值计算的，sklearn 做机器学习的，pybrain 做神经网络的。 </p>
+<p>软件测试领域：自动化测试（Web 端(python+selenium)和移动客户端 python+appium）</p>
+<h1 id="二、python解释器的安装"><a href="#二、python解释器的安装" class="headerlink" title="二、python解释器的安装"></a>二、python解释器的安装</h1><p>主要针对python3 进行学习，是对python2 的优化</p>
+<p><strong>1.下载和安装</strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.python.org/downloads/release/python-384/">python下载</a></p>
+<p><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/cb5d6105a32b5f005c2fe0ea.html">python安装</a></p>
+<p>安装注意： </p>
+<p>在第一步的时候，一定要勾选上： </p>
+<p><strong>Add python to PATH</strong> </p>
+<p>其余都是下一步 </p>
+<p>直接安装下载的安装包即可（<strong>建议安装在 C 盘根目录</strong>）</p>
+<p>2.验证安装是否成功</p>
+<p>\1. </p>
+<p>进入 cmd 窗口 </p>
+<p>\2. </p>
+<p>输入 python </p>
+<p>\3. </p>
+<p>显示以下界面，表示 python 安装成功 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Windows\System32&gt;python</span><br><span class="line">Python 3.6.6 (v3.6.6:4cf1f54eb7, Jun 27 2018, 03:37:03) [MSC v.1900 64 bit (AMD64)] on win32</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三、python的输入和输出"><a href="#三、python的输入和输出" class="headerlink" title="三、python的输入和输出"></a>三、python的输入和输出</h1><p><strong>不要直接用电脑自带的记事本写代码，因为会造成中文乱码！！！</strong> </p>
+<p><strong>推荐下载一个 nodepad++、或者 editplus 这类高级记事本来写</strong></p>
+<p>输出：Python 没有过分强调语句结尾的“;”  </p>
+<p>​            可以写或者不写</p>
+<p>输入：print()函数 </p>
+<p>输出字符串拼接直接使用逗号隔开 </p>
+<p>录入的类型为<strong>字符串类型</strong></p>
+<h1 id="四、python的数据类型与运算符"><a href="#四、python的数据类型与运算符" class="headerlink" title="四、python的数据类型与运算符"></a>四、python的数据类型与运算符</h1><p><strong>1. Python几个常见的数据类型</strong> </p>
+<p>Python 不会像 JAVA 一样，刻意去强调数据类型 </p>
+<p>字符串——str </p>
+<p>整数——int </p>
+<p>浮点数——float </p>
+<p>格式： </p>
+<p>num=13 </p>
+<p>解释： </p>
+<p>变量 num 就是一个整数类型</p>
+<p><strong>2. Python</strong> <strong>数据类型的检测</strong></p>
+<p>Python 的检测使用 type 函数</p>
+<p><strong>3.python</strong> <strong>的运算符</strong></p>
+<p>python 常见的运算符</p>
+<p>1.算术运算符：+、-、*、/ 、%</p>
+<p>2.逻辑运算符：and 、or、not</p>
+<p>3.赋值运算符：+=、-=、*=、/=、%=、**=(幂赋值)</p>
+<p>4.比较运算符  &gt;=  &lt;=   !=  ==</p>
+<h1 id="五、Python-的容器一：列表、元组"><a href="#五、Python-的容器一：列表、元组" class="headerlink" title="五、Python 的容器一：列表、元组"></a>五、Python 的容器一：列表、元组</h1><p><strong>1.列表list：</strong></p>
+<p>列表（list）可以存储多个不同类型的数据 </p>
+<p>列表可以通过下标(从 0 开始)来访问 </p>
+<p>列表的长度不是固定的</p>
+<p><strong>列表的功能：</strong></p>
+<p>1）使用 len()函数可以获得 list 的个数</p>
+<p>2）使用 append()函数往列表里面追加数据</p>
+<p><strong>2.元组tuple：</strong></p>
+<p>元祖也是一个容器，可以用来存储数据，不过区别在于： </p>
+<p><strong>元祖的长度一旦声明不可以更改、元祖的存储值用的小括号</strong></p>
+<h1 id="六、Pycharm工具的使用"><a href="#六、Pycharm工具的使用" class="headerlink" title="六、Pycharm工具的使用"></a>六、Pycharm工具的使用</h1><p><strong>1.介绍</strong></p>
+<p>PyCharm 是一种 Python IDE，带有一整套可以帮助用户在使用 Python 语言开发时提高其效率的工具，比如调试、语法高亮、Project 管理、代码跳转、智能提示、自动完成、单 元测试、版本控制。此外，该 IDE 提供了一些高级功能，以用于支持 Django 框架下的专业 Web 开发。</p>
+<p>2.下载、安装</p>
+<p><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/0a52e3f4e0d2a6bf62ed7236.html">pycharm下载、安装步骤链接</a></p>
+<p><strong>3.使用注意：</strong></p>
+<ol>
+<li><p>如何创建项目： </p>
+<p>选择上方的”file” </p>
+<p>然后选择”new project” </p>
+<p>然后输入项目名和选择代码路径 </p>
+</li>
+<li><p>设置字体： </p>
+<p>选择上方的”file” </p>
+<p>选择”setting” </p>
+<p>输入”font”，设置 size</p>
+</li>
+<li><p>代码写好了，怎么运行？ </p>
+<p>在代码编辑区域-右键 </p>
+<p>选择”Run”</p>
+</li>
+</ol>
+<h1 id="七、Python-的选择结构"><a href="#七、Python-的选择结构" class="headerlink" title="七、Python 的选择结构"></a>七、Python 的选择结构</h1><p><strong>1.第一种：1个条件，1个结果</strong></p>
+<p>if…</p>
+<p><strong>2.第二种：1个条件，2个结果</strong></p>
+<p>if…else…</p>
+<p><strong>3.第三种：多个条件，多个结果</strong></p>
+<p>if…elseif…else</p>
+<p><strong>4.if 里面套if</strong></p>
+<h1 id="八、Python的循环结构"><a href="#八、Python的循环结构" class="headerlink" title="八、Python的循环结构"></a>八、Python的循环结构</h1><p><strong>1.什么是循环</strong></p>
+<p>分析：输出 100 句 hello,意味着要写 100 个 print 语句，但是我们会发现这是一件重复的 </p>
+<p>事情——一直在输出 hello。遇到这样重复的问题，我们可以通过循环来写一句 print(“hello”) </p>
+<p>实现 100 句输出。 </p>
+<p>列如下面的代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n=1; </span><br><span class="line">while n&lt;=100:</span><br><span class="line">	print(n,&quot;Hello&quot;) </span><br><span class="line">	n+=1</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.循环的四要素</strong></p>
+<p>要了解循环，必须了解循环的几要素： </p>
+<ol>
+<li><p>循环从哪里开始：循环的初始化变量 </p>
+</li>
+<li><p>循环到哪里终止：循环的判断条件 </p>
+</li>
+<li><p>循环一直在做什么：循环体语句 </p>
+</li>
+<li><p>循环一次，计数记录更新：控制循环语句 </p>
+<p>列如：输出 100 句 hello </p>
+<p>循环的初始化变量： </p>
+<p>n=1 </p>
+<p>循环的判断条件： while n&lt;=100: </p>
+<p>循环体语句： print(“hello”) </p>
+<p>控制循环语句： n+=1</p>
+</li>
+</ol>
+<p><strong>3.while循环：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">循环的初始化变量： While 循环的判断条件： 循环体语句 控制循环语句</span><br></pre></td></tr></table></figure>
+
+<p>案例：循环输出 1-50 能被 2 整除并且能被 3 整除的数字：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n=1;</span><br><span class="line">while n&lt;=50: </span><br><span class="line">	if n%2==0: </span><br><span class="line">	print(n)</span><br></pre></td></tr></table></figure>
+
+<p><strong>4.for循环：</strong></p>
+<p>Python 的 for 循环可以用 rang()函数来确定数的范围： </p>
+<p>列如：循环 1–50</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for x in range(1,51):</span><br><span class="line">	print(x)</span><br></pre></td></tr></table></figure>
+
+<p>解释：</p>
+<ol>
+<li><p>range(1,51):表示这个数字从 1–50 </p>
+</li>
+<li><p>x 和 in 表示从 range 函数取一个赋值给 x，然后打印 x </p>
+</li>
+</ol>
+<p>案例：求 1–100 的偶数和</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sum=0 </span><br><span class="line">for x in range(1,51):</span><br><span class="line">	if x%2 ==0: </span><br><span class="line">		sum+=x </span><br><span class="line">print(sum)</span><br></pre></td></tr></table></figure>
+
+<p><strong>5.循环的练习</strong></p>
+<p>打印一个直角三角形：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sum=0 </span><br><span class="line">for x in range(1,4): </span><br><span class="line">	for y in range(0,x): </span><br><span class="line">		print(&quot;*&quot;,end=&quot;&quot;) </span><br><span class="line">	print()</span><br></pre></td></tr></table></figure>
+
+<p>解释：end=””组织它换行</p>
+<p>打印一个倒菱形：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for i in range(4): </span><br><span class="line">	for k in range(i, 7 - i): </span><br><span class="line">		print(&quot; * &quot;, end=&quot;&quot;) </span><br><span class="line">	print() </span><br><span class="line">for j in range(0, i + 1): </span><br><span class="line">	print(&quot; &quot;, end=&quot;&quot;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="九、python的容器二：字典"><a href="#九、python的容器二：字典" class="headerlink" title="九、python的容器二：字典"></a>九、python的容器二：字典</h1><p>字典是另一种可变容器模型，且可存储任意类型对象。 </p>
+<p>字典的每个键值(key=&gt;value)对用冒号(<strong>:</strong>)分割，每个对之间用逗号(<strong>,</strong>)分割，整个字典包括在花括号(**{})**中 ,格式如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dict = &#123;&#x27;Alice&#x27;: &#x27;2341&#x27;, &#x27;Beth&#x27;: &#x27;9102&#x27;, &#x27;Cecil&#x27;: &#x27;3258&#x27;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>1.访问字典里的值</strong></p>
+<p>把相应的键放入熟悉的方括号，通过访问 key 来找 value.如下实例:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict = &#123;&#x27;Name&#x27;: &#x27;W3CSchool&#x27;, &#x27;Age&#x27;: 7, &#x27;Class&#x27;:&#x27;First&#x27;&#125;</span><br><span class="line">print (&quot;dict[&#x27;Name&#x27;]: &quot;, dict[&#x27;Name&#x27;])</span><br><span class="line">print (&quot;dict[&#x27;Age&#x27;]) dict[&#x27;Age&#x27;])</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.修改字典</strong></p>
+<p>向字典添加新内容的方法是增加新的键/值对，修改或删除已有键/值对如下实例:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dict = &#123;&#x27;Name&#x27;: &#x27;W3CSchool&#x27;, &#x27;Age&#x27;: 7, &#x27;Class&#x27;: &#x27;First&#x27;&#125; dict[&#x27;Age&#x27;] = 8; # 更新 </span><br><span class="line">Age dict[&#x27;School&#x27;] = &quot;python 教程&quot; # 添加信息 </span><br><span class="line">print (&quot;dict[&#x27;Age&#x27;]: &quot;, dict[&#x27;Age&#x27;])</span><br><span class="line">print (&quot;dict[&#x27;School&#x27;]: &quot;, dict[&#x27;School&#x27;])</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.删除字典元素</strong></p>
+<p>能删单一的元素也能清空字典，清空只需一项操作。 </p>
+<p>显示删除一个字典用 del 命令，如下实例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dict = &#123;&#x27;Name&#x27;: &#x27;W3CSchool&#x27;, &#x27;Age&#x27;: 7, &#x27;Class&#x27;: &#x27;First&#x27;&#125;</span><br><span class="line">del dict[&#x27;Name&#x27;] # 删除键 </span><br><span class="line">&#x27;Name&#x27; dict.clear() # 删除字典</span><br><span class="line">del dict # 删除字典 </span><br><span class="line">print (&quot;dict[&#x27;Age&#x27;]: &quot;, dict[&#x27;Age&#x27;])</span><br><span class="line">print (&quot;dict[&#x27;School&#x27;]: &quot;, dict[&#x27;School&#x27;])</span><br></pre></td></tr></table></figure>
+
+<p><strong>4.字典键（key）的特性</strong></p>
+<p>1.不允许同一个键出现两次。创建时如果同一个键被赋值两次，后一个值会被记住</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dict = &#123;&#x27;Name&#x27;: &#x27;zhangsan&#x27;, &#x27;Age&#x27;: 7, &#x27;Name&#x27;: &#x27;小菜鸟&#x27;&#125;</span><br><span class="line">print (&quot;dict[&#x27;Name&#x27;]: &quot;, dict[&#x27;Name&#x27;])</span><br></pre></td></tr></table></figure>
+
+<p><strong>5.字典内置函数&amp;方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>函数及描述</th>
+<th>实例</th>
+<th>输出结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>len(dict) 计算字典元素个 数，即键的总数。</td>
+<td>&gt;&gt;&gt; dict ={‘Name:’zhangsan’,’Age’:’7’,’Class’:’first’} &gt;&gt;&gt; len(dict)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>str(dict)输出字典以可打印的字符串表示。</td>
+<td>&gt;&gt;&gt; dict ={‘Name:’zhangsan’,’Age’:’7’,’Class’:’first’} &gt;&gt;&gt; str(dict)</td>
+<td>“{‘Name’: ‘zhangsan’, ‘Class’: ‘First’, ‘Age’: 7}”</td>
+</tr>
+<tr>
+<td>3</td>
+<td>type(variable)返回输入的变量类型，如果变量是字典就返回字典类型。</td>
+<td>&gt;&gt;&gt; dict ={‘Name:’zhangsan’,’Age’:’7’,’Class’:’first’} &gt;&gt;&gt; type(dict)</td>
+<td>&lt;class ‘dict’&gt;</td>
+</tr>
+</tbody></table>
+<h1 id="十、Python-的迭代器与生成器"><a href="#十、Python-的迭代器与生成器" class="headerlink" title="十、Python 的迭代器与生成器"></a>十、Python 的迭代器与生成器</h1><p><strong>1.迭代器</strong></p>
+<p>迭代是 Python 最强大的功能之一，是访问集合元素的一种方式。。 </p>
+<p>迭代器是一个可以记住遍历的位置的对象。 </p>
+<p>迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束。迭代器只能往前不会后退。 </p>
+<p>迭代器有两个基本的方法：<strong>iter()</strong> 和 **next()**。 </p>
+<p>字符串，列表或元组对象都可用于创建迭代器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#创建一个 </span><br><span class="line">list list=[1,2,3,4] </span><br><span class="line">#创建迭代器对象 </span><br><span class="line">it=iter(list) </span><br><span class="line">#开始迭代第 1 个元素 1</span><br><span class="line">print(next(it)) </span><br><span class="line">#开始迭代第 2 个元素  2</span><br><span class="line">print(next(it))</span><br></pre></td></tr></table></figure>
+
+<p>迭代器对象可以使用常规 for 语句进行遍历：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list=[1,2,3,4] </span><br><span class="line">it = iter(list) # 创建迭代器对象 </span><br><span class="line">for x in it: </span><br><span class="line">	print (x, end=&quot; &quot;)</span><br></pre></td></tr></table></figure>
+
+<p>也可以使用 next() 函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">list=[1,2,3,4] </span><br><span class="line">it = iter(list) # 创建迭代器对象</span><br><span class="line">while True: </span><br><span class="line">	try:</span><br><span class="line">		print (next(it)) </span><br><span class="line">	except StopIteration: </span><br><span class="line">		sys.exit()</span><br></pre></td></tr></table></figure>
+
+<p>解释：</p>
+<p>while True:这是一个死循环 </p>
+<p>try…except StopIteration:捕捉异常</p>
+<p><strong>2.生成器</strong></p>
+<p>在 </p>
+<p>Python 中，使用了 yield 的函数被称为生成器（generator）。 </p>
+<p>跟普通函数不同的是，生成器是一个返回迭代器的函数，只能用于迭代操作，更简单点理解生成器就是一个迭代器。 </p>
+<p>在调用生成器运行的过程中，每次遇到 yield时函数会暂停并保存当前所有的 </p>
+<p>运行信息，返回 yield 的值。并在下一次执行next()方法时从当前位置继续运行。</p>
+<p>以下实例使用 yield 实现斐波那契数列：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import sys </span><br><span class="line">def fibonacci(n): # 生成器函数 - 斐波那契 </span><br><span class="line">	a, b, counter = 0, 1, 0 </span><br><span class="line">	while True: </span><br><span class="line">		if (counter &gt; n):</span><br><span class="line">        	return</span><br><span class="line">         yield a</span><br><span class="line">         a, b = b, a + b </span><br><span class="line">         counter += 1 </span><br><span class="line">f = fibonacci(10) # f 是一个迭代器，由生成器返回生成 while True: </span><br><span class="line">	try: </span><br><span class="line">		print (next(f), end=&quot; &quot;) </span><br><span class="line">	except StopIteration: </span><br><span class="line">		sys.exit()</span><br></pre></td></tr></table></figure>
+
+<h1 id="十一、python的内置函数"><a href="#十一、python的内置函数" class="headerlink" title="十一、python的内置函数"></a>十一、python的内置函数</h1><p><strong>1.取绝对值</strong></p>
+<table>
+<thead>
+<tr>
+<th>abs(x)</th>
+<th>求绝对值                                                                                1、参数可以是整型，也可以是复数                                 2、若参数是复数，则返回复数的模</th>
+</tr>
+</thead>
+</table>
+<p><strong>2.数据类型转换函数</strong></p>
+<table>
+<thead>
+<tr>
+<th>float([x])</th>
+<th>将一个字符串或数转换为浮点数。如果无参数将返回 0.0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int([x[, base]])</td>
+<td>将一个字符转换为 int 类型，base 表示进制</td>
+</tr>
+<tr>
+<td>long([x[, base]])</td>
+<td>将一个字符转换为 long 类型</td>
+</tr>
+</tbody></table>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/pyyu/p/6702896.html">完整参考</a></p>
+<h1 id="十二、Python-的自定义函数"><a href="#十二、Python-的自定义函数" class="headerlink" title="十二、Python 的自定义函数"></a>十二、Python 的自定义函数</h1><p>函数能提高应用的模块性，和代码的重复利用率。Python 提供了许多内建函数，比如print()等。也可以创建用户自定义函数。</p>
+<p><strong>1.函数的定义</strong></p>
+<p>函数定义的简单规则： </p>
+<p>函数代码块以 def 关键词开头，后接函数标识符名称和圆括号()，任何传入 </p>
+<p>参数和自变量必须放在圆括号中间 </p>
+<p>函数内容以冒号起始，并且缩进 </p>
+<p>若有返回值，Return[expression] 结束函数；不带 return 表达式相当于返回 None </p>
+<p>函数通常使用三个单引号 ‘’’…’’’ 来注释说明函数；函数体内容不可为空，可用 </p>
+<p>pass 来表示空语句；以下几个为简单的函数示例： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x27;&#x27;&#x27; some basic functions &#x27;&#x27;&#x27;</span><br><span class="line">def func1(): # 函数无传入参数 </span><br><span class="line">	print(&quot;func1&quot;) # 无 return 值 </span><br><span class="line">func1() # 函数调用 </span><br><span class="line">def func2(): </span><br><span class="line">	return(&quot;func2&quot;) # return 字符串 &quot;func2&quot; print(func2())</span><br><span class="line">def func3(a,b): # 需传两个参数 </span><br><span class="line">	print(&quot;a+b = %d&quot; %(a+b)) # print 表达式，无return func3(3,4) </span><br><span class="line">def func4(a,b): # 需传两个参数</span><br><span class="line">	return (a+b) # return a+b 的值 </span><br><span class="line">print(func4(4,3))</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.函数的调用</strong></p>
+<p>定义一个函数只给了函数一个名称，指定了函数里包含的参数，和代码块结构。</p>
+<p>这个函数的基本结构完成以后，你可以通过另一个函数调用执行，也可以直接从Python 提示符执行。 </p>
+<p>上面的例子中 func1() 就是无参数函数的调用； func3(3,4) 为有参数函数的调用 </p>
+<h1 id="十三、Python的面向对象：类与对象"><a href="#十三、Python的面向对象：类与对象" class="headerlink" title="十三、Python的面向对象：类与对象"></a>十三、Python的面向对象：类与对象</h1><p><strong>1.面向对象的关键因素</strong></p>
+<p><strong>类(class):</strong></p>
+<p>用来描述具有相同的属性和方法的对象的集合。它定义了该集合中每个对象所共有的属性和方法。</p>
+<p> <strong>数据成员：</strong></p>
+<p>类的不同属性数据。</p>
+<p><strong>对象：</strong></p>
+<p>对象是类的实例</p>
+<p><strong>方法：</strong></p>
+<p>类中定义的函数，实现相关的功能。</p>
+<p><strong>2.面向对象编程</strong></p>
+<p>简称 OOP（Object Oriented Programming），是一种程序设计思想。OOP 把对象 </p>
+<p>作为程序的基本单元，一个对象包含了数据和操作数据的函数（方法）。 </p>
+<p>面向对象的设计思想是从自然界中来的，因为在自然界中，类（Class）和实例（Instance）的概念是很自然的。Class 是一种抽象概念，比如我们定义的 Student 类，是指学生这个概念，而实例（Instance）则是一个个体的 Student 对象。 </p>
+<p>Python 是一门面向对象的语言，在 Python 中创建一个类和对象是很容易的</p>
+<p><strong>3.定义类</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Student(object): 类体</span><br></pre></td></tr></table></figure>
+
+<p>Class 是类的定义的关键词，class 后面紧接着是类名，即 Student，类名通常是大写开头的单词，紧接着是(object)，表示该类是从哪个类继承下来的。通常如果没有明确的继承类，就使用 object 类，括号内一般为空默认就是继承 Obejct 类。这是所有类最终都会继承的类，也就是基类。</p>
+<p><strong>4.属性初始化</strong></p>
+<p>由于类可以起到模板的作用，因此，可以在创建实例对象的时候，把一些我们认为必须绑定的属性强制填写进去。通过定义一个特殊的__init__方法，如：在创建 Student 实例的时候，就把 name，city 等属性绑上去：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Student(): </span><br><span class="line">	def __init__(self,name,city): </span><br><span class="line">	self.name=name </span><br><span class="line">	self.city=city </span><br><span class="line">	print(&quot;My name is %s and come from %s&quot; % (name, city))</span><br></pre></td></tr></table></figure>
+
+<p>__init__方法的第一个参数永远是 self，表示创建的实例本身，因此，在__init__方法内部，就可以把各种属性绑定到 self，因为 self 就指向创建的实例本身。有了__init__方法， 在创建实例的时候，就不能传入空的参数了，必须传入与__init__方法匹配的参数，但 self 不需要传，Python 解释器自己会把实例变量传进去。</p>
+<p><strong>5.定义方法</strong></p>
+<p>类的方法除了第一个参数是 self 外，其他和普通函数一样。要调用一个方法，只需要在实例变量上直接调用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Student():</span><br><span class="line">	def __init__(self,name,city): </span><br><span class="line">		self.name=name self.city=city </span><br><span class="line">		print(&quot;My name is %s and come from %s&quot; % (name, city)) </span><br><span class="line">	def talk(self): print(&quot;Hello&quot;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>6.生成实例对象</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">stu1=Student(&#x27;Jack&#x27;,&#x27;Beijing&#x27;)</span><br><span class="line">stu1.talk() </span><br><span class="line">stu2=Student(&#x27;Harry&#x27;,&#x27;Shanghai&#x27;)</span><br><span class="line">stu2.talk()</span><br></pre></td></tr></table></figure>
+
+<h1 id="十四、python-的模块应用"><a href="#十四、python-的模块应用" class="headerlink" title="十四、python 的模块应用"></a>十四、python 的模块应用</h1><p><strong>1.为何要使用模块？</strong></p>
+<p>随着项目功能和需求增多，代码量也会增大，把全部代码放在一个文件会显得冗余，因此需要使用模块进行分区管理。</p>
+<p><strong>2.python 的模块是什么？</strong></p>
+<p>Python 模块(Module)，是一个 Python 文件，以 .py 结尾，包含了 Python 对象定义和 Python 语句。</p>
+<p><strong>3.使用模块的好处？</strong></p>
+<p>最大的好处是大大提高了代码的可维护性。其次，编写代码不必从零开始。当一个模块编写完毕，就可以被其他地方引用。如：随机数模块，时间模块。</p>
+<p><strong>4.import语句</strong></p>
+<p>导入时间模块显示当前系统时间</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#模块 显示当前时间 </span><br><span class="line">import time </span><br><span class="line">print(time.ctime())#调用获取当前时间的方法</span><br></pre></td></tr></table></figure>
+
+<p>导入随机数模块显示随机整数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import random</span><br><span class="line">num=random.randint()</span><br><span class="line">print(num)</span><br></pre></td></tr></table></figure>
+
+<p><strong>5.from…import 语句</strong></p>
+<p>Python 的from 语句让你从模块中导入一个指定的部分到当前命名空间中。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from time import sleep</span><br><span class="line">from Student import Student stu1=Student(&#x27;jack&#x27;,&#x27;Beijing&#x27;) </span><br><span class="line">stu1.talk() </span><br><span class="line">stu2=Student(&#x27;Harry&#x27;,&#x27;Shanghai&#x27;) </span><br><span class="line">stu2.talk()</span><br></pre></td></tr></table></figure>
+
+<p><strong>6.跨目录调用模块</strong></p>
+<p>案例：调用 School 目录下的 Student 模块</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from School.Student import Student stu1=Student(&#x27;jack&#x27;,&#x27;Beijing&#x27;)</span><br><span class="line">stu1.talk() </span><br><span class="line">stu2=Student(&#x27;Harry&#x27;,&#x27;Shanghai&#x27;)</span><br><span class="line">stu2.talk()</span><br></pre></td></tr></table></figure>
+
+<p><strong>7.import 搜索路径</strong></p>
+<p>当你导入一个模块，Python 解析器对模块位置的搜索顺序是：</p>
+<p>1、当前目录 </p>
+<p>2、如果不在当前目录，Python 则搜索 PYTHONPATH 下的每个目录。 </p>
+<p>3、如果都找不到，Python 会察看安装默认路径。</p>
+<h1 id="十五、python的异常"><a href="#十五、python的异常" class="headerlink" title="十五、python的异常"></a>十五、python的异常</h1><p><strong>1.什么是异常？</strong></p>
+<p>异常即是一个事件，该事件会在程序执行过程中发生，影响了程序的正常执行。 一般情况 </p>
+<p>下，在 Python 无法正常处理程序时就会发生一个异常。 异常是 Python 对象，表示一个 </p>
+<p>错误。 当 Python 脚本发生异常时我们需要捕获处理它，否则程序会终止执行。</p>
+<p><strong>2.常见的异常类型？</strong></p>
+<table>
+<thead>
+<tr>
+<th>异常名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FileNotFoundError</td>
+<td>找不到指定文件的异常</td>
+</tr>
+<tr>
+<td>NameError</td>
+<td>未声明/初始化对象 (没有属性)</td>
+</tr>
+<tr>
+<td>BaseException</td>
+<td>所有异常的基类</td>
+</tr>
+</tbody></table>
+<p><strong>3.异常的处理语句使用？</strong></p>
+<p>try…except… </p>
+<p>try…except…finally </p>
+<p>raise</p>
+<p><strong>FileNotFoundError</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try: </span><br><span class="line">	fileName=input(&quot;Please input fileName:&quot;) 		open(&quot;%s.txt&quot; %fileName) </span><br><span class="line">except FileNotFoundError:</span><br><span class="line">	print(&quot;%s file not found &quot; %fileName)</span><br></pre></td></tr></table></figure>
+
+<p><strong>NameError</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try: </span><br><span class="line">	print(stu) </span><br><span class="line">except NameError:</span><br><span class="line">	print(&quot;stu not define !&quot;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>BaseException</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try: </span><br><span class="line">	print(stu) </span><br><span class="line">except BaseException:</span><br><span class="line">print(&quot;stu not define !&quot;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>try…except…as…</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">	#stu=&#x27;Jack&#x27; </span><br><span class="line">	print(stu) </span><br><span class="line">	except BaseException as msg:</span><br><span class="line">    print(msg)</span><br></pre></td></tr></table></figure>
+
+<p><strong>try… except… else 使用</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">	stu=&#x27;Jack&#x27; </span><br><span class="line">	print(stu) </span><br><span class="line">except BaseException as msg: </span><br><span class="line">	print(msg) </span><br><span class="line">else:</span><br><span class="line">	print(&quot;stu is defined！&quot;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>try..except…finally 输出</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">	#stu=&#x27;Jack&#x27; </span><br><span class="line">	print(stu) </span><br><span class="line">except BaseException as msg:</span><br><span class="line">	print(msg) </span><br><span class="line">finally: </span><br><span class="line">	print(&quot;The end !&quot;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>raise抛出异常</strong></p>
+<p>前面 try 语句是执行过程中捕获代码块的异常，而 raise 是通过事先定义一个条件，一 </p>
+<p>旦符合异常条件就抛出异常。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def division(x,y)</span><br><span class="line">	if y==0: </span><br><span class="line">		raise ZeroDivisionError(&quot;Zero is not allow!&quot;) </span><br><span class="line">	return x/y</span><br><span class="line"> try:</span><br><span class="line"> 	division(8,0) </span><br><span class="line"> except BaseException as msg:</span><br><span class="line"> 	print(msg)</span><br></pre></td></tr></table></figure>
+
+<p>注意：raise 只能用于 Python 标准异常类！</p>
+<table>
+<thead>
+<tr>
+<th>异常名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BaseException</td>
+<td>所有异常的基类</td>
+</tr>
+<tr>
+<td>SystemExit</td>
+<td>解释器请求退出</td>
+</tr>
+<tr>
+<td>KeyboardInterrupt</td>
+<td>用户中断执行(通常是输入^C)</td>
+</tr>
+<tr>
+<td>Exception</td>
+<td>常规错误的基类</td>
+</tr>
+<tr>
+<td>StopIteration</td>
+<td>迭代器没有更多的值</td>
+</tr>
+<tr>
+<td>GeneratorExit</td>
+<td>生成器(generator)发生异常来通知退出</td>
+</tr>
+<tr>
+<td>StandardError</td>
+<td>所有的内建标准异常的基类</td>
+</tr>
+<tr>
+<td>ArithmeticError</td>
+<td>所有数值计算错误的基类</td>
+</tr>
+<tr>
+<td>FloatingPointError</td>
+<td>浮点计算错误</td>
+</tr>
+<tr>
+<td>OverflowError</td>
+<td>数值运算超出最大限制</td>
+</tr>
+<tr>
+<td><strong>ZeroDivisionError</strong></td>
+<td>除(或取模)零 (所有数据类型)</td>
+</tr>
+<tr>
+<td>AssertionError</td>
+<td>断言语句失败</td>
+</tr>
+<tr>
+<td>AttributeError</td>
+<td>对象没有这个属性</td>
+</tr>
+<tr>
+<td>EOFError</td>
+<td>没有内建输入,到达 EOF 标记</td>
+</tr>
+<tr>
+<td>EnvironmentError</td>
+<td>操作系统错误的基类</td>
+</tr>
+<tr>
+<td>IOError</td>
+<td>输入/输出操作失败</td>
+</tr>
+<tr>
+<td>OSError</td>
+<td>操作系统错误</td>
+</tr>
+<tr>
+<td>WindowsError</td>
+<td>系统调用失败</td>
+</tr>
+<tr>
+<td>ImportError</td>
+<td>导入模块/对象失败</td>
+</tr>
+<tr>
+<td>LookupError</td>
+<td>无效数据查询的基类</td>
+</tr>
+<tr>
+<td>IndexError</td>
+<td>序列中没有此索引(index)</td>
+</tr>
+<tr>
+<td>KeyError</td>
+<td>映射中没有这个键</td>
+</tr>
+<tr>
+<td>MemoryError</td>
+<td>内存溢出错误(对于 Python 解释器不是致命的)</td>
+</tr>
+<tr>
+<td>NameError</td>
+<td>未声明/初始化对象 (没有属性)</td>
+</tr>
+<tr>
+<td>UnboundLocalError</td>
+<td>访问未初始化的本地变量</td>
+</tr>
+<tr>
+<td>ReferenceError</td>
+<td>弱引用(Weak reference)试图访问已经垃圾回收了的对象</td>
+</tr>
+<tr>
+<td>RuntimeError</td>
+<td>一般的运行时错误</td>
+</tr>
+<tr>
+<td>NotImplementedError</td>
+<td>尚未实现的方法</td>
+</tr>
+<tr>
+<td>SyntaxError</td>
+<td>Python 语法错误</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>IndentationError</th>
+<th>缩进错误</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TabError</td>
+<td>Tab 和空格混用</td>
+</tr>
+<tr>
+<td>SystemError</td>
+<td>一般的解释器系统错误</td>
+</tr>
+<tr>
+<td>TypeError</td>
+<td>对类型无效的操作</td>
+</tr>
+<tr>
+<td>ValueError</td>
+<td>传入无效的参数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="C:\hexo\themes\hexo-theme-snippet-master\source\img\33.jpg"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="C:\hexo\themes\hexo-theme-snippet-master\source\img\12.jpg"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        赞赏是不耍流氓的鼓励
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">hujun</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2021/09/06/%E6%A1%88%E4%BE%8B%E6%95%B4%E5%90%88/" class="pre-post btn btn-default" title='案例整合'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            案例整合</span>
+    </a>
+    
+    
+    <a href="/2021/09/03/Appium%E7%9A%84%E6%95%B0%E6%8D%AE%E9%85%8D%E7%BD%AE%E4%B8%8E%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86/" class="next-post btn btn-default" title='Appium的数据配置与日志收集'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            Appium的数据配置与日志收集</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+    
+<div id="vcomments" class="valine"></div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+<script>
+    new Valine({
+        av: AV,
+        el: '#vcomments',
+        appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+        appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+        placeholder: '说点什么吧',
+        notify: false,
+        verify: true,
+        avatar: 'mm',
+        meta: 'nick,mail'.split(','),
+        pageSize: '10',
+        path: window.location.pathname,
+        lang: 'en'.toLowerCase()
+    })
+    </script>
+
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81Python-%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-text">一、Python 的介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81python%E8%A7%A3%E9%87%8A%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-text">二、python解释器的安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81python%E7%9A%84%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA"><span class="toc-text">三、python的输入和输出</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81python%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">四、python的数据类型与运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81Python-%E7%9A%84%E5%AE%B9%E5%99%A8%E4%B8%80%EF%BC%9A%E5%88%97%E8%A1%A8%E3%80%81%E5%85%83%E7%BB%84"><span class="toc-text">五、Python 的容器一：列表、元组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81Pycharm%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">六、Pycharm工具的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83%E3%80%81Python-%E7%9A%84%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84"><span class="toc-text">七、Python 的选择结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AB%E3%80%81Python%E7%9A%84%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="toc-text">八、Python的循环结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B9%9D%E3%80%81python%E7%9A%84%E5%AE%B9%E5%99%A8%E4%BA%8C%EF%BC%9A%E5%AD%97%E5%85%B8"><span class="toc-text">九、python的容器二：字典</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E3%80%81Python-%E7%9A%84%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%B8%8E%E7%94%9F%E6%88%90%E5%99%A8"><span class="toc-text">十、Python 的迭代器与生成器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%B8%80%E3%80%81python%E7%9A%84%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0"><span class="toc-text">十一、python的内置函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81Python-%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><span class="toc-text">十二、Python 的自定义函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%B8%89%E3%80%81Python%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%9A%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="toc-text">十三、Python的面向对象：类与对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E5%9B%9B%E3%80%81python-%E7%9A%84%E6%A8%A1%E5%9D%97%E5%BA%94%E7%94%A8"><span class="toc-text">十四、python 的模块应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%BA%94%E3%80%81python%E7%9A%84%E5%BC%82%E5%B8%B8"><span class="toc-text">十五、python的异常</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
