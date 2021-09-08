@@ -1,0 +1,598 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="HERO">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://example.com">
+    <!--SEO-->
+
+<meta name="keywords" content="Postman接口测试工具" />
+
+
+<meta name="description" content="一、postman的概述一般简单的接口测试我们可以直接在浏览器里面进行调试，但是涉及到一些权限设置的就无法操作了，因此我们需 要接口测试的相关工具；Postman 是一个接口测试和http请求的..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    Postman接口测试工具 |
+    
+    HERO
+</title>
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner3.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='hujun'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                生活如此简单有趣
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://example.com">
+                        HERO</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Postman接口测试工具">
+            
+            Postman接口测试工具
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/Postman%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7/" rel="tag">Postman接口测试工具</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2021/09/08</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="一、postman的概述"><a href="#一、postman的概述" class="headerlink" title="一、postman的概述"></a>一、postman的概述</h1><p>一般简单的接口测试我们可以直接在浏览器里面进行调试，但是涉及到一些权限设置的就无法操作了，因此我们需 要接口测试的相关工具；Postman 是一个接口测试和http请求的工具</p>
+<p><strong>1.postman的下载、安装</strong></p>
+<p>软件下载地址：<a target="_blank" rel="noopener" href="https://dl.pstmn.io/download/latest/win64">https://dl.pstmn.io/download/latest/win64</a></p>
+<p><img src="https://pic.imgdb.cn/item/61385b4244eaada739baa423.jpg"></p>
+<p>当然这软件不能支持设置中文，如果对想看中文的，可以下载这款国产高仿的接口测试软件：apipost</p>
+<p>软件官网：<a target="_blank" rel="noopener" href="https://www.apipost.cn/#">https://www.apipost.cn/#</a> </p>
+<p>软件手册：<a target="_blank" rel="noopener" href="https://doc.apipost.cn/4a77c87f97fb686b">https://doc.apipost.cn/4a77c87f97fb686b</a></p>
+<p><strong>2.postman 的优缺点</strong></p>
+<p>1.支持各种的请求类型: get、post、put、patch、delete 等</p>
+<p>2.支持在线存储数据，通过账号就可以进行迁移数据</p>
+<p>3.很方便的支持请求 header 和请求参数的设置</p>
+<p>4.支持不同的认证机制，如 Basic Auth，Digest Auth，OAuth 1.0，OAuth 2.0 等</p>
+<p>5.响应数据是自动按照语法格式高亮的，包括 HTML，JSON 和 XML</p>
+<p><strong>3.postman的界面介绍</strong></p>
+<p><strong>A.界面组成</strong></p>
+<p><img src="https://pic.imgdb.cn/item/61385c2144eaada739bc0ba0.jpg"></p>
+<p><strong>B.控制台</strong></p>
+<p>postman 控制台：先打开 console，再点击 send 发送请求</p>
+<p><img src="https://pic.imgdb.cn/item/61385c5644eaada739bc670c.jpg"></p>
+<p>devtools 控制台：view –&gt;developer 下 </p>
+<p>快捷键（ctrl+shift+I） </p>
+<p><img src="https://pic.imgdb.cn/item/61385c7344eaada739bc97eb.jpg"></p>
+<p><strong>C.基本的使用</strong></p>
+<p>new，新建按钮，可以创建：请求、集合、环境变量、文档、Mock 服务器、监视器、模版、API network</p>
+<p><img src="C:\hexo\source_posts\image-20210908144840217.png" alt="image-20210908144840217"></p>
+<p>Request：创建一个基本的请求 </p>
+<p>Collection：就是请求的集合，里面可放多个请求，这些请求可以组成一组相关的测试场景 </p>
+<p>Environment：环境变量，用变量替代 URL 中的参数值 </p>
+<p>Monitor：监视器，定时运行接口，并收集、检查性能和相应结果（局域网不能使用，只支持公网的 ip 请求；免费版使用次数有限制） </p>
+<p>API Documemtation：创建接口文档 </p>
+<p><strong>4.使用postman发送一个请求</strong></p>
+<ol>
+<li><p>启动软件后在引导界面点击 Request，给 Request 命名，然后创建文件夹并把该Request 归属到该文件夹。 </p>
+</li>
+<li><p>在地址栏输入 postman-echo.com/get 然后点击 Send 按钮，可以看到返回值。如下图所示：</p>
+</li>
+</ol>
+<p><img src="https://pic.imgdb.cn/item/61385d5544eaada739be8d37.jpg"></p>
+<h1 id="二、postman工作原理"><a href="#二、postman工作原理" class="headerlink" title="二、postman工作原理"></a>二、postman工作原理</h1><p>如下图所示，当您在 Postman 中输入请求并单击 Send 按钮时，服务器将接收您的请求并返回 Postman 在接口中显示的响应。</p>
+<p><img src="https://pic.imgdb.cn/item/61385d9c44eaada739bf03d4.jpg"></p>
+<p><strong>Request 编辑</strong> </p>
+<p>在主界面左侧可以查看、保存、编辑 Request。</p>
+<h1 id="三、postman发送多种请求"><a href="#三、postman发送多种请求" class="headerlink" title="三、postman发送多种请求"></a>三、postman发送多种请求</h1><p><strong>1.</strong> <strong>发送</strong> <strong>get</strong> <strong>请求</strong></p>
+<p>HTTP GET 请求方法用于从服务器检索数据。 数据由唯一的 URI(统一资源标识符)标识。 GET 请求可以使用“Query String Parameters”将参数传递给服务器。 例如，在下面的请求中：</p>
+<p>案例：查询快递 100 的接口，下面准备接口地址 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.kuaidi100.com/query?type=yuantong&amp;postid=123456</span><br></pre></td></tr></table></figure>
+
+<p><strong>说明：</strong></p>
+<p>​    Type、postid 表示发送的参数 </p>
+<p>​    ？问号后面连接参数 </p>
+<p>​    &amp;表示连接多个参数 </p>
+<p><strong>编辑参数：</strong> </p>
+<p><img src="https://pic.imgdb.cn/item/61385e2d44eaada739bffaa3.jpg"></p>
+<p>解释：</p>
+<p>Type 设置的快递公司名称的拼音 </p>
+<p>Postid:表示快递的单号</p>
+<p><strong>2.</strong> <strong>发送</strong> <strong>post</strong> <strong>请求</strong> </p>
+<p>HTTP POST 请求方法旨在将数据传输到服务器，返回的数据取决于服务器的实现。POST 请求可以使用 Query String Parameters 以及 body 将参数传递给服务器 </p>
+<p><strong>案例</strong> <strong>1：</strong> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://postman-echo.com/post?param=java</span><br></pre></td></tr></table></figure>
+
+<p>返回值：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;args&quot;: &#123; &quot;param&quot;: &quot;java&quot; &#125;,</span><br><span class="line">&quot;data&quot;: &#123;&#125;, </span><br><span class="line">&quot;files&quot;: &#123;&#125;, </span><br><span class="line">&quot;form&quot;: &#123;&#125;, </span><br><span class="line">&quot;headers&quot;: &#123; </span><br><span class="line">	&quot;x-forwarded-proto&quot;: &quot;https&quot;,</span><br><span class="line">    &quot;x-forwarded-port&quot;: &quot;443&quot;, </span><br><span class="line">    &quot;host&quot;: &quot;postman-echo.com&quot;,</span><br><span class="line">    &quot;x-amzn-trace-id&quot;: &quot;Root=1-5f297e6e-ff1108001ac45200f71e6e00&quot;, </span><br><span class="line">    &quot;content-length&quot;: &quot;0&quot;, </span><br><span class="line">    &quot;cache-control&quot;: &quot;no-cache&quot;, </span><br><span class="line">    &quot;postman-token&quot;: &quot;69f685b5-96ab-4ca2-83b5-26f4e1c50203&quot;, </span><br><span class="line">    &quot;user-agent&quot;: &quot;PostmanRuntime/7.4.0&quot;,</span><br><span class="line">    &quot;accept&quot;: &quot;*/*&quot;,</span><br><span class="line">    &quot;cookie&quot;: &quot;sails.sid=s%3AwSs2NC8SufYRF_X8JSeoRRYm2S8zld8-.0lM9TgljEowpovt7s9T4jobFlIbPoF5e6gaYBSiw758&quot;,</span><br><span class="line">    &quot;accept-encoding&quot;: &quot;gzip, deflate&quot;</span><br><span class="line">  &#125;,</span><br><span class="line"> &quot;json&quot;: null, </span><br><span class="line"> &quot;url&quot;: &quot;https://postman-echo.com/post?param=java&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>案例</strong> <strong>2：</strong> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">发送一个 Request，其中 body 为 application/x-www-form-urlencoded 类型，参数分别为 param1=wulibobo 和 param2=888 </span><br><span class="line">请 求 URL 如下： </span><br><span class="line">https://postman-echo.com/post</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/61385fad44eaada739c2afaa.jpg"></p>
+<p><strong>Postman Body 数据类型说明：</strong> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">• form-data multipart/form-data 是 Web 表单用于传输数据的默认编码。这模拟了在 网站上填写表单并提 交它。表单数据编辑器允许我们为数据设置键-值对。我们也可以为文 件设置一个键，文件本身作为值进行 设置。 </span><br><span class="line">• x-www-form-urlencoded 该编码与 URL 参数中使用的编码相同。我们只需输入键- 值对，Postman 会 正确编码键和值。请注意，我们无法通过此编码模式上传文件。表单 数据和 urlencoded 之间可能存在一些差异，因此请务必首先检查 API 的编码实现，确定 是否可以使用这种方式发送请求。 </span><br><span class="line">• raw 请求可以包含任何内容。除了替换环境变量之外，Postman 不触碰在编辑器中输入 的字符串。无论你 在编辑区输入什么内容，都会随请求一起发送到服务器。编辑器允许我 们设置格式类型以及使用原始主体 发送的正确请求头。我们也可以手动设 Content-Type标题，这将覆盖 Postman 定义的设置。 </span><br><span class="line">• binary 二进制数据可让我们发送 Postman 中无法输入的内容，例如图像，音频或视频 文件。</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.</strong> <strong>发送</strong> <strong>put</strong> <strong>请求</strong> </p>
+<p>HTTP PUT 请求主要是从客户端向服务器传送的数据取代指定的文档的内容。 </p>
+<p>PUT 请求可以使用 Query String Parameters 以及 body </p>
+<p>请求体将参数传递给服务器。 </p>
+<p><strong>案例：发送 put 请求，并传递字符串参数“wulibobo”</strong> </p>
+<p><img src="https://pic.imgdb.cn/item/61385ff844eaada739c33962.jpg"></p>
+<p><strong>4.</strong> <strong>发送</strong> <strong>delete</strong> <strong>请求</strong> </p>
+<p>HTTP DELETE 方法用于删除服务器上的资源，DELETE </p>
+<p>请求可以使用 Query String </p>
+<p>Parameters 以及 body 请求体将 参数传递给服务器。 </p>
+<p>准备接口参数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://postman-echo.com/delete</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/6138602444eaada739c38390.jpg"></p>
+<p><strong>5.</strong> <strong>请求头</strong> </p>
+<p>Request Header（请求头）用来说明服务器要使用的附加信息，比较重要的信息有 </p>
+<p>Cookie、Referer、User-Agent 等。在 Postman 中可以在请求下方的 Headers 栏目来 </p>
+<p>设置，如下如图所示： </p>
+<p><strong>准备接口参数：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://postman-echo.com/post?param=java&amp;param=C#</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/6138604c44eaada739c3cb1e.jpg"></p>
+<p><strong>6.</strong> <strong>响应头</strong> </p>
+<p>Response Header(响应头)其中包含了服务器对请求的应答信息，如 </p>
+<p>Content-Type、Server、Set-Cookie 等， 在 Postman 主界面下方 Headers 或者 Postman Console 界面都可以查看 Response Header 信息。</p>
+<p><img src="https://pic.imgdb.cn/item/6138606944eaada739c3fc9b.jpg"></p>
+<h1 id="四、授权设置"><a href="#四、授权设置" class="headerlink" title="四、授权设置"></a><strong>四、授权设置</strong></h1><p>很多时候，出于安全考虑我们的接口并不希望对外公开。这个时候就需要使用授权(Authorization)机制 授权过程 验证您是否具有访问服务器所需数据的权限。 </p>
+<p>当您发送请求时，您通常必须包含参数，以确保请求具有访问和返 回所需数据的权限。 </p>
+<p>Postman 提供授权类型，可以轻松地在 Postman 本地应用程序中处理身份验证协议。</p>
+<p><strong>Postman 支持的授权协议类型如下：</strong> </p>
+<p>• No Auth• Bearer Token</p>
+<p><strong>• Basic auth</strong></p>
+<p><strong>• Digest Auth</strong> </p>
+<p><strong>• OAuth 1.0</strong></p>
+<p>• OAuth 2.0 </p>
+<p><strong>• Hawk Authentication</strong> </p>
+<p>• AWS Signature </p>
+<p>• NTLM Authentication [Beta] </p>
+<p>这里主要介绍以上加粗的授权协议。</p>
+<p><strong>1.</strong> <strong>如何打开授权界面</strong> </p>
+<p><strong>下方演示如何打开授权界面</strong></p>
+<p><img src="https://pic.imgdb.cn/item/6138617a44eaada739c5e3ac.jpg"></p>
+<p><strong>2. Basic auth</strong> <strong>授权</strong> </p>
+<p>基本身份验证是一种比较简单的授权类型，需要经过验证的用户名和密码才能访问数据资源。这就需要我们输入用 户名和对应的密码。</p>
+<p><strong>案例：请求 URL 如下，授权账号为：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">• 用户名: postman </span><br><span class="line">• 密码: password </span><br><span class="line">• 授权协议为：Basic auth</span><br></pre></td></tr></table></figure>
+
+<p><strong>准备的 URL：</strong><a target="_blank" rel="noopener" href="https://postman-**echo**.**com**/basic-auth">https://postman-**echo**.**com**/basic-auth</a> </p>
+<p><strong>注意：</strong> </p>
+<p>• 如果不输入用户名密码，直接使用 GET 请求，则会返回提示：Unauthorized</p>
+<p><img src="https://pic.imgdb.cn/item/6138632144eaada739c8ca8a.jpg"></p>
+<p>• 输入用户名密码，选择 Basic auth 授权类型，则返回如下结果：</p>
+<p><img src="https://pic.imgdb.cn/item/6138625544eaada739c763f6.jpg"></p>
+<p><strong>3. Digest Auth</strong> <strong>授权</strong> </p>
+<p>Digest auth 是一个简单的认证机制，最初是为 HTTP 协议开发的，因此也常叫做HTTP 摘要。其身份验证机制非 常简单，它采用哈希加密方法，以避免用明文传输用户的口令。摘要认证就是要核实參与通信的两方都知道双方共享的一个口令。当 server 想要查证用户的身份，它产生一个摘要盘问（digest challenge），并发送给用户。典型的摘要盘问例如 以下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Digest realm=&quot;iptel.org&quot;, qop=&quot;auth,auth-int&quot;, </span><br><span class="line">nonce=&quot;dcd98b7102dd2f0e8b11d0f600bfb0c093&quot;, opaque=&quot;&quot;, algorithm=MD5</span><br></pre></td></tr></table></figure>
+
+<p>这里包含了一组参数，也要发送给用户。用户使用这些參数，来产生正确的摘要回答，并发送给 server。各个參数意义如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">realm（领域）：领域參数是强制的，在全部的盘问中都必须有。它是目的是鉴别 SIP 消 息中的机密。在 SIP 实际应用中，它通常设置为 SIP 代理 server 所负责的域名。 </span><br><span class="line">nonce（现时）：这是由 server 规定的数据字符串，在 server 每次产生一个摘要盘问时， 这个參数都是不一样的 （与前面所产生的不会雷同）。“现时”一般是由一些数据通过 md5 杂凑运算构造的。 这种数据通常包含时间标 识和 server 的机密短语。这确保每一个“现 时”都有一个有限的生命期（也就是过了一些时间后会失效，并且以后再也不会使用），并 且是独一无二的 （即不论什么其他的 server 都不能产生一个同样的“现时”）。 algorithm（算法）：这是用来计算的算法。当前仅仅支持 MD5 算法。 qop（保护的质量）。这个參数规定 server 支持哪种保护方案。client 能够从列表中选择 一个。值 auth 表示仅仅 进行身份查验， auth-int 表示进行查验外，另一些完整性保护。</span><br><span class="line">须要看更具体的描写叙述，请參阅 RFC2617。 参考链接：https://blog.csdn.net/guobailu/article/details/82775459</span><br></pre></td></tr></table></figure>
+
+<p>案例： </p>
+<p>准备 URL： <a target="_blank" rel="noopener" href="https://postman-**echo**.**com**/digest-auth">https://postman-**echo**.**com**/digest-auth</a></p>
+<p>配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Digest username=&quot;postman&quot;, realm=&quot;Users&quot;, nonce=&quot;ni1LiL0O37PRRhofWdCLmwFsnEtH1lew&quot;,</span><br><span class="line">uri=&quot;/digest-auth&quot;, </span><br><span class="line">response=&quot;254679099562cf07df9b6f5d8d15db44&quot;, opaque=&quot;&quot;</span><br></pre></td></tr></table></figure>
+
+<p>一切都正确，结果如下：</p>
+<p><img src="https://pic.imgdb.cn/item/6138649844eaada739cb5f02.jpg"></p>
+<p><strong>4. Hawk Auth</strong> </p>
+<p>Hawk Auth 是一个 HTTP 认证方案，使用 MAC(Message Authentication Code，消息认证码算法)算法，它提供 了对请求进行部分加密验证的认证 HTTP 请求的方法。 </p>
+<p>hawk 方案要求提供一个共享对称密匙在服务器与客户端之 间，通常这个共享的凭证在初始 TLS（安全传输层协议）保护阶段建立的，或者是从客户端和服务器都可用的其他一些共享机密信息中获得的。 </p>
+<p><strong>1)</strong> <strong>准备参数</strong> </p>
+<p><strong>请求的 URL：****<a target="_blank" rel="noopener" href="https://postman-echo.com/auth/hawk">https://postman-echo.com/auth/hawk</a></strong> </p>
+<p><strong>秘钥信息：</strong> </p>
+<p>Hawk Auth ID: dh37fgj492je </p>
+<p>Hawk Auth Key: werxhqb98rpaxn39848xrunpaw3489ruxnpa98w4rxn </p>
+<p>Algorithm: sha256</p>
+<p>按步骤操作及结果如下：</p>
+<p><img src="https://pic.imgdb.cn/item/6138658444eaada739cd0879.jpg"></p>
+<p><img src="https://pic.imgdb.cn/item/613866b644eaada739cf10bf.jpg"></p>
+<p><strong>5. OAuth 1.0</strong> </p>
+<p>OAuth（开放授权）是一个开放标准，允许用户让第三方应用访问该用户在某一网站上存储的私密的资源（如照片， 视频，联系人列表），而无需将用户名和密码提供给第三方应用。 </p>
+<p>扩展资料： <a target="_blank" rel="noopener" href="https://blog.huoding.com/2010/10/10/8">https://blog.huoding.com/2010/10/10/8</a></p>
+<p><strong>1)</strong> <strong>准备参数</strong> </p>
+<p>请求 URL 如下：请求方式为 GET，Add authorization data to </p>
+<p>设置 Request Headers 为：<a target="_blank" rel="noopener" href="https://postman-**echo**.**com**/oauth1">https://postman-**echo**.**com**/oauth1</a> </p>
+<p><strong>配置参数：</strong> </p>
+<p>Consumer Key: RKCGzna7bv9YD57c </p>
+<p>Consumer Secret: D+EdQ-gs$-%@2Nu7 </p>
+<p><strong>2)</strong> <strong>步骤截图及结果</strong></p>
+<p><img src="https://pic.imgdb.cn/item/613867e444eaada739d14b9b.jpg"></p>
+<p>异常结果： </p>
+<p>如果 Consumer Secret 错误则返回如下结果：</p>
+<p><img src="https://pic.imgdb.cn/item/6138691544eaada739d359ca.jpg"></p>
+<h1 id="五、Cookie-设置"><a href="#五、Cookie-设置" class="headerlink" title="五、Cookie 设置"></a>五、Cookie 设置</h1><p><strong>1.</strong> <strong>什么是</strong> <strong>cookie</strong> </p>
+<p>cookie 是存储在浏览器中的小片段信息，每次请求后都将其发送回服务器，以便在请求之间存储有用的信息。比如很多网站登录界面都有保留账号密码，以便下次登录。</p>
+<p><strong>Cookie 是由服务端生成，存储在响应头中，返回给客户端，客户端会将 cookie 存</strong> <strong>储下来，在客户端发送请求时， user-agent 会自动获取本地存储的 cookie，将 cookie</strong> <strong>信息存储在请求头中，并发送给服务端</strong>。</p>
+<p>postman 也可以设置、获取、删除 Cookie。</p>
+<p><img src="https://pic.imgdb.cn/item/61386a0944eaada739d50931.jpg"></p>
+<p><strong>2.</strong> <strong>设置</strong> <strong>cookie</strong> </p>
+<p>在 Send 按钮下方点击 Cookies 文字菜单，弹出如下界面，然后可以设置 Cookie。</p>
+<p><strong>1)</strong> <strong>准备参数：</strong></p>
+<p>请求 URL：<a target="_blank" rel="noopener" href="https://www.baidu.com/">https://www.baidu.com</a> </p>
+<p>请求方式：GET 请求 </p>
+<p>设置 cookie 为：username:hujun</p>
+<p><strong>2)</strong> <strong>操作步骤：</strong></p>
+<p> <strong>点击下方</strong> <strong>cookie</strong>——&gt;<strong>添加</strong> <strong>cookie</strong>——&gt;<strong>添加参数进去</strong></p>
+<p><img src="https://pic.imgdb.cn/item/61386cb544eaada739d9ce4e.jpg"></p>
+<p><strong>点击控制台</strong>——&gt;<strong>点击发送</strong></p>
+<p><img src="https://pic.imgdb.cn/item/61387d7544eaada739f84609.jpg"></p>
+<p><img src="https://pic.imgdb.cn/item/6138746144eaada739e7f351.jpg"></p>
+<p><strong>查看结果：</strong></p>
+<p><img src="https://pic.imgdb.cn/item/61387c9344eaada739f69a42.jpg"></p>
+<p><strong>4.</strong> <strong>删除</strong> <strong>cookie</strong> </p>
+<p>点击 Cookies 文字菜单,然后可以根据需求去清除对应的 Cookie。</p>
+<h1 id="六、变量"><a href="#六、变量" class="headerlink" title="六、变量"></a>六、变量</h1><p><strong>1.变量存在的意义</strong></p>
+<p>在开发不同阶段可能存在不同的环境,比如测试环境和生产环境。 </p>
+<p>测试环境 API 如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://dev.postman.com/get </span><br><span class="line">https://dev.postman.com/post </span><br><span class="line">https://dev.postman.com/put</span><br></pre></td></tr></table></figure>
+
+<p>生产环境 API 如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://postman-echo.com/get</span><br><span class="line">https://postman-echo.com/post </span><br><span class="line">https://postman-echo.com/put</span><br></pre></td></tr></table></figure>
+
+<p>在这么情况下，按照常规思路要么你需要维护两套环境的 API，要么每次都手动一个个去修改 URL，不管哪种选择 都比较麻烦且低效，那么有没有比较的好的方法来解决这个问题呢？</p>
+<p>通过比较我们可以发现，以上两组 API 主要是除了 host 不同之外其他都一样，其实把 Host 用<strong>变量</strong>替换，这样就可以灵活切换环境。</p>
+<p><strong>2.postman的变量类型</strong></p>
+<p><strong>postman提供了变量设置，有4种变量类型。</strong></p>
+<ul>
+<li>本地变量(LocalVariable )</li>
+<li>全局变量(Global Variable)</li>
+<li>环境变量(Environment Variable)</li>
+<li>数据变量(Data Variable)</li>
+</ul>
+<p><strong>3．Postman</strong> <strong>的变量详解</strong> </p>
+<p><strong>1)</strong> <strong>环境变量(Environment Variable)</strong> </p>
+<p>环境变量指在不同环境，同一个变量值随着环境不同而变化，比如我们上面举例场景就 </p>
+<p>可以使用环境变量，当在测试环境时，host 值为: dev.postman.com ,当切换到生产环境 </p>
+<p>时，host 值变为：postman-echo.com 。 </p>
+<p>环境变量设置： 在 postman 界面点击右上角眼睛图标，即可开始设置环境变量和全 </p>
+<p>局变量。环境变量设置过程如下图所示： </p>
+<p>我们可以设置两种环境 dev 和 release, </p>
+<ul>
+<li><strong>dev</strong> <strong>是开发测试环境；</strong> </li>
+<li><strong>release</strong> <strong>是正式的生产环境。</strong> </li>
+<li><strong>host</strong> <strong>环境变量， 根据不同的环境值不一样</strong></li>
+</ul>
+<p><img src="https://pic.imgdb.cn/item/6138818a44eaada739ff162b.jpg"></p>
+<p>同样的步骤，再来添加生产环境</p>
+<p><img src="https://pic.imgdb.cn/item/6138834144eaada73901bc0a.jpg"></p>
+<p>变量引用格式为,如下图所示： </p>
+<p>列如：生产环境</p>
+<p><img src="https://pic.imgdb.cn/item/613882d344eaada739010a90.jpg"></p>
+<p>完整参考：<a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/948f59247349c0980ff5f9c3.html">https://jingyan.baidu.com/article/948f59247349c0980ff5f9c3.html</a></p>
+<p><strong>2)</strong> <strong>本地变量(LocalVariable )</strong></p>
+<p>本地变量主要是针对单个 URL 请求设置的变量，作用域只是局限在请求范围内。如请求 URL 如下，设置两个本地变量（user,passwd）作为参数。请求方式为 POST</p>
+<p>准备参数：<a target="_blank" rel="noopener" href="https://postman-**echo**.**com**/post">https://postman-**echo**.**com**/post</a></p>
+<p><img src="https://pic.imgdb.cn/item/6138841a44eaada739033613.jpg"></p>
+<p>上面通过环境变量知道，设置变量的格式为： </p>
+<p>变量设置好之后需要赋值，在 Pre-request-Script 里面编写如下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pm.variables.set(&quot;user&quot;,&quot;hujun&quot;);</span><br><span class="line">pm.variables.set(&quot;passwd&quot;,&quot;123456&quot;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/613884a444eaada739040c6b.jpg"></p>
+<p>点击 send 执行之后的返回值如下，可以看到我们定义的变量已经发送。</p>
+<p><img src="https://pic.imgdb.cn/item/613884d544eaada7390459f8.jpg"></p>
+<p><strong>3)</strong> <strong>全局变量</strong><strong>(Global Variable)</strong> </p>
+<p>全局变量是指在所有的环境里面，变量值都是一样的，全局变量的作用域是所有请求。全局变量设置有两种方式： </p>
+<p><strong>1. 点击界面里设置</strong> </p>
+<p>点击眼睛图标后，在 Global 选项菜单点击 Edit 菜单即可设置全局变量，如下图所示。 </p>
+<p>全局变量的引用格式和环境 变量一样， </p>
+<p>注意：当环境变量和全局变量名称一样时，切换到某个环境时，环境变量会覆盖全局变量。</p>
+<p><img src="https://pic.imgdb.cn/item/6138854944eaada739051f58.jpg"></p>
+<p><strong>2.在脚本里设置</strong> </p>
+<p>使用如下脚本可以设置全局变量：variable_key 表示变量名称， variable_value 表示变量值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm.globals.set(&quot;variable_key&quot;, &quot;variable_value&quot;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>4)</strong> <strong>实践案例：</strong> </p>
+<p>在实际接口测试过程中，接口经常会有关联。比如需要取上一个接口的某个返回值，然后作为参数传递到下一个接 口作为参数。 </p>
+<p><strong>假设我们要获取 A 接口返回的 userid 值作为 B 接口的请求参数</strong>。 </p>
+<p>A 接口请求 URL 如下： </p>
+<p><a target="_blank" rel="noopener" href="https://postman-echo.com/post">https://postman-echo.com/post</a> </p>
+<p>• 请求方式为 Post </p>
+<p>• 请求参数：userid(这里自己定义，接口会返回对应的 id 值)</p>
+<p><img src="https://pic.imgdb.cn/item/6138862a44eaada739068228.jpg"></p>
+<p>根据返回值我们需要从返回值中提取 userid 值。在 Test 标签栏下编写如下脚本获取 userid 值</p>
+<p><img src="https://pic.imgdb.cn/item/6138876244eaada739087fba.jpg"></p>
+<p>B 接口请求 URL 如下：请求方式为 GET</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">postman-echo.com/get?userid=&#123;&#123;userid&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>先执行 A 接口的，然后在执行 B 接口，此时 B 接口通过全局变量 userid 可以获得A 接口的返回值。</p>
+<p><img src="https://pic.imgdb.cn/item/6138883a44eaada73909de3a.jpg"></p>
+<h1 id="七、断言"><a href="#七、断言" class="headerlink" title="七、断言"></a>七、断言</h1><p><strong>1.定义</strong></p>
+<p>一般来说执行完测试，我们需要对测试结果来进行校验，判断结果是是否符合我们的预期，也就是断言。在接口测试中一般会根据响应状态码或者响应返回的数据来进行断言。</p>
+<p>Postman 提供一个测试沙箱（Postman Sandbox） 测试沙箱是一个 JavaScript 执行环境，可以通过 JS 脚本来编 写 pre-request Script 和 test Script。 </p>
+<p>pre-request Script（预置脚本）可以用来修改一些默认参数,在请求发送之前执行。 </p>
+<p>test Script（测试脚本）当接收到响应之后，再执行测试脚本。</p>
+<p><strong>2.断言的案例</strong> </p>
+<p><strong>(1)</strong> <strong>准备的</strong> <strong>URL:</strong> </p>
+<p>postman-echo.com/post </p>
+<p><strong>(2)</strong> <strong>断言的规则</strong> </p>
+<ul>
+<li>响应状态码：200 </li>
+<li>响应内容：返回的 user 参数值与定义的一致 </li>
+<li>响应时间：小于 0.5s</li>
+</ul>
+<p><strong>(3)</strong> <strong>准备的脚本</strong> </p>
+<p><strong>在</strong> <strong>pre-request Script</strong> <strong>定义变量</strong> <strong>user</strong></p>
+<p>pm.variables.set(“user”,’hujun’);</p>
+<p>在test栏下面编写脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//判断响应状态码</span><br><span class="line">pm.test(&quot;Status code is 200&quot;, function () &#123; </span><br><span class="line">pm.response.to.have.status(200); </span><br><span class="line">&#125;); </span><br><span class="line">//获取发送的参数值 </span><br><span class="line">username=pm.variables.get(&quot;user&quot;);</span><br><span class="line">console.log(username); </span><br><span class="line">//校验响应内容是否和请求的一致 </span><br><span class="line">pm.test(&quot;Check username&quot;, function () &#123;</span><br><span class="line">var jsonData = pm.response.json();</span><br><span class="line">pm.expect(jsonData.json[&#x27;user&#x27;]).to.eql(username);</span><br><span class="line">&#125;); </span><br><span class="line">//检测响应时间是否小于 0.5s </span><br><span class="line">pm.test(&quot;Response time is less than 500ms&quot;, function () &#123; </span><br><span class="line">pm.expect(pm.response.responseTime).to.be.below(500);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>结果如下：</p>
+<p><img src="https://pic.imgdb.cn/item/61388c2744eaada7390fb2f4.jpg"></p>
+<p>Postman 测试脚本的官方文档： </p>
+<p><a target="_blank" rel="noopener" href="https://learning.postman.com/docs/writing-scripts/intro-to-scripts/">https://learning.postman.com/docs/writing-scripts/intro-to-scripts/</a></p>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="C:\hexo\themes\hexo-theme-snippet-master\source\img\33.jpg"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="C:\hexo\themes\hexo-theme-snippet-master\source\img\12.jpg"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        赞赏是不耍流氓的鼓励
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">hujun</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+    <a href="/2021/09/08/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/" class="next-post btn btn-default" title='接口测试基础'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            接口测试基础</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+    
+<div id="vcomments" class="valine"></div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+<script>
+    new Valine({
+        av: AV,
+        el: '#vcomments',
+        appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+        appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+        placeholder: '说点什么吧',
+        notify: false,
+        verify: true,
+        avatar: 'mm',
+        meta: 'nick,mail'.split(','),
+        pageSize: '10',
+        path: window.location.pathname,
+        lang: 'en'.toLowerCase()
+    })
+    </script>
+
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81postman%E7%9A%84%E6%A6%82%E8%BF%B0"><span class="toc-text">一、postman的概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81postman%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-text">二、postman工作原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81postman%E5%8F%91%E9%80%81%E5%A4%9A%E7%A7%8D%E8%AF%B7%E6%B1%82"><span class="toc-text">三、postman发送多种请求</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%8E%88%E6%9D%83%E8%AE%BE%E7%BD%AE"><span class="toc-text">四、授权设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81Cookie-%E8%AE%BE%E7%BD%AE"><span class="toc-text">五、Cookie 设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%8F%98%E9%87%8F"><span class="toc-text">六、变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E6%96%AD%E8%A8%80"><span class="toc-text">七、断言</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
