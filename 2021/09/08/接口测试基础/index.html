@@ -1,0 +1,395 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="HERO">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://example.com">
+    <!--SEO-->
+
+<meta name="keywords" content="接口测试基础" />
+
+
+<meta name="description" content="一、接口测试的概述1.接口定义
+API（Application Programming Interface,应用程序编程接口）是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    接口测试基础 |
+    
+    HERO
+</title>
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner3.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='hujun'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                生活如此简单有趣
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://example.com">
+                        HERO</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="接口测试基础">
+            
+            接口测试基础
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/" rel="tag">接口测试基础</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2021/09/08</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="一、接口测试的概述"><a href="#一、接口测试的概述" class="headerlink" title="一、接口测试的概述"></a>一、接口测试的概述</h1><p><strong>1.接口定义</strong></p>
+<p>API（Application Programming Interface,应用程序编程接口）是一些预先定义的<strong>函数</strong>，目的是提供应用程序与开发人员基于某<strong>软件或硬件</strong>得以访问一组例程的能力，而又无需访问源码，或理解内部工作机制的细节。 </p>
+<p><strong>2.接口测试定义</strong></p>
+<p>接口测试是对系统或组件之间的接口进行测试，主要是校验数据的交换，传递和控制管理过程，以及相互逻辑依赖关系。其中接口协议分为 HTTP,WebService,Dubbo,Thrift,Socket 等类型。</p>
+<p><strong>3.接口测试目的</strong></p>
+<p>接口测试实施在多系统的平台架构下，有着极为高效的成本收益比（当然，单元测试收益更高，但实施单元测试的 成本投入更大，技术要求更高）。 </p>
+<p>接口测试天生为高复杂性的平台带来高效的缺陷检测和质量监督能力，平台复杂，系统越庞大，接口测试的效果越 明显。 </p>
+<p><strong>接口测试优势主要体现在如下三个方面：</strong> </p>
+<p>1、节省了测试成本 </p>
+<p>根据数据模型推算，底层的一个程序 BUG 可能引发 UI 层的 8 个左右 BUG，而且底层的 BUG 更容易引起全网的死 机；接口测试能够提供系统复杂度上升情况下的低成本高效率的解决方案。 </p>
+<p>2、接口测试门槛相对较低 </p>
+<p>接口测试不同于单元测试，接口测试是站在用户的角度对系统接口进行全面高效持续的检测。 </p>
+<p>3、效益更高 </p>
+<p>将接口测试实现为自动化和持续集成，当系统复杂度和体积越大，接口测试的成本就越低，相对应的，效益产出就 越高。</p>
+<p><strong>4.接口测试流程</strong></p>
+<p>需求分析——用例设计——脚本开发——用例执行——结果分析</p>
+<p><a target="_blank" rel="noopener" href="https://hujun1996.github.io/tags/http%E5%8D%8F%E8%AE%AE/">http协议相关基础理论</a></p>
+<h1 id="二、JSON数据格式"><a href="#二、JSON数据格式" class="headerlink" title="二、JSON数据格式"></a>二、JSON数据格式</h1><p><strong>1.简介</strong></p>
+<p>JSON（JavaScript Object Notation，即 JavaScript 对象表示法）是一种轻量级的数据交换格式。它独立于语言 和平台，JSON 解析器和 JSON 库支持不同的编程语言。JSON 具有自我描述性，很容易理解。目前大多数接口返 回的数据格式为 JSON,因此进行接口测试必须掌握 JSON。</p>
+<p><strong>2.JSON的语法特点</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.数据在键/值对中</span><br><span class="line">2.数据由逗号隔开</span><br><span class="line">3.&#123;花括号&#125;保存对象</span><br><span class="line">4.[方括号]保存数组</span><br></pre></td></tr></table></figure>
+
+<p>JSON 数据的书写格式是：key:value 键值对。比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;name&quot;:&quot;张三&quot;</span><br></pre></td></tr></table></figure>
+
+<p>解释：name 是 key，张三 是 value</p>
+<p><strong>JSON 值可以是：</strong> </p>
+<p>a. 数字（整数或浮点数） </p>
+<p>b. 字符串（在双引号中） </p>
+<p>c. 逻辑值（true 或 false） </p>
+<p>d. 数组（在方括号中） </p>
+<p>e. 对象（在花括号中）</p>
+<p><strong>案例代码：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/*1.json 的值是数字*/ </span><br><span class="line">&quot;age&quot;:18</span><br><span class="line">/*2.json 的值为字符串*/ </span><br><span class="line">&quot;name&quot;:&quot;Tom&quot; </span><br><span class="line">/*3.json 的值为逻辑值*/ </span><br><span class="line">&quot;result&quot;:true</span><br><span class="line">/*4.json 的值为数组*/ </span><br><span class="line">&quot;city&quot;:[&quot;长沙&quot;,&quot;上海&quot;,&quot;北京&quot;]</span><br><span class="line">/*5.json 的值为对象</span><br><span class="line">	JSON 对象在花括号中书写： </span><br><span class="line">	对象可以包含多个键/值对： </span><br><span class="line">* */</span><br><span class="line">&#123; &quot;firstName&quot;:&quot;John&quot; , &quot;lastName&quot;:&quot;Doe&quot; &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意:在接口测试过程中，一般都是返回 JSON 对象类型。</strong></p>
+<p>比如在数组中含多个对象：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;employees&quot;: [</span><br><span class="line">&#123; &quot;firstName&quot;:&quot;John&quot; , &quot;lastName&quot;:&quot;Doe&quot; &#125;,</span><br><span class="line">&#123; &quot;firstName&quot;:&quot;Anna&quot; , &quot;lastName&quot;:&quot;Smith&quot; &#125;, </span><br><span class="line">&#123; &quot;firstName&quot;:&quot;Peter&quot; , &quot;lastName&quot;:&quot;Jones&quot; &#125; </span><br><span class="line">]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在上面的例子中，对象 “employees” 是包含三个对象的数组。每个对象代表一条关于某人（有姓和名）的记录。</p>
+<p><strong>3.JSON数据解析</strong></p>
+<p>Python3 中可以使用 json模块来对 JSON 数据进行编解码，它包含了两个方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">json.dumps(): 将 python 数据转化为 Json 数据</span><br><span class="line">json.loads(): 将 json 数据类型转为 Python 数据类型</span><br></pre></td></tr></table></figure>
+
+<p>JSON 库官方文档 <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/json.htm">https://docs.python.org/3/library/json.htm</a></p>
+<p><strong>案例一：将PYTHON数据转化JSON数据</strong></p>
+<p>准备代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import json </span><br><span class="line">#1 准备字典 </span><br><span class="line">data=&#123;&#x27;id&#x27;:1,&#x27;name&#x27;:&#x27;zhangsan&#x27;,&#x27;password&#x27;:&#x27;66666&#x27;&#125; </span><br><span class="line">#2 检测类型 </span><br><span class="line">--dict print(type(data))</span><br><span class="line">#3 通过 json.dumps()方法来转换 </span><br><span class="line">json_str=json.dumps(data) </span><br><span class="line">#4.检测类型为 </span><br><span class="line">str print(type(json_str))</span><br><span class="line">#5.输出的格式就是一个 json 格式 </span><br><span class="line">print(json_str)</span><br></pre></td></tr></table></figure>
+
+<p>输出效果：</p>
+<p><img src="https://pic.imgdb.cn/item/613856ac44eaada739b23bec.jpg"></p>
+<p><strong>案例二：将JSON数据转为PYTHON数据类型</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import json </span><br><span class="line">#1 准备 json 数据--字符串 json_str=&#x27;&#123;&quot;id&quot;:1,&quot;name&quot;:&quot;zhangsan&quot;,&quot;password&quot;:&quot;66666&quot;&#125;&#x27; </span><br><span class="line">#2 把字符串转 dict </span><br><span class="line">data=json.loads(json_str) </span><br><span class="line">#3 字符串 </span><br><span class="line">print(type(json_str))</span><br><span class="line">#4.dict</span><br><span class="line">print(type(data)) </span><br><span class="line">print(data) </span><br><span class="line">print(data[&#x27;id&#x27;]) </span><br><span class="line">print(data[&#x27;name&#x27;])</span><br></pre></td></tr></table></figure>
+
+<p><strong>运行结果：</strong></p>
+<p><img src="https://pic.imgdb.cn/item/6138573f44eaada739b33c01.jpg"></p>
+<p><strong>4.JSON文件处理</strong></p>
+<p><strong>案例一：使用PYTHON从JSON中读取数据</strong></p>
+<p>​    准备条件</p>
+<p>​        1.JSON文件</p>
+<p>​        2.PYTHON代码</p>
+<p>​    代码：</p>
+<p>JASON代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;employees&quot;: [ </span><br><span class="line">&#123; &quot;firstName&quot;:&quot;Bill&quot; , &quot;lastName&quot;:&quot;Gates&quot; &#125;,</span><br><span class="line">&#123; &quot;firstName&quot;:&quot;George&quot; , &quot;lastName&quot;:&quot;Bush&quot; &#125;, </span><br><span class="line">&#123; &quot;firstName&quot;:&quot;Thomas&quot; , &quot;lastName&quot;:&quot;Carter&quot; &#125;</span><br><span class="line">]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>PYTHON代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import json </span><br><span class="line">with open(&#x27;data.json&#x27;, &#x27;r&#x27;) as f: </span><br><span class="line">	data = json.load(f)</span><br><span class="line">print(data)</span><br></pre></td></tr></table></figure>
+
+<p><strong>代码路径截图：放同一个文件夹里面</strong></p>
+<p><img src="https://pic.imgdb.cn/item/6138589444eaada739b5aac6.jpg"></p>
+<p>案例二：使用PYTHON写入数据到JSON文件中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import json </span><br><span class="line">#1.准备一个字符串 data=&#x27;&#123;&quot;id&quot;:1,&quot;name&quot;:&quot;zhangsan&quot;,&quot;password&quot;:&quot;66666&quot;&#125;&#x27; #2.写入 json 文件 </span><br><span class="line">with open(&#x27;data.json&#x27;, &#x27;w&#x27;) as f: </span><br><span class="line">	json.dump(data, f) </span><br><span class="line">#3.可以查看 json 文件或者读取出来 </span><br><span class="line">with open(&#x27;data.json&#x27;, &#x27;r&#x27;) as f:</span><br><span class="line">	data = json.load(f) </span><br><span class="line">print(data)</span><br></pre></td></tr></table></figure>
+
+<p>在pycharm中：</p>
+<p>JASON代码：</p>
+<p><img src="https://pic.imgdb.cn/item/613859bf44eaada739b812ad.jpg"></p>
+<p>PYTHON代码：</p>
+<p><img src="https://pic.imgdb.cn/item/613859d644eaada739b83b6e.jpg"></p>
+<p><strong>代码路径截图：放同一个文件夹里面</strong></p>
+<p><img src="https://pic.imgdb.cn/item/61385a1544eaada739b8a6e8.jpg"></p>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="C:\hexo\themes\hexo-theme-snippet-master\source\img\33.jpg"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="C:\hexo\themes\hexo-theme-snippet-master\source\img\12.jpg"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        赞赏是不耍流氓的鼓励
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">hujun</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+    <a href="/2021/09/06/%E6%A1%88%E4%BE%8B%E6%95%B4%E5%90%88/" class="next-post btn btn-default" title='案例整合'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            案例整合</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+    
+<div id="vcomments" class="valine"></div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+<script>
+    new Valine({
+        av: AV,
+        el: '#vcomments',
+        appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+        appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+        placeholder: '说点什么吧',
+        notify: false,
+        verify: true,
+        avatar: 'mm',
+        meta: 'nick,mail'.split(','),
+        pageSize: '10',
+        path: window.location.pathname,
+        lang: 'en'.toLowerCase()
+    })
+    </script>
+
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E7%9A%84%E6%A6%82%E8%BF%B0"><span class="toc-text">一、接口测试的概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81JSON%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F"><span class="toc-text">二、JSON数据格式</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
