@@ -1,0 +1,474 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="HERO">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://example.com">
+    <!--SEO-->
+
+<meta name="keywords" content="jmeter 接口测试" />
+
+
+<meta name="description" content="
+jmeter脚本编写的步骤：
+添加线程组
+添加HTTP请求
+在HTTP请求中写入接入 url、路径、请求方式和参数
+添加查看结果树
+调用接口、查看返回值
+
+本次用来测试的接口地址的api：ht..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    jmeter 接口测试 |
+    
+    HERO
+</title>
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner3.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='hujun'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                生活如此简单有趣
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://example.com">
+                        HERO</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="jmeter 接口测试">
+            
+            jmeter 接口测试
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/jmeter-%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/" rel="tag">jmeter 接口测试</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2021/09/09</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <ol>
+<li>jmeter脚本编写的步骤：</li>
+<li>添加线程组</li>
+<li>添加HTTP请求</li>
+<li>在HTTP请求中写入接入 url、路径、请求方式和参数</li>
+<li>添加查看结果树</li>
+<li>调用接口、查看返回值</li>
+</ol>
+<p>本次用来测试的接口地址的api：<a target="_blank" rel="noopener" href="http://httpbin.org/">httpbin.org</a></p>
+<h2 id="一、实施1-2步骤："><a href="#一、实施1-2步骤：" class="headerlink" title="一、实施1-2步骤："></a>一、<strong>实施1-2步骤：</strong></h2><p>添加线程组、http请求</p>
+<p><img src="https://pic.imgdb.cn/item/6139881144eaada739667395.jpg"></p>
+<h2 id="二、配置http请求的相关参数"><a href="#二、配置http请求的相关参数" class="headerlink" title="二、配置http请求的相关参数"></a>二、<strong>配置http请求的相关参数</strong></h2><p>在 http 请求中写入接入 url、路径、请求方式和参数，当前选择请求的方式为GET方式。</p>
+<p><img src="https://pic.imgdb.cn/item/6139894044eaada739682573.jpg"></p>
+<h2 id="三、调用接口，查看返回值"><a href="#三、调用接口，查看返回值" class="headerlink" title="三、调用接口，查看返回值"></a>三、<strong>调用接口，查看返回值</strong></h2><ol>
+<li><p>添加查看结果树</p>
+</li>
+<li><p>调用接口，得到返回值</p>
+</li>
+</ol>
+<p><img src="https://pic.imgdb.cn/item/613988f644eaada73967b822.jpg"></p>
+<h2 id="四、请求方式改为post方式来进行请求"><a href="#四、请求方式改为post方式来进行请求" class="headerlink" title="四、请求方式改为post方式来进行请求"></a>四、<strong>请求方式改为post方式来进行请求</strong></h2><p>改为post进行测试，得到的响应数据</p>
+<p><img src="https://pic.imgdb.cn/item/6139899844eaada73968a86d.jpg"></p>
+<p><img src="https://pic.imgdb.cn/item/613989e044eaada73969106f.jpg"></p>
+<h2 id="五、HTTP-请求默认值"><a href="#五、HTTP-请求默认值" class="headerlink" title="五、HTTP 请求默认值"></a>五、<strong>HTTP 请求默认值</strong></h2><p>通过上面两个请求我们发现，Web 服务器中的协议和服务器名称或 IP 这两个值都是一样，每次重复输入其实比较麻烦，因此我们可以使用 HTTP 请求默认值来管理这些公共的配置数据。</p>
+<p>添加步骤：</p>
+<ol>
+<li><p>线程组——添加——配置元件——HTTP 请求默认值 </p>
+</li>
+<li><p>然后进行如下配置，并把该元件放置到请求前面</p>
+<p><img src="https://pic.imgdb.cn/item/61398a7d44eaada73969e338.jpg"></p>
+</li>
+</ol>
+<p><img src="https://pic.imgdb.cn/item/61398a5744eaada73969afa1.jpg"></p>
+<p><strong>经过请求默认值的配置后，后续我们增加新的请求，如果这两项值是一样的话，那么则无需再重复填入该值。</strong></p>
+<h2 id="六、断言设置"><a href="#六、断言设置" class="headerlink" title="六、断言设置"></a>六、<strong>断言设置</strong></h2><p>Jmeter 可以针对每一个请求响应进行断言。</p>
+<p>设置步骤:</p>
+<p>选中一个请求，如 http-get,然后右键选择：</p>
+<p><strong>添加——断言——相应断言</strong></p>
+<p><img src="https://pic.imgdb.cn/item/61398b4a44eaada7396af22e.jpg"></p>
+<p>各个匹配模式含义如下</p>
+<p>包括：响应内容包括需要匹配的内容即代表响应成功，支持正则表达式</p>
+<p>匹配：响应内容要完全匹配需要匹配的内容即代表响应成功，大小写不敏感，支持正则表达式。</p>
+<p>Equals：响应内容要完全等于需要匹配的内容才代表成功，大小写敏感，需要匹配的内容是字符串正则表达式</p>
+<p>Substring：返回结果包含指定结果的字串，但是 subString 不支持正则字符串</p>
+<p>如下图所示匹配返回的字符串是否包含：<a target="_blank" rel="noopener" href="http://httpbin.org/get">http://httpbin.org/get</a></p>
+<p>如果断言成功，则查看结果树为绿色标志，如果断言失败则为红色显示，如下图所示：</p>
+<p><img src="https://pic.imgdb.cn/item/6139991544eaada7397ff1ac.jpg"></p>
+<h2 id="七、参数设置"><a href="#七、参数设置" class="headerlink" title="七、参数设置"></a>七、<strong>参数设置</strong></h2><p>Jmeter 支持通过 Query String Parameters 或者 Request body 请求体来传递参数。</p>
+<p><strong>Query</strong> <strong>String</strong> <strong>Parameters</strong></p>
+<p>如果希望在请求 URL 中添加参数，则可以在 Http 请求界面的 Parameters 选项里面添加参数。该参数会通过 Query String Parameters 方式传递给服务器，也就是在 URL 中传递参数。 如下图如所示设置参数：</p>
+<p><img src="https://pic.imgdb.cn/item/613999a944eaada73980e200.jpg"></p>
+<p><strong>Request</strong> <strong>body</strong></p>
+<p>在 Post 请求中参数一般在 body 中传递，Jmeter 也支持在 body 中传递参数。如传递 Json 格式的参数，在 BodyData 编辑框输入如下参数：</p>
+<p>{“username”:”Test1234”}</p>
+<p><img src="https://pic.imgdb.cn/item/613999f744eaada739815f29.jpg"></p>
+<p>另外还需要指定参数的格式，因此需要添加 HTTP 信息头</p>
+<p>添加步骤：</p>
+<p>选定请求——添加——配置元件——HTTP 信息头管理器，然后在管理器里面添加参数类型Content-Type ：application/json 如下图所示：</p>
+<p><img src="https://pic.imgdb.cn/item/61399a6a44eaada739820c6b.jpg"></p>
+<h2 id="八、变量"><a href="#八、变量" class="headerlink" title="八、变量"></a>八、<strong>变量</strong></h2><p>在请求过程中，有时我们需要在请求中设置一些变量来测试不同的场景。</p>
+<p>Jmeter 支持以下类型变量：</p>
+<ol>
+<li><p>用户自定义变量</p>
+</li>
+<li><p>函数生成变量</p>
+</li>
+<li><p>数据文件变量</p>
+</li>
+</ol>
+<p><strong>1.用户自定义变量</strong></p>
+<p>设置步骤: 选中请求——添加——前置处理器——用户参数 设置变量名称为 user，值为 Test1234</p>
+<p><img src="https://pic.imgdb.cn/item/61399ba944eaada73984080f.jpg"></p>
+<p>在请求时引用变量如下所示: 变量引用格式为：${user}</p>
+<p><img src="https://pic.imgdb.cn/item/61399bf544eaada73984812d.jpg"></p>
+<p><strong>2.函数生成变量</strong></p>
+<p> Jmeter 有许多内置的函数，可以生成随机数。</p>
+<p> 创建步骤:</p>
+<p>点击菜单栏工具——函数助手对话框——下拉选择__Random()函数 函数配置如下：</p>
+<p><img src="https://pic.imgdb.cn/item/61399ccf44eaada73985dcea.jpg"></p>
+<p><strong>3.CSV 数据文件变量</strong></p>
+<p>CSV 数据文件变量是指从外部 csv 文件读取数据出来作为变量。</p>
+<p>设置步骤: </p>
+<p>选择请求——添加——配置元件——CSV 数据文件设置</p>
+<p>创建 csv 文件:  注意文件编码为 UTF-8 文件内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Test1234,Test1234</span><br></pre></td></tr></table></figure>
+
+<p>dd.csv</p>
+<p>CSV 数据文件设置如下：</p>
+<p><img src="https://pic.imgdb.cn/item/61399e0144eaada73987cec9.jpg"></p>
+<p>在 Post 请求中引用变量数据如下：</p>
+<p><img src="https://pic.imgdb.cn/item/61399ea544eaada73988e4e4.jpg"></p>
+<p>得到的请求数据</p>
+<p><img src="https://pic.imgdb.cn/item/61399f2b44eaada73989cb28.jpg"></p>
+<p><strong>4.CSV参数化</strong></p>
+<p>针对之前的 POST 接口进行如下参数遍历测试： </p>
+<p>接口如下： </p>
+<p><a target="_blank" rel="noopener" href="http://httpbin.org/post">http://httpbin.org/post</a> </p>
+<p>发送参数：user1.csv</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">user1,user1</span><br><span class="line">user2,user2</span><br><span class="line">user3,user3</span><br></pre></td></tr></table></figure>
+
+<p>在之前的 csv 数据文件设置需要需改配置如下：</p>
+<p>表示把所有数据读取一遍，且不重复。 </p>
+<p><img src="https://pic.imgdb.cn/item/61399fa944eaada7398aaee5.jpg"></p>
+<p>读取的数据：</p>
+<p><img src="https://pic.imgdb.cn/item/6139a15f44eaada7398d9209.jpg"></p>
+<h2 id="一、用例分离"><a href="#一、用例分离" class="headerlink" title="一、用例分离"></a>一、<strong>用例分离</strong></h2><h3 id="用例设计"><a href="#用例设计" class="headerlink" title="用例设计"></a><strong>用例设计</strong></h3><p>之前我们的用例数据都是配置在 Jmeter Http 请求中，每次需要增加，修改用例都需要打开 jmeter 重新编辑，当 用例越来越多的时候，用例维护起来就越来越麻烦，有没有好的方法来解决这种情况呢？ </p>
+<p>其实我们可以将用例的数据存放在 csv 文件中，然后通过 csv 文件配置来读取用例中的数据，执行测试。用例数据如图所示：</p>
+<p><img src="https://pic.imgdb.cn/item/6139a1ab44eaada7398e0f97.jpg"></p>
+<p>用例名称变量含义：</p>
+<p>1．${caseSeq}:用例编号</p>
+<p>2．${apiType}:api 类型</p>
+<p>3．${apiSeq} ：api 版本号</p>
+<p>4．${apiName}：api 名称</p>
+<p>5．${priority}:优先级</p>
+<p>6．${url}:api 路径</p>
+<p>7．${methods}:请求方法</p>
+<p>8．${parameter}: 请求参数</p>
+<p>9．${expectValue}:期望值，用于断言</p>
+<h3 id="Jmeter设置步骤："><a href="#Jmeter设置步骤：" class="headerlink" title="Jmeter设置步骤："></a><strong>Jmeter设置步骤：</strong></h3><h4 id="1-新建一个线程组，命名为：数据驱动"><a href="#1-新建一个线程组，命名为：数据驱动" class="headerlink" title="1. 新建一个线程组，命名为：数据驱动"></a>1. <strong>新建一个线程组，命名为：数据驱动</strong></h4><p><img src="https://pic.imgdb.cn/item/6139a1e844eaada7398e7545.jpg"></p>
+<h4 id="2-创建一个-http-请求默认值，设置如下："><a href="#2-创建一个-http-请求默认值，设置如下：" class="headerlink" title="2.创建一个 http 请求默认值，设置如下："></a><strong>2.创建一个 http 请求默认值，设置如下：</strong></h4><p><img src="https://pic.imgdb.cn/item/6139a23244eaada7398ef8c8.jpg"></p>
+<h4 id="3-添加一个循环控制器"><a href="#3-添加一个循环控制器" class="headerlink" title="3.添加一个循环控制器"></a><strong>3.添加一个循环控制器</strong></h4><p>步骤为：线程组——添加——逻辑控制器——循环控制器。 </p>
+<p>循环控制器的作用可以控制整个用例循环执行的次数。默认值是 1 根据用例数量可以修改为 4</p>
+<p><img src="https://pic.imgdb.cn/item/6139a25644eaada7398f357d.jpg"></p>
+<h4 id="4-在循环控制器节点下创建-CSV-文件设置，具体配置内容如下——注意csv文件为上面的用例设计这步"><a href="#4-在循环控制器节点下创建-CSV-文件设置，具体配置内容如下——注意csv文件为上面的用例设计这步" class="headerlink" title="4.在循环控制器节点下创建 CSV 文件设置，具体配置内容如下——注意csv文件为上面的用例设计这步"></a><strong>4.在循环控制器节点下创建 CSV 文件设置，具体配置内容如下——注意csv文件为上面的用例设计这步</strong></h4><p><img src="https://pic.imgdb.cn/item/6139a31644eaada739906911.jpg"></p>
+<h4 id="5-创建一个-if-控制器"><a href="#5-创建一个-if-控制器" class="headerlink" title="5.创建一个 if 控制器"></a><strong>5.创建一个 if 控制器</strong></h4><p>步骤为：循环控制器——添加——逻辑控制器——if 控制器</p>
+<p>if 控制器的作用为根据不同条件执行不同的用例，例如这里根据不同的接口请求类型，分别创建了 GET 和 POST 两个控制器。</p>
+<p>GET 设置的条件语句如下：</p>
+<p>条件语句为：**”${methods}”==”GET”其中${methods}表示引用 csv 中的methods中的值。**</p>
+<p><img src="https://pic.imgdb.cn/item/6139a55044eaada73994065a.png"></p>
+<ul>
+<li><pre><code>参数：
+
+Interpret Condition as Variable Expression?：如果这个选项被选中，将不会使用 js 解析;条件表达式的值必须是true(忽略大小写)，这里我们取消勾选状态。
+Evaluate for all children：如果选中这一项，在每个子结点执行前都会计算表达式
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 6. **创建 GET 请求类型的用例如下:**</span><br><span class="line"></span><br><span class="line">![](https://pic.imgdb.cn/item/6139a56544eaada739942826.png)</span><br><span class="line"></span><br><span class="line">#### 7. **POST请求设置：POST 条件语句设置为：&quot;$&#123;methods&#125;&quot;==&quot;POST&quot;** </span><br><span class="line"></span><br><span class="line">![](https://pic.imgdb.cn/item/6139a50b44eaada73993993d.jpg)</span><br><span class="line"></span><br><span class="line">![](https://pic.imgdb.cn/item/6139a59844eaada739947ab9.jpg)</span><br><span class="line"></span><br><span class="line">用例名称格式：$&#123;caseSeq&#125;_ $&#123;apiSeq&#125;_$&#123;apiName&#125; </span><br><span class="line"></span><br><span class="line">断言设置如下：$&#123;expectValue&#125;引用 csv 中对应的值。</span><br><span class="line"></span><br><span class="line">![](https://pic.imgdb.cn/item/6139a5e444eaada73994ecf2.jpg)</span><br><span class="line"></span><br><span class="line">## 十、**测试报告** </span><br><span class="line"></span><br><span class="line">批量执行完接口测试之后，我们需要查看测试报告，在之前单个接口调试我们是通过查看结果树查看结果，但是当大 </span><br><span class="line"></span><br><span class="line">批量执行接口测试之后依旧这样查看那么肯定会很低效 那么该如何设置呢？ </span><br><span class="line"></span><br><span class="line">**聚合报告** </span><br><span class="line"></span><br><span class="line">聚合报告是一个比较精简的报告元件，可以查看每个接口的性能情况与执行结果。 设置步骤：选中线程组——添 </span><br><span class="line"></span><br><span class="line">加——监听器——聚合报告。报告各个参数含义如下： </span><br><span class="line"></span><br><span class="line">• Samples -- 本次场景中一共完成了多少个请求 </span><br><span class="line"></span><br><span class="line">• Average -- 平均响应时间(单位：ms) </span><br><span class="line"></span><br><span class="line">• Median -- 响应时间的中值(单位：ms) </span><br><span class="line"></span><br><span class="line">• 90% Line -- 所有请求中 90%的响应时间。 </span><br><span class="line"></span><br><span class="line">• Min -- 最小响应时间(单位：ms) </span><br><span class="line"></span><br><span class="line">• Max -- 最大响应时间(单位：ms) </span><br><span class="line"></span><br><span class="line">• Error -- 出错率 </span><br><span class="line"></span><br><span class="line">• Troughput -- 吞吐量 </span><br><span class="line"></span><br><span class="line">• Received--响应数据大小 </span><br><span class="line"></span><br><span class="line">• KB/sec -- 以流量做衡量的吞吐量 </span><br><span class="line"></span><br><span class="line">**HTML 报告** </span><br><span class="line"></span><br><span class="line">有时候我们需要将测试报告以 HTML 附件形式发送给各个项目成员，那么需要生成 HTML 报告。 JMeter3.0 以后 </span><br><span class="line"></span><br><span class="line">引入了 Dashboard Report，用于生成 HTML 页面格式图形化报告的扩展模块。 </span><br><span class="line"></span><br><span class="line">生成步骤： </span><br><span class="line"></span><br><span class="line">打开 cmd 进入 jmeter 目录 bin 目录 </span><br><span class="line"></span><br><span class="line">执行命令:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+jmeter -n -t httpbin_test.jmx -l httpbin.jtl -e -o  C:\Users\Administrator\Desktop\Report
+</code></pre>
+</li>
+</ul>
+<p>命令的参数：</p>
+<p>-n ：以非 GUI 形式运行 Jmeter </p>
+<p>-t ：jmeter 脚本路径 </p>
+<p>-l ：result.jtl 运行结果保存路径（.jtl）此文件必须不存在。 </p>
+<p>-e ：在脚本运行结束后生成 html 报告 </p>
+<p>-o ：用于存放 html 报告的目录，不加该参数默认生成到 </p>
+<p>参考/拓展资料</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhizunyu2009/article/details/79011413">https://blog.csdn.net/zhizunyu2009/article/details/79011413</a> </p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/gld824125233/article/details/52842914">https://blog.csdn.net/gld824125233/article/details/52842914</a> </p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/defonds/article/details/53517247">https://blog.csdn.net/defonds/article/details/53517247</a> </p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wuyou10206/article/details/77539791">https://blog.csdn.net/wuyou10206/article/details/77539791</a> </p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/huangjuyan/article/details/52993758">https://blog.csdn.net/huangjuyan/article/details/52993758</a> </p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/imyalost/p/10239317.html">https://www.cnblogs.com/imyalost/p/10239317.html</a></p>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="C:\hexo\themes\hexo-theme-snippet-master\source\img\33.jpg"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="C:\hexo\themes\hexo-theme-snippet-master\source\img\12.jpg"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        赞赏是不耍流氓的鼓励
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">hujun</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+    <a href="/2021/09/08/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%B4%BB%E5%8A%A8/" class="next-post btn btn-default" title='软件测试活动'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            软件测试活动</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+    
+<div id="vcomments" class="valine"></div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+<script>
+    new Valine({
+        av: AV,
+        el: '#vcomments',
+        appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+        appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+        placeholder: '说点什么吧',
+        notify: false,
+        verify: true,
+        avatar: 'mm',
+        meta: 'nick,mail'.split(','),
+        pageSize: '10',
+        path: window.location.pathname,
+        lang: 'en'.toLowerCase()
+    })
+    </script>
+
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%9E%E6%96%BD1-2%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-text">一、实施1-2步骤：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%85%8D%E7%BD%AEhttp%E8%AF%B7%E6%B1%82%E7%9A%84%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0"><span class="toc-text">二、配置http请求的相关参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%B0%83%E7%94%A8%E6%8E%A5%E5%8F%A3%EF%BC%8C%E6%9F%A5%E7%9C%8B%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-text">三、调用接口，查看返回值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E6%94%B9%E4%B8%BApost%E6%96%B9%E5%BC%8F%E6%9D%A5%E8%BF%9B%E8%A1%8C%E8%AF%B7%E6%B1%82"><span class="toc-text">四、请求方式改为post方式来进行请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81HTTP-%E8%AF%B7%E6%B1%82%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-text">五、HTTP 请求默认值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E6%96%AD%E8%A8%80%E8%AE%BE%E7%BD%AE"><span class="toc-text">六、断言设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE"><span class="toc-text">七、参数设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E5%8F%98%E9%87%8F"><span class="toc-text">八、变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%94%A8%E4%BE%8B%E5%88%86%E7%A6%BB"><span class="toc-text">一、用例分离</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1"><span class="toc-text">用例设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Jmeter%E8%AE%BE%E7%BD%AE%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-text">Jmeter设置步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BA%BF%E7%A8%8B%E7%BB%84%EF%BC%8C%E5%91%BD%E5%90%8D%E4%B8%BA%EF%BC%9A%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8"><span class="toc-text">1. 新建一个线程组，命名为：数据驱动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA-http-%E8%AF%B7%E6%B1%82%E9%BB%98%E8%AE%A4%E5%80%BC%EF%BC%8C%E8%AE%BE%E7%BD%AE%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="toc-text">2.创建一个 http 请求默认值，设置如下：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-text">3.添加一个循环控制器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%9C%A8%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6%E5%99%A8%E8%8A%82%E7%82%B9%E4%B8%8B%E5%88%9B%E5%BB%BA-CSV-%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE%EF%BC%8C%E5%85%B7%E4%BD%93%E9%85%8D%E7%BD%AE%E5%86%85%E5%AE%B9%E5%A6%82%E4%B8%8B%E2%80%94%E2%80%94%E6%B3%A8%E6%84%8Fcsv%E6%96%87%E4%BB%B6%E4%B8%BA%E4%B8%8A%E9%9D%A2%E7%9A%84%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1%E8%BF%99%E6%AD%A5"><span class="toc-text">4.在循环控制器节点下创建 CSV 文件设置，具体配置内容如下——注意csv文件为上面的用例设计这步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA-if-%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-text">5.创建一个 if 控制器</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
