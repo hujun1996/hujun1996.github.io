@@ -1,0 +1,436 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="HERO">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://example.com">
+    <!--SEO-->
+
+<meta name="keywords" content="restful django" />
+
+
+<meta name="description" content="一、rest概述简介• REST 是英文 Representational State Transfer(表现层状态转化)，Rest 是 web 服务的一种架构风格; 
+• 使用 HTTP,UR..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    Rest介绍与Django REST Framework环境搭建 |
+    
+    HERO
+</title>
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner3.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='hujun'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                生活如此简单有趣
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://example.com">
+                        HERO</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Rest介绍与Django REST Framework环境搭建">
+            
+            Rest介绍与Django REST Framework环境搭建
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/restful-django/" rel="tag">restful django</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2021/09/13</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="一、rest概述"><a href="#一、rest概述" class="headerlink" title="一、rest概述"></a>一、rest概述</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>• REST 是英文 Representational State Transfer(<strong>表现层状态转化</strong>)，Rest 是 web 服务的一种架构风格; </p>
+<p>• 使用 HTTP,URI、XML、JSON、HTML 等广泛流行的标准和协议;轻量级,跨平台、跨语言的架构设计; </p>
+<p>• 它是一种设计风格,不是一种标准,是一种思想。</p>
+<h2 id="rest原则"><a href="#rest原则" class="headerlink" title="rest原则"></a>rest原则</h2><p>• 网络上的所有事物都可以被抽象为资源(resource)。 </p>
+<p>• 每一个资源都有唯一的资源标识(resource identifier)，对资源的操作不会改变这些标识 </p>
+<p>• 所有的操作都是无状态的。 </p>
+<h2 id="设计思想"><a href="#设计思想" class="headerlink" title="设计思想"></a>设计思想</h2><p>REST 简化开发，其架构遵循 CRUD 原则，该原则告诉我们对于资源(包括网络资源)只需要四种行为：创建，获取，更新和删除就可以完成相关的操作和处理。我们可以通过统一资源标识符（Universal Resource Identifier，URI）来识别和定位资源，并且针对这些资源而 执行的操作是通过 HTTP 规范定义的。其核心操作只有 GET,POST,PUT,DELETE。也就是：URL 定位资源，用 HTTP 动词（GET,POST,DELETE,DETC）描述操作。 </p>
+<p>因此设计 web 接口的时候，REST 主要是用于定义接口名，接口名一般是用名次写，不用动词，那怎么表达“获取” 或者“删除”或者“更新”这样的操作呢——用请求类型（GET,PUT,POST,DELETE）来区分。</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>比如我们设计一个用户管理系统的接口，如果不使用 Restful 风格，接口会定义如下： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/user/query/1 #根据用户 id 查询用户数据 GET 请求 </span><br><span class="line">http://127.0.0.1/user/adduser #新增用户 Post 请求 </span><br><span class="line">http://127.0.0.1/user/update #修改用户信息 PUT 请求 </span><br><span class="line">http://127.0.0.1/user/delete #删除用户信息 DELETE 请求 </span><br></pre></td></tr></table></figure>
+
+<p>从上面的定义接口来看貌似没有什么问题，但是仔细揣测就会发现有一些瑕疵：比如查询方法定义接口使用了 query动词，而 GET 请求本身的含义也就是从服务器获取资源，带有查询的含义，如果接口里面定义又加上这样的动词显得重复，同理其他几个接口也是一样的。</p>
+<p>而使用 Rest 接口定义如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/user/1 #GET 根据用户 id 查询用户数据 </span><br><span class="line">http://127.0.0.1/user #POST 新增用户 </span><br><span class="line">http://127.0.0.1/user #PUT 修改用户信息 </span><br><span class="line">http://127.0.0.1/user #DELETE 删除用户信息 </span><br></pre></td></tr></table></figure>
+
+<p>从上面定义的接口我们可以看出，接口名称主要指向 user 资源，具体的资源操作（增删改查）由 HTTP 的请求类型来定义。这样接口名称显得统一整洁，就不用定义不同的接口名称。 遵循这样一种风格的 Reset 接口就叫做Restful。</p>
+<h2 id="Rest-优势"><a href="#Rest-优势" class="headerlink" title="Rest 优势"></a><strong>Rest 优势</strong></h2><p>由于 REST 强制所有的操作都必须是无状态的，这就没有上下文的约束，如果做分布式，集群都不需要考虑上下文和会话保持的问题。极大的提高系统的可伸缩性。 </p>
+<p>前后端分离。前端拿到数据只负责展示和渲染，不对数据做任何处理。后端处理数据并以 JSON 格式传输出去，定义这样一套统一的接口，在 web，ios，android 三端都可以用相同的接口。</p>
+<h1 id="二、Django-REST-Framework"><a href="#二、Django-REST-Framework" class="headerlink" title="二、Django REST Framework"></a>二、<strong>Django REST Framework</strong></h1><h2 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a><strong>简介</strong></h2><p>Django REST Framework，是一套基于 Django 的 REST 风格的框架。 </p>
+<p>官方主页：<a target="_blank" rel="noopener" href="http://www.django-rest-framework.org/">http://www.django-rest-framework.org</a> </p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a><strong>特点</strong></h2><p>• 功能强大、灵活，可以帮助你快速开发 Web API。 </p>
+<p>• 支持认证策略，包括 OAuth1 和 OAuth2。</p>
+<p>• 支持 ORM(对象关系映射)和非 ORM 数据源的序列化。 </p>
+<p>• 丰富的文档以及良好的社区支持。</p>
+<h2 id="安装："><a href="#安装：" class="headerlink" title="安装："></a><strong>安装：</strong></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install djangorestframework </span><br><span class="line">pip install markdown</span><br><span class="line">pip install django-filter </span><br></pre></td></tr></table></figure>
+
+<h2 id="创建-Api"><a href="#创建-Api" class="headerlink" title="创建 Api"></a><strong>创建 Api</strong></h2><p>项目创建 </p>
+<p>当 Django REST Framework 安装好之后，创建一个新的项目 django_restful，如下命令所示我是创建在 D 盘根目录。在项目下创建 api 应用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\admin&gt;d: </span><br><span class="line">#创建一个新的项目 </span><br><span class="line">D:\&gt;django-admin  startproject django_restful</span><br></pre></td></tr></table></figure>
+
+<p>进入项目 django_restful 创建 api 应用,创建完成之后可以看到项目文件夹下面多了一个 api 文件夹.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\&gt;cd django_restful </span><br><span class="line">D:\django_restful&gt;python manage.py startapp api </span><br></pre></td></tr></table></figure>
+
+<p>进入到 D:\django_rest\django_restful 目录，打开 settings.py 在项目下创建 api 和 rest_framework。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [ </span><br><span class="line">&#x27;django.contrib.admin&#x27;, </span><br><span class="line">&#x27;django.contrib.auth&#x27;, </span><br><span class="line">&#x27;django.contrib.contenttypes&#x27;, </span><br><span class="line">&#x27;django.contrib.sessions&#x27;, </span><br><span class="line">&#x27;django.contrib.messages&#x27;, </span><br><span class="line">&#x27;django.contrib.staticfiles&#x27;, </span><br><span class="line">&#x27;rest_framework&#x27;, </span><br><span class="line">&#x27;api&#x27;, </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>rest_framework 权限配置</p>
+<p>默认的权限策略可以设置在全局范围内，通过 DEFAULT_PERMISSION_CLASSES 设置。在该文件末尾添加如下内容： </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">REST_FRAMEWORK = &#123; </span><br><span class="line">&#x27;DEFAULT_PERMISSION_CLASSES&#x27;: ( </span><br><span class="line">&#x27;rest_framework.permissions.IsAuthenticated&#x27;, </span><br><span class="line">) </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据库迁移"><a href="#数据库迁移" class="headerlink" title="数据库迁移"></a><strong>数据库迁移</strong></h2><p>然后通过命令 migrate 命令进行数据库迁移。 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\django_restful&gt;python  manage.py migrate </span><br></pre></td></tr></table></figure>
+
+<p>执行之后看到如下提示说明迁移成功</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Operations to perform: </span><br><span class="line">Apply all migrations: admin, auth, contenttypes, sessions </span><br><span class="line">Running migrations: </span><br><span class="line">Applying contenttypes.0001_initial... OK </span><br><span class="line">Applying auth.0001_initial... OK </span><br><span class="line">Applying admin.0001_initial... OK </span><br><span class="line">Applying admin.0002_logentry_remove_auto_add... OK </span><br><span class="line">Applying contenttypes.0002_remove_content_type_name... OK </span><br><span class="line">Applying auth.0002_alter_permission_name_max_length... OK </span><br><span class="line">Applying auth.0003_alter_user_email_max_length... OK </span><br><span class="line">Applying auth.0004_alter_user_username_opts... OK </span><br><span class="line">Applying auth.0005_alter_user_last_login_null... OK </span><br><span class="line">Applying auth.0006_require_contenttypes_0002... OK </span><br><span class="line">Applying auth.0007_alter_validators_add_error_messages... OK </span><br><span class="line">Applying auth.0008_alter_user_username_max_length... OK </span><br><span class="line">Applying auth.0009_alter_user_last_name_max_length... OK </span><br><span class="line">Applying sessions.0001_initial... OK</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建超级管理员"><a href="#创建超级管理员" class="headerlink" title="创建超级管理员"></a><strong>创建超级管理员</strong></h2><p>使用 createsuperuser 命令来创建超级管理员账户，密码至少 8 位数字和字母组合。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">D:\django_rest&gt;python manage.py createsuperuser </span><br><span class="line">Username (leave blank to use &#x27;admin&#x27;): 账户</span><br><span class="line">Email address: 邮箱</span><br><span class="line">Password: </span><br><span class="line">Password (again): </span><br><span class="line">Superuser created successfully. </span><br></pre></td></tr></table></figure>
+
+<h2 id="启动-Server"><a href="#启动-Server" class="headerlink" title="启动 Server"></a><strong>启动 Server</strong></h2><p>启动 django，然后验证登录我们创建的超级管理员账户。 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">D:\django_rest&gt;python  manage.py runserver </span><br><span class="line">Performing system checks... </span><br><span class="line">System check identified no issues (0 silenced). </span><br><span class="line">July 20, 2020 - 16:01:39 </span><br><span class="line"></span><br><span class="line">Django version 2.0.7, using settings &#x27;django_rest.settings&#x27; </span><br><span class="line">Starting development server at http://127.0.0.1:8000/ </span><br><span class="line">Quit the server with CTRL-BREAK. </span><br></pre></td></tr></table></figure>
+
+<p>启动成功之后，输入地址:<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> 我们可以看到如下页面： </p>
+<p><img src="https://pic.imgdb.cn/item/613f222f44eaada73933818d.jpg"></p>
+<h2 id="登录超级管理员账户"><a href="#登录超级管理员账户" class="headerlink" title="登录超级管理员账户"></a><strong>登录超级管理员账户</strong></h2><p>我们再输入地址：<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/admin">http://127.0.0.1:8000/admin</a> 即可进入到登录超级管理员账户界面： </p>
+<p><img src="https://pic.imgdb.cn/item/613f226444eaada73933bb86.jpg"></p>
+<p>登录我们创建的账户，可以看到如下界面：</p>
+<p><img src="https://pic.imgdb.cn/item/613f227b44eaada73933d385.jpg"></p>
+<p>下面部分内容参考如下：</p>
+<p><a target="_blank" rel="noopener" href="https://www.django.cn/course/show-20.html">https://www.django.cn/course/show-20.html</a></p>
+<p>感兴趣同学可去查阅</p>
+<h1 id="三、数据序列化"><a href="#三、数据序列化" class="headerlink" title="三、数据序列化"></a>三、数据序列化</h1><p>Serializers 用于定义 API 的表现形式，如返回哪些字段、返回怎样的格式等。这里序列化 Django 自带的 User 和 Group。创建数据序列化，在 api 应用下创建 serializers.py 文件。</p>
+<p><img src="https://pic.imgdb.cn/item/613f22c744eaada739341b87.jpg"></p>
+<p>serializers.py脚本：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">from django.contrib.auth.models import User,Group</span><br><span class="line">from rest_framework import serializers</span><br><span class="line">class UserSerializer(serializers.HyperlinkedModelSerializer):</span><br><span class="line">class Meta:</span><br><span class="line">     model=User</span><br><span class="line">     fields=(&#x27;url&#x27;,&#x27;username&#x27;,&#x27;email&#x27;,&#x27;groups&#x27;)</span><br><span class="line">class GroupSerializer(serializers.HyperlinkedModelSerializer):</span><br><span class="line">    class Meta:</span><br><span class="line">     model=Group</span><br><span class="line">     fields=(&#x27;url&#x27;,&#x27;name&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="四、创建视图"><a href="#四、创建视图" class="headerlink" title="四、创建视图"></a>四、<strong>创建视图</strong></h1><p>视图用于如何向用户展示数据，展示哪些数据。比如用户查询 User 信息或查询 Group 信息，那么程序内部要定义好。 </p>
+<p>怎么去查询。在 Django REST framework 中，ViewSets 用于定义视图的展现形式，例如返回哪些内容，需要做哪些权限处理</p>
+<p>打开 api 应用下的 views.py 文件，编写如下代码:</p>
+<p><img src="https://pic.imgdb.cn/item/613f231044eaada7393465cb.jpg"></p>
+<p>views.py脚本：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">from django.shortcuts import render</span><br><span class="line"></span><br><span class="line">from django.contrib.auth.models import User,Group</span><br><span class="line">from rest_framework import viewsets</span><br><span class="line">from api.serializers import UserSerializer,GroupSerializer</span><br><span class="line"># Create your views here.</span><br><span class="line">class UserViewSet(viewsets.ModelViewSet):</span><br><span class="line"> queryset = User.objects.all()</span><br><span class="line"> serializer_class = UserSerializer</span><br><span class="line">class GroupViewSet(viewsets.ModelViewSet):</span><br><span class="line"> queryset = Group.objects.all()</span><br><span class="line"> serializer_class = GroupSerializer</span><br></pre></td></tr></table></figure>
+
+<h1 id="五、URL-路由配置"><a href="#五、URL-路由配置" class="headerlink" title="五、URL 路由配置"></a>五、<strong>URL 路由配置</strong></h1><p>打开…/django_restful/urls.py 文件，添加 api 的路由配置。 </p>
+<p><img src="https://pic.imgdb.cn/item/613f233f44eaada739349af7.jpg"></p>
+<p>脚本文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">from django.contrib import admin</span><br><span class="line">from django.urls import path</span><br><span class="line">from django.conf.urls import include</span><br><span class="line">from rest_framework import routers</span><br><span class="line">from api import views</span><br><span class="line"></span><br><span class="line">router = routers.DefaultRouter()</span><br><span class="line">router.register(r&#x27;users&#x27;, views.UserViewSet)</span><br><span class="line">router.register(r&#x27;groups&#x27;, views.GroupViewSet)</span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(&#x27;admin/&#x27;, admin.site.urls),</span><br><span class="line">    path(&#x27;&#x27;, include(router.urls)),</span><br><span class="line">    path(&#x27;api-auth/&#x27;, include(&#x27;rest_framework.urls&#x27;, namespace=&#x27;rest_framework&#x27;)),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h1 id="六、打开-API-主页"><a href="#六、打开-API-主页" class="headerlink" title="六、打开 API 主页"></a>六、<strong>打开 API 主页</strong></h1><p>启动服务，然后在浏览器打开：<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> 即可看到 API 主页，如下所示：</p>
+<p><img src="https://pic.imgdb.cn/item/613f237544eaada73934d35b.jpg"></p>
+<h1 id="七、创建数据"><a href="#七、创建数据" class="headerlink" title="七、创建数据"></a>七、<strong>创建数据</strong></h1><p>点击主页右上角的 Log in 登录超级管理员账户，然后分别创建 Group 和 User 数据。</p>
+<p><img src="https://pic.imgdb.cn/item/613f239444eaada73934f31f.jpg"></p>
+<p><img src="https://pic.imgdb.cn/item/613f23a644eaada7393506d7.jpg"></p>
+<p><img src="https://pic.imgdb.cn/item/613f23bc44eaada739351d0f.jpg"></p>
+<p>Vary: Accept 标头可告诉代理服务器缓存两种版本的资源：压缩和非压缩，这有助于避免一些公共代理不能正确地检测 Content-Encoding 标头的问题</p>
+<h1 id="八、wagger-接口文档生成"><a href="#八、wagger-接口文档生成" class="headerlink" title="八、wagger 接口文档生成"></a>八、<strong>wagger 接口文档生成</strong></h1><p>接口开发完成了，那么接下来需要编写接口文档。传统的接口文档编写都是使用 Word 或者其他一些接口文档管理平台，这种形式接口文档维护更新比较麻烦，每次接口有变动时得手动修改文档。因此，针对这种情况，这里推荐使用 Swagger 来管理接口文档。 </p>
+<h2 id="1．Swagger-简介"><a href="#1．Swagger-简介" class="headerlink" title="1．Swagger 简介"></a>1．<strong>Swagger 简介</strong></h2><p>Swagger 是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。总体目标是使客户端和文件系统(源代码)作为服务器以同样的速度来更新。每当接口有变动时，对应的接口文档也会自动更新。 </p>
+<p>Tips：<a target="_blank" rel="noopener" href="http://httpbin.org/#/">http://httpbin.org/#/</a> 也是利用 Swagger 生成接口文档。 </p>
+<p><strong>Swagger 能成为最受欢迎的 REST APIs 文档生成工具之一，有以下几个原因：</strong> </p>
+<p>• Swagger可以生成一个具有互动性的 API 控制台，开发者可以用来快速学习和尝试 API。 </p>
+<p>• Swagger 可以生成客户端 SDK 代码用于各种不同的平台上的实现。 </p>
+<p>• Swagger 文件可以在许多不同的平台上从代码注释中自动生成。 </p>
+<p>• Swagger 有一个强大的社区，里面有许多强悍的贡献者。 </p>
+<h2 id="2．Django-接入-Swagger"><a href="#2．Django-接入-Swagger" class="headerlink" title="2．Django 接入 Swagger"></a>2．<strong>Django 接入 Swagger</strong></h2><p>首先安装 django-rest-swagger </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install django-rest-swagger </span><br></pre></td></tr></table></figure>
+
+<p>进入到 setting.py 文件，添加 django-rest-swagger 应用</p>
+<p><img src="https://pic.imgdb.cn/item/613f240f44eaada73935754d.jpg"></p>
+<p>进入到 setting.py 文件，添加 django-rest-swagger 应用</p>
+<p><img src="https://pic.imgdb.cn/item/613f242444eaada739359526.jpg"></p>
+<p>脚本：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># Application definition</span><br><span class="line">INSTALLED_APPS = [</span><br><span class="line"> &#x27;django.contrib.admin&#x27;,</span><br><span class="line"> &#x27;django.contrib.auth&#x27;,</span><br><span class="line"> &#x27;django.contrib.contenttypes&#x27;,</span><br><span class="line"> &#x27;django.contrib.sessions&#x27;,</span><br><span class="line"> &#x27;django.contrib.messages&#x27;,</span><br><span class="line"> &#x27;django.contrib.staticfiles&#x27;,</span><br><span class="line"> &#x27;rest_framework&#x27;,</span><br><span class="line"> &#x27;api&#x27;,</span><br><span class="line"> &#x27;rest_framework_swagger&#x27;, </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>进入到 views.py 将之前定义的 UserViewSet 和 GroupViewSet 补充注释：</p>
+<p><img src="https://pic.imgdb.cn/item/613f244e44eaada73935c828.jpg"></p>
+<p>脚本：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">from django.contrib.auth.models import User,Group</span><br><span class="line">from rest_framework import viewsets</span><br><span class="line">from api.serializers import UserSerializer,GroupSerializer</span><br><span class="line"># Create your views here.</span><br><span class="line">class UserViewSet(viewsets.ModelViewSet):</span><br><span class="line"> &quot;&quot;&quot;</span><br><span class="line"> retrieve:</span><br><span class="line"> Return a user instance.</span><br><span class="line"> list:</span><br><span class="line"> Return all users, ordered by most recently joined.</span><br><span class="line"> create:</span><br><span class="line"> Create a new user.</span><br><span class="line"> delete:</span><br><span class="line"> Remove an existing user.</span><br><span class="line"> partial_update:</span><br><span class="line"> Update one or more fields on an existing user.</span><br><span class="line"> update:</span><br><span class="line"> Update a user.</span><br><span class="line"> &quot;&quot;&quot;</span><br><span class="line"> queryset = User.objects.all()</span><br><span class="line"> serializer_class = UserSerializer</span><br><span class="line">class GroupViewSet(viewsets.ModelViewSet):</span><br><span class="line"> &quot;&quot;&quot;</span><br><span class="line"> retrieve:</span><br><span class="line"> Return a group instance.</span><br><span class="line"> list:</span><br><span class="line">  Return all groups, ordered by most recently joined.</span><br><span class="line">  create:</span><br><span class="line">  Create a new group.</span><br><span class="line">  delete:</span><br><span class="line">  Remove an existing group.</span><br><span class="line">  partial_update:</span><br><span class="line">  Update one or more fields on an existing group.</span><br><span class="line">  update:</span><br><span class="line">  Update a group.</span><br><span class="line">  &quot;&quot;&quot;</span><br><span class="line"> queryset = Group.objects.all()</span><br><span class="line"> serializer_class = GroupSerializer</span><br></pre></td></tr></table></figure>
+
+<p>在 urls.py 添加 get_schema_view 辅助函数 </p>
+<p><img src="https://pic.imgdb.cn/item/613f248b44eaada739360acd.jpg"></p>
+<p>脚本：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from rest_framework.schemas import get_schema_view </span><br><span class="line">from rest_framework_swagger.renderers import SwaggerUIRenderer,OpenAPIRenderer </span><br><span class="line">schema_view=get_schema_view(title=&#x27;API&#x27;,renderer_classes=[OpenAPIRenderer,SwaggerUIRenderer]) </span><br><span class="line">urlpatterns = [ </span><br><span class="line">path(&#x27;admin/&#x27;, admin.site.urls), </span><br><span class="line">path(&#x27;&#x27;,include(router.urls)), </span><br><span class="line">path(&#x27;api-auth/&#x27;,include(&#x27;rest_framework.urls&#x27;,namespace=&#x27;rest_framework&#x27;)), </span><br><span class="line">path(&#x27;docs/&#x27;,schema_view,name=&#x27;docs&#x27;) </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>启动服务，然后打开地址：<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/docs/">http://127.0.0.1:8000/docs/</a> 即可看到如下界面</p>
+<p><strong>然后一打开就报错这个：</strong></p>
+<p><img src="https://pic.imgdb.cn/item/613f24cc44eaada7393650b8.jpg"></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/DaisyCold/article/details/107955493">解决方法</a></p>
+<p>再次启动：</p>
+<p>启动服务，然后打开地址：<a target="_blank" rel="noopener" href="http://127.0.0.1:8000/docs/">http://127.0.0.1:8000/docs/</a> 即可看到如下界面</p>
+<p><img src="https://pic.imgdb.cn/item/613f25a744eaada73937355d.jpg"></p>
+<p><img src="https://pic.imgdb.cn/item/613f25c044eaada7393751ab.jpg"></p>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="C:\hexo\themes\hexo-theme-snippet-master\source\img\33.jpg"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="C:\hexo\themes\hexo-theme-snippet-master\source\img\12.jpg"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        赞赏是不耍流氓的鼓励
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">hujun</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+    <a href="/2021/09/10/%E5%AD%A6%E4%B9%A0%E5%B8%B8%E7%94%A8/" class="next-post btn btn-default" title='学习常用'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            学习常用</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+    
+<div id="vcomments" class="valine"></div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+<script>
+    new Valine({
+        av: AV,
+        el: '#vcomments',
+        appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+        appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+        placeholder: '说点什么吧',
+        notify: false,
+        verify: true,
+        avatar: 'mm',
+        meta: 'nick,mail'.split(','),
+        pageSize: '10',
+        path: window.location.pathname,
+        lang: 'en'.toLowerCase()
+    })
+    </script>
+
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81rest%E6%A6%82%E8%BF%B0"><span class="toc-text">一、rest概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rest%E5%8E%9F%E5%88%99"><span class="toc-text">rest原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3"><span class="toc-text">设计思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B"><span class="toc-text">案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rest-%E4%BC%98%E5%8A%BF"><span class="toc-text">Rest 优势</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Django-REST-Framework"><span class="toc-text">二、Django REST Framework</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-1"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-text">特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%EF%BC%9A"><span class="toc-text">安装：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-Api"><span class="toc-text">创建 Api</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB"><span class="toc-text">数据库迁移</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98"><span class="toc-text">创建超级管理员</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8-Server"><span class="toc-text">启动 Server</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98%E8%B4%A6%E6%88%B7"><span class="toc-text">登录超级管理员账户</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">三、数据序列化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%88%9B%E5%BB%BA%E8%A7%86%E5%9B%BE"><span class="toc-text">四、创建视图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81URL-%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE"><span class="toc-text">五、URL 路由配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E6%89%93%E5%BC%80-API-%E4%B8%BB%E9%A1%B5"><span class="toc-text">六、打开 API 主页</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE"><span class="toc-text">七、创建数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AB%E3%80%81wagger-%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E7%94%9F%E6%88%90"><span class="toc-text">八、wagger 接口文档生成</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%EF%BC%8ESwagger-%E7%AE%80%E4%BB%8B"><span class="toc-text">1．Swagger 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%EF%BC%8EDjango-%E6%8E%A5%E5%85%A5-Swagger"><span class="toc-text">2．Django 接入 Swagger</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
