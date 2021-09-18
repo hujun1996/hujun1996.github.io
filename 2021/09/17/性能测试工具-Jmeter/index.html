@@ -1,0 +1,583 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="HERO">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://example.com">
+    <!--SEO-->
+
+<meta name="keywords" content="jmeter功能剖析" />
+
+
+<meta name="description" content="一、线程组处理每个JMeter测试计划的第一步就是添加线程组。这个线程组会告诉JMeter你想要模拟的用户数量，用户应该发送请求的频率和应该发送的数量。
+
+如上图所示，在图中红框位置点击右键，选..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    性能测试工具-Jmeter |
+    
+    HERO
+</title>
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner3.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='hujun'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                生活如此简单有趣
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://example.com">
+                        HERO</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="性能测试工具-Jmeter">
+            
+            性能测试工具-Jmeter
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/jmeter%E5%8A%9F%E8%83%BD%E5%89%96%E6%9E%90/" rel="tag">jmeter功能剖析</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2021/09/17</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="一、线程组"><a href="#一、线程组" class="headerlink" title="一、线程组"></a>一、线程组</h1><p>处理每个JMeter测试计划的第一步就是添加线程组。这个线程组会告诉JMeter你想要模拟的用户数量，用户应该发送请求的频率和应该发送的数量。</p>
+<p><img src="https://pic.imgdb.cn/item/61445ca92ab3f51d91e149bc.jpg"></p>
+<p>如上图所示，在图中红框位置点击右键，选择：添加-Threads(User)-线程组，这时可以看到这个线程组已经在测试计划下面了，如果没有看到，就点击测试计划元件展开这个测试计划树。</p>
+<p>下一步，你需要修改这些默认的属性。如果你还没有选择线程组元件,则从测试计划树型结构中选择它。这时你应该看到JMeter窗口右边的线程组控制面板了。</p>
+<p><img src="https://pic.imgdb.cn/item/61445cc62ab3f51d91e176af.jpg"></p>
+<p>循环次数设置为Y次，线程数设置为X时，那么每个线程会执行Y/X次请求</p>
+<p>如果勾选上永远，则jmeter不会自己停止下来，直到用户手工停止</p>
+<p>而对应LR中经常会设置请求异常时继续执行这种情况，对应上图：在取样器错误后要执行的动作，单选：继续即可</p>
+<p>当用户勾选：调度器时，会出现调度器配置，调度器的配置遵循如下判断：</p>
+<p><img src="https://pic.imgdb.cn/item/61445e2e2ab3f51d91e32f15.jpg"></p>
+<p>而对于Ramp-Up Period和线程数的关系，Jmeter是如下处理的：</p>
+<p><img src="https://pic.imgdb.cn/item/61445e552ab3f51d91e35c8b.jpg"></p>
+<p>于是对应在LR中我们经常会设置如下场景：</p>
+<table>
+<thead>
+<tr>
+<th>LR场景</th>
+<th>JMeter设置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>并发20个用户持续执行10分钟</td>
+<td>线程数填写：20，勾选调度器，设置启动时间后，持续时间写上600</td>
+</tr>
+<tr>
+<td>并发20个用户启动时需要每10s启动2个用户</td>
+<td>线程数填写：20，Ramp-up Period（in seconds）：100每10s启动2个用户，则20个用户需要启动时间为100s，此设置的实际效果是100s启动20个用户，每5s启动1个用户，与LR的期望效果略为不同</td>
+</tr>
+</tbody></table>
+<h1 id="二、取样器"><a href="#二、取样器" class="headerlink" title="二、取样器"></a>二、取样器</h1><h2 id="2-1-HTTP请求"><a href="#2-1-HTTP请求" class="headerlink" title="2.1 HTTP请求"></a>2.1 HTTP请求</h2><p>http请求取样器可以发送一个http/https的请求给web服务器，可以通过配置控制是否需要jmeter解析html文件中的图片和其它内嵌资源，并发送http请求下载这些资源，如下类型的内嵌资源可以被检索：</p>
+<p>（1）image</p>
+<p>（2）applets</p>
+<p>（3）stylesheets</p>
+<p>（4）external scripts</p>
+<p>（5）frames、iframes</p>
+<p>（6）background images (body、 table、TD、TR)</p>
+<p>（7）background sound</p>
+<p>默认使用的解析器是htmlparser，详细介绍见：<a target="_blank" rel="noopener" href="http://baike.baidu.com/view/1174491.htm%EF%BC%8C%E5%A6%82%E6%9E%9C%E9%9C%80%E8%A6%81%E6%9B%B4%E6%8D%A2htmlparser%E7%9A%84%E7%B1%BB%EF%BC%8C%E4%BF%AE%E6%94%B9jmeter.properties%E7%9A%84%E5%80%BC%E5%8D%B3%E5%8F%AF%E3%80%82%E5%BD%93%E4%BD%A0%E9%9C%80%E8%A6%81%E5%8F%91%E9%80%81%E5%A4%9A%E4%B8%AA%E8%AF%B7%E6%B1%82%E5%88%B0%E5%90%8C%E4%B8%80%E4%B8%AAweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%B6%EF%BC%8C%E5%8F%AF%E4%BB%A5%E8%80%83%E8%99%91%E4%BD%BF%E7%94%A8HTTP">http://baike.baidu.com/view/1174491.htm，如果需要更换htmlparser的类，修改jmeter.properties的值即可。当你需要发送多个请求到同一个web服务器时，可以考虑使用HTTP</a> Request Defaults Configuration（HTTP请求默认值）配置元件，这样你就可以不必为每个http请求都写入相同的信息，或者，你也可以使用http proxy服务器来录制发送的http请求，这样当你在创建很多http请求时能够很大程度上节省你的时间。</p>
+<p>HTTP请求有一个下拉框可以选择http协议的实现，目前可设置4个选项：</p>
+<p>（1）Java：由jvm提供，与HTTPClient相比有一定的局限性，如无法控制连接如何重用，当一个连接被jmeter释放后不一定能够重新被同一个线程使用，且目前存在bug，具体可自行搜索</p>
+<p>（2）HTTPClient3.1：使用Apache Commons HttpClient 3.1，这个版本目前已不再开发，未来的jmeter版本会丢弃这个版本</p>
+<p>（3）HTTPClient4：使用Apache HttpComponents HttpClient 4.x</p>
+<p>（4）空白：即不设置任何选项，会默认读取jmeter.properties文件中设置的jmeter.httpsampler的值，目前默认使用HttpClient4</p>
+<p>对于普通登录，例如你需要在一个表单可输入登录名和密码时，你需要先了解表单的按钮提交时会如何处理，然后再创建一个http请求选择method为post（通常情况），并构造表单可要求的正确参数一并提交。如果页面使用http协议，你还可以使用jmeter的proxy代理去捕捉登录时发起的请求参数。</p>
+<p>在jmeter2.2版本，只有一个单一的SSL上下文被用在所有线程的取样器中，这样做无法模拟多个用户产生压力。现在的版本可以为每个线程设置一个单独的SSL上下文，是否回到之前共享一个SSL上下文的方式，可以通过https.sessioncontext.shared=true来控制。</p>
+<p>默认情况下，SSL的上下文会在测试过程可被保持的，在2.5.1的版本之后，SSL的会话可以选择性地在每次迭代中进行重置，这可通过设置https.use.cached.ssl.context=false来实现，这个设置不适用于java实现的http请求。Jmeter默认的SSL协议是使用TLS，如果服务器需要不同的如SSLv3，那么可以修改https.default.protocol=SSLv3的，jmeter可以使用其它额外的协议，可以直接修改https.socket.protocols属性值。</p>
+<p>如果你的请求需要cookies，那么你可以添加一个http cookie管理器，只要添加到线程组中即可使用，这个cookie管理器，所有的http请求均可共享使用。</p>
+<p><img src="https://pic.imgdb.cn/item/61445ed22ab3f51d91e3f9a5.jpg"></p>
+<p>Server Name or IP：web服务器的域名或ip地址，如<a target="_blank" rel="noopener" href="http://www.google.com,不需要加上http//%E5%89%8D%E7%BC%80">www.google.com，不需要加上http://前缀</a></p>
+<p>Port：web服务器监听请求的端口号，默认是80端口</p>
+<p>Connect Timeout：连接超时时间，即等待连接打开的毫秒数。当HTTP请求中implementation选择java时，需要java1.5或以上版本</p>
+<p>Response Timeout：响应超时时间，即等待服务器返回响应的毫秒数。当HTTP请求中implementation选择java时，需要java1.5或以上版本</p>
+<p>Implementation：3个选项java、HttpClient3.1、HttpClient4，如果此处没有指定，则默认值取决于jmeter的配置项jmeter.httpsampler，当取不到时，会使用java这个选项</p>
+<p>Protocol：http或https</p>
+<p>Method：http的get、post请求，此处还包含head、put、options、trace、delete、patch</p>
+<p>Content encoding：所发送请求的报文内容所使用的编码</p>
+<p>Path：资源的路径（如/servlets/myServlet），如果资源需要带上查询参数的话，可以添加到Send Parameters With the Request部分，需要注意的是，path必须填写完整的路径</p>
+<p>Redirect Automatically：设置是否自动重定向，可以用在GET和HEAD请求中，勾选此项时，如果服务器返回重定向相关的状态码，会直接取得Response headers中的location值进行重定向请求，察看结果树视图中，看不到重定向的样本，只能看到一个样本。对于POST或PUT的请求，忽略此设置。具体可参考重定向相关内容：<a target="_blank" rel="noopener" href="http://www.cnblogs.com/wodemeng/archive/2011/09/01/2161859.html">http://www.cnblogs.com/wodemeng/archive/2011/09/01/2161859.html</a></p>
+<p>Follow Redirects：此选项的设置与Redirect Automatically有互斥关系，当不勾选Redirect Automatically时，才能勾选Follow Redirects。如果设置了此选项，jmeter的取样器将会检查响应是否需要重定向，如果有则会随后发起请求。使用察看结果树视图可以看到，最初的请求和随后的重定向请求都会显示在结果树中。父取样器请求的URL和数据字段都会从最后一个请求中取得，但父样本的字节数和执行时间将包含子取样器的所有数据</p>
+<p><img src="https://pic.imgdb.cn/item/61445eef2ab3f51d91e41946.jpg"></p>
+<p>Use KeepAlive：需要先介绍keep-aliver模式：HTTP协议采用“请求-应答”模式，当使用普通模式，即非KeepAlive模式时，每个请求/应答客户和服务器都要新建一个连接，完成之后立即断开连接（HTTP协议为无连接的协议）；当使用Keep-Alive模式（又称持久连接、连接重用）时，Keep-Alive功能使客户端到服务器端的连接持续有效，当出现对服务器的后继请求时，Keep-Alive功能避免了建立或者重新建立连接。勾选此选项，jmeter会在http头加入”Connection: Keep-Alive”，才能启用Keep-Alive，它需要选择HttpClient的实现才能起作用</p>
+<p>Use multipart/form-data for HTTP POST：使用multipart/form-data或者application/x-www-form-urlencoded设置post请求提交数据所使用的格式，详细介绍见：<a target="_blank" rel="noopener" href="http://www.cnblogs.com/mumue/archive/2012/05/24/2515984.html">http://www.cnblogs.com/mumue/archive/2012/05/24/2515984.html</a></p>
+<p>Send parameters with the request：设置参数名和参数值，将会依据你所选的post和get方法发送参数和参数值，当选择get时，参数会被添加到url直接发送，当选择post时，参数将单独发送。当你需要发送一个文件时，需要使用multipart form，参数的创建也需要根据multipart form的规范。表格中还有选项encode?：可以指定某一参数是否进行编码，如果你不确定，那么最好都打上勾，当你的参数值中包含$、&amp;、+、逗号、/、冒号、=、问号、@等时，通常需要进行编码</p>
+<p>Send files with the request：</p>
+<p>（1）file path：发送的文件名称，如果不设置，jmeter不会发送文件，当填写文件名时，jmeter会自动以multipart form形式发送。当请求为POST、PUT、PATCH请求时，仅有一个文件，那么parameter name将会被忽略，直接将文件作为请求的整个包体进行发送，这样的使用方式可以允许用户发送任何请求内容。</p>
+<p>（2）parameter name：请求参数名“name”的值</p>
+<p>（3）MIME Type：MIME类型，如text/plain，如果是POST或PUT请求且“name”值被忽略，或请求仅由参数值构成，那么该字段设置的值将作为请求头content-type的值</p>
+<p>Proxy server：</p>
+<p>（1）server Name or ip：执行请求的代理服务器或ip地址</p>
+<p>（2）port：代理服务器端口</p>
+<p>（3）username：代理服务器的用户名</p>
+<p>（4）password：代理服务器的密码</p>
+<p>Optional tasks：</p>
+<p>（1）retrieve All Embedded Resources from HTML Files：设置jmeter是否需要从html文件中解析引用的所有图片、java applets、js文件、css等</p>
+<p>（2）Use concurrent pool：使用并发池的连接去获取嵌入的资源</p>
+<p>（3）size：concurrent pool的连接数大小</p>
+<p>（4）use as monitor：配合监视器结果视图（Monitor results）使用</p>
+<p>（5）save response as MD5 hash：如果选择了此项设置，响应将不会被取样器直接存储，jmeter会对响应进行md5哈希后再行存储，这主要针对大数据量的测试（这块是直接从官网翻译的，不明白为什么是针对大数据量的测试）</p>
+<p>（6）embedded URLs must match：选择时，可以使用正则表达式匹配指定url的资源才被下载，如你需要下载url为<a href="http://example.com/%E7%9A%84%E5%B5%8C%E5%85%A5%E8%B5%84%E6%BA%90%EF%BC%8C%E9%82%A3%E4%B9%88%E8%BF%99%E9%87%8C%E5%8F%AF%E4%BB%A5%E8%AE%BE%E7%BD%AE%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%BA%EF%BC%9Ahttp://example/.com/.*%E3%80%82">http://example.com/的嵌入资源，那么这里可以设置正则表达式为：http://example\.com/.*。</a></p>
+<p>（7）source ip address：设置后，请求或响应均会使用这个属性设置的地址，如有多个ip地址时，则可直接指定</p>
+<p>需要注意的是，当使用Redirect Automatically时，cookies仅会发送给初始的url，这可能会导致意想不到的行为，例如：访问<a target="_blank" rel="noopener" href="http://www.example.com时重定向到www.example.co.uk,这时服务器可能会返回两个url的cookies,但jmeter可能只看到最后一个主机地址的cookie,如果在下一个请求还是测试www.example.com而非www.example.co.uk,则可能会发送不正确的cookie.同样请求头的内容也是被发到初始的请求,不会发送给重定向后的url,这种情况只会在手动创建的测试计划中比较经常出现,如果是通过http代理录制下来的则不会有类似问题./">www.example.com时重定向到www.example.co.uk，这时服务器可能会返回两个URL的cookies，但jmeter可能只看到最后一个主机地址的cookie，如果在下一个请求还是测试www.example.com而非www.example.co.uk，则可能会发送不正确的cookie。同样请求头的内容也是被发到初始的请求，不会发送给重定向后的URL，这种情况只会在手动创建的测试计划中比较经常出现，如果是通过http代理录制下来的则不会有类似问题。</a></p>
+<p>HTTP请求中可以对parameters和post body进行切换，一旦你需要切换回parameters的tab页时，需要清空post body的内容。在post body模式下，每行将会自动添加CRLF回车换行符，除了最后一行。</p>
+<p>响应报文大小的计算设置，通过设置sampleresult.getbytes.body_real_size=true可以获取返回的响应中的body部分的字节数，设置sampleresult.getbytes.headers_size=true则获取整个报文的字节数，包含报文头和报文体。</p>
+<h2 id="2-2-JDBC请求"><a href="#2-2-JDBC请求" class="headerlink" title="2.2  JDBC请求"></a>2.2  JDBC请求</h2><p>Jdbc请求取样器可以向数据库发送一个jdbc请求，在使用前，需要先创建一个JDBC Connection Configuration配置元件</p>
+<p><img src="https://pic.imgdb.cn/item/61445f552ab3f51d91e49127.jpg"></p>
+<p>Variable name：绑定的连接池名称，此处填写的是JDBC Connection Configuration配置元件所定义的数据库连接名称</p>
+<p>Query Type：Select Statement、Update Statement、Callable Statement、Prepared Select Statement、Prepared Update Statement、Commit、Rollback、AutoCommit(false)、AutoCommit(true)，，以下仅列出主要的执行代码版本，try、catch、finally部分不体现：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">（1）Query Type为Select Statement时，对应执行代码为：</span><br><span class="line">stmt = conn.createStatement();</span><br><span class="line">ResultSet rs = null;</span><br><span class="line">rs = stmt.executeQuery(sql);</span><br><span class="line">return getStringFromResultSet(rs).getBytes(ENCODING);</span><br><span class="line">（2）Query Type为Callable Statement时，对应执行代码为：</span><br><span class="line">CallableStatement cstmt = getCallableStatement(conn);</span><br><span class="line">int out[]=setArguments(cstmt);</span><br><span class="line">boolean hasResultSet = cstmt.execute();</span><br><span class="line">String sb = resultSetsToString(cstmt,hasResultSet, out);</span><br><span class="line">return sb.getBytes(ENCODING);</span><br><span class="line">（3）Query Type为Update Statement时，对应执行代码为：</span><br><span class="line">stmt = conn.createStatement();</span><br><span class="line">stmt.executeUpdate(sql);</span><br><span class="line">int updateCount = stmt.getUpdateCount();</span><br><span class="line">String results = updateCount + &quot; updates&quot;;</span><br><span class="line">return results.getBytes(ENCODING);</span><br><span class="line">（4）Query Type为Prepared Select Statement时，对应执行代码为：</span><br><span class="line">PreparedStatement pstmt = getPreparedStatement(conn);</span><br><span class="line">setArguments(pstmt);</span><br><span class="line">ResultSet rs = null;</span><br><span class="line">rs = pstmt.executeQuery();</span><br><span class="line">return getStringFromResultSet(rs).getBytes(ENCODING);</span><br><span class="line">（5）Query Type为Prepared Update Statement时，对应执行代码为：</span><br><span class="line">PreparedStatement pstmt = getPreparedStatement(conn);</span><br><span class="line">setArguments(pstmt);</span><br><span class="line">pstmt.executeUpdate();</span><br><span class="line">String sb = resultSetsToString(pstmt,false,null);</span><br><span class="line">return sb.getBytes(ENCODING);</span><br><span class="line">（6）Query Type为Rollback时，对应执行代码为：</span><br><span class="line">conn.rollback();</span><br><span class="line">return ROLLBACK.getBytes(ENCODING);</span><br><span class="line">（7）Query Type为Commit时，对应执行代码为：</span><br><span class="line">conn.commit();</span><br><span class="line">return COMMIT.getBytes(ENCODING);</span><br><span class="line">（8）Query Type为AutoCommit(false)时，对应执行代码为：</span><br><span class="line">conn.setAutoCommit(false);</span><br><span class="line">return AUTOCOMMIT_FALSE.getBytes(ENCODING);</span><br><span class="line">（9）Query Type为AutoCommit(true)时，对应执行代码为：</span><br><span class="line">conn.setAutoCommit(true);</span><br><span class="line">return AUTOCOMMIT_TRUE.getBytes(ENCODING);</span><br><span class="line">（10）其它情况直接抛异常：throw new UnsupportedOperationException(&quot;Unexpected query type: &quot;+_queryType);</span><br></pre></td></tr></table></figure>
+
+<p>Query：填写sql查询语句，不需要输入最后的分号，这里需要注意一下，xxx Statement和Prepared xxx Statement用法上的区别。xxx Statement需要填写的sql是一句完整可执行的sql，而Prepared xxx Statement允许用户在sql中使用?，然后再Parameter values和Parameter types中填写参数和类型，最终执行时替代sql中的?，形成一句完整的sql语句</p>
+<p>Parameter values和Parameter types：成对出现，且sql语句中有多少个?，这里就必须有多少对参数键值对，假设sql语句为select * from cp_tranaction_info t where t.tx_id=?，那么可以设置Parameter values为${tid}，Parameter types为VARCHAR</p>
+<p>Variable names：有多个字段返回时，可以使用逗号隔开，用于存放select操作返回的查询结果</p>
+<p>Result variable name：这里的用法比较复杂，不铺开介绍</p>
+<p>使用察看结果树视图，检查上面sql返回的执行结果，如下图所示：</p>
+<p><img src="https://pic.imgdb.cn/item/6144603e2ab3f51d91e5ca0a.jpg"></p>
+<p>可按如下取值：</p>
+<p>TX_ID_# = 4，STATUS_# = 4</p>
+<p>TX_ID_1= 001001-2010041201892134，STATUS _1=C</p>
+<p>TX_ID_4= 001001-2010041301892419，STATUS _1=C</p>
+<p>需要注意的是：如果使用SELECT item from table where name=’${VAR}’作为查询语句时，name为varchar类型，则需要自行加上’’。</p>
+<h2 id="2-3-WebService请求"><a href="#2-3-WebService请求" class="headerlink" title="2.3 WebService请求"></a>2.3 WebService请求</h2><p>Webservice请求是我们最为经常使用的取样器，与Loadrunner中的webservice协议一样，均是为了测试webservice服务而使用的测试元件。可以看到该测试元件目前被打上deprecated待废弃标志，jmeter提议压测webservice服务的脚本也使用http请求进行发送即可，具体的例子在第六章说明。</p>
+<p><img src="https://pic.imgdb.cn/item/614460d02ab3f51d91e675a4.jpg"></p>
+<p>Wsdl url：在此处填写正确的wsdl地址，如上图所示，再点击“载入wsdl”按钮，jmeter会自动帮你填充协议、服务器名称或ip、端口号、路径、SOAPAction等信息</p>
+<p>Web methods可以不用设置，因为真正发起请求时，还是主要看发送的soap/xml-rpc data中设置的服务</p>
+<p>Soap/xml-rpc data：此处的填写则需要利用soapui里生成的soap报文，然后直接复制到这个区域过来，如何使用，可以参考我另一份文档《接口测试工具-SoapUI-第二版.pdf》，格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:fac=&quot;http://facade.service.common.couponcore.alipay.com&quot;&gt;</span><br><span class="line">   &lt;soapenv:Header/&gt;</span><br><span class="line">   &lt;soapenv:Body&gt;</span><br><span class="line">      &lt;fac:couponPayAbort&gt;</span><br><span class="line">         &lt;fac:in0&gt;$&#123;tx_id_1&#125;&lt;/fac:in0&gt;</span><br><span class="line">         &lt;fac:in1&gt;23242&lt;/fac:in1&gt;</span><br><span class="line">      &lt;/fac:couponPayAbort&gt;</span><br><span class="line">   &lt;/soapenv:Body&gt;</span><br><span class="line">&lt;/soapenv:Envelope&gt;</span><br></pre></td></tr></table></figure>
+
+<p>文件名：如果这块设置了文件名，则发送请求时，会直接读取文件内容发送，忽略Soap/xml-rpc data中设置的报文</p>
+<p>内存缓存：当使用一个外部文件作为请求报文时，设置这个选项可以仅处理一次文件并缓存结果，当文件较大时，会比较消耗内存。如果你正在使用CSV Data Set Config，不能选择这个选项，因为如果选中了这个选项，jmeter不会循环到下一个值，所有的请求均只会使用CSV Data Set Config文件中设置的第一个值</p>
+<p>读取soap响应：当你需要对结果进行后置处理或断言等处理时，需要勾选这个选项，以确保jmeter会读取返回的结果报文并进行后续处理</p>
+<h2 id="2-4-java请求（todo）"><a href="#2-4-java请求（todo）" class="headerlink" title="2.4 java请求（todo）"></a>2.4 java请求（todo）</h2><p><img src="https://pic.imgdb.cn/item/614461272ab3f51d91e6e00b.jpg"></p>
+<h1 id="三、逻辑控制器"><a href="#三、逻辑控制器" class="headerlink" title="三、逻辑控制器"></a>三、逻辑控制器</h1><h2 id="3-1-ForEach控制器"><a href="#3-1-ForEach控制器" class="headerlink" title="3.1 ForEach控制器"></a>3.1 ForEach控制器</h2><p>一个ForEach控制器遍历一组相关变量的值，如有下列元素：</p>
+<p>inputVar_1=test1</p>
+<p>inputVar_2=test2</p>
+<p>inputVar_3=test3</p>
+<p>inputVar_4=test4</p>
+<p>注意：“_”分隔符是可选的</p>
+<p><img src="C:\hexo\source_posts\image-20210917173634001.png" alt="image-20210917173634001"></p>
+<p>可在ForEach控制器中设置变量名前缀为：inputVar，则控制器会循环执行4次。</p>
+<p><img src="https://pic.imgdb.cn/item/614461c22ab3f51d91e7aaaf.jpg"></p>
+<p>在ForEach控制器下方添加子节点，如上图的HTTP2，即可传递returnVar的值，并循环执行4次。</p>
+<h2 id="3-2-Runtime控制器"><a href="#3-2-Runtime控制器" class="headerlink" title="3.2 Runtime控制器"></a>3.2 Runtime控制器</h2><p>Runtime控制器控制其子结点被允许运行的时间，如下图设置表示HTTP1请求将持续运行5s后再进行后续的操作，如果子节点为空，则该控制器不起作用。</p>
+<p><img src="https://pic.imgdb.cn/item/614462052ab3f51d91e7fc55.jpg"></p>
+<h2 id="3-3-Switch控制器"><a href="#3-3-Switch控制器" class="headerlink" title="3.3 Switch控制器"></a>3.3 Switch控制器</h2><p>Switch控制器会根据Switch Value设置的值来运行其指定的子节点，它可以有以下两种设置方式，可以设置为你要运行的子结点的名称，如下图：HTTP 4。</p>
+<p><img src="https://pic.imgdb.cn/item/614465b82ab3f51d91ec64b9.jpg"></p>
+<p>也可以设置为数字，从0开始计数，0表示HTTP 3第一个子节点，1表示HTTP 4第二个子节点。</p>
+<p><img src="https://pic.imgdb.cn/item/614465e72ab3f51d91eca067.jpg"></p>
+<h2 id="3-4-While控制器"><a href="#3-4-While控制器" class="headerlink" title="3.4  While控制器"></a>3.4  While控制器</h2><p>While控制器会执行其子节点直到判断条件为false。Condition可以填写：${result}，当result的值为true时，才会执行这个controller下面的samplers</p>
+<p><img src="https://pic.imgdb.cn/item/614466522ab3f51d91ed1d75.jpg"></p>
+<h2 id="3-5-交替控制器"><a href="#3-5-交替控制器" class="headerlink" title="3.5  交替控制器"></a>3.5  交替控制器</h2><p>选择交替控制器时，jmter将会交替选择控制器子节点里的请求进行处理，下面举两个例子说明这个控制器的功能。</p>
+<p>例子1：线程组设置2个线程循环5次，那么最后执行的结果为：News Page-&gt;Log Page-&gt;FAQ Page-&gt; Log Page-&gt;Gump Page-&gt; Log Page-&gt;News Page-&gt;Log Page-&gt;FAQ Page</p>
+<p><img src="https://pic.imgdb.cn/item/6144668b2ab3f51d91ed5f17.jpg"></p>
+<p>例子2：线程组设置1个线程循环4次，那么最后执行的结果为：Home Page-&gt;Interleaved-&gt;Bug Page-&gt;Interleaved-&gt;CSV Page-&gt;Interleaved-&gt;FAQ Page-&gt;Interleaved</p>
+<p><img src="https://pic.imgdb.cn/item/614468e32ab3f51d91f02172.jpg"></p>
+<h2 id="3-6-吞吐量控制器"><a href="#3-6-吞吐量控制器" class="headerlink" title="3.6 吞吐量控制器"></a>3.6 吞吐量控制器</h2><p>这个控制器的命名不准确，因为它不是用来控制吞吐量的。吞吐量控制器允许用户控制执行频率，jmeter提供了两种模式：执行百分比和执行总次数。</p>
+<p>执行百分比：通过测试计划的总次数，使控制器执行特定的迭代次数所占的百分比，如下图，填写0-100的数字，表示执行的百分比。</p>
+<p><img src="C:\hexo\source_posts\image-20210917181726525.png" alt="image-20210917181726525"></p>
+<p>执行总次数：当控制器执行了指定的执行总次数后即停止执行此控制器，如下图，吞吐量后的文本框里表示控制器将执行的次数。</p>
+<p><img src="https://pic.imgdb.cn/item/61446b492ab3f51d91f2df8c.jpg"></p>
+<p>Per User选项的用处：</p>
+<p>勾选：会按照每个线程单独计算吞吐量，如线程组设置了5个线程，循环次数为2的情况，吞吐量为1时，吞吐量的子节点每个线程执行一次，总共会执行5次。</p>
+<p>不勾选：按照全局的执行数次进行计数，如线程组设置了5个线程，循环次数为2的情况，吞吐量为1时，吞吐量的子节点仅会执行一次。</p>
+<h2 id="3-7-如果（if）控制器"><a href="#3-7-如果（if）控制器" class="headerlink" title="3.7 如果（if）控制器"></a>3.7 如果（if）控制器</h2><p>如果控制器允许用户控制其子节点所表示的测试步骤是否执行，下图“条件”可以使用函数（默认是Javascript语句）或变量，只要运行结果为true或false即可。使用上有些区别，举个例子，原先我们可以使用条件为：${__jexl(${VAR} == 23)}，这将被评估为true或false，结果将被传递到JavaScript，然后返回true或false。如果选中“Interpret Condition as Variable Expression?”，直接会对变量表达式进行评估是否为true，而不需要使用Javascript进行解析。此外，变量表达式可以返回任何值，而JavaScript的条件必须返回true或false，否则将记录错误。</p>
+<p>当选择“Evaluate for all children?”时，该条件会对每个子节点进行判断，不选则默认只执行第一个子节点。</p>
+<p>Javascript作为条件的例子：</p>
+<p>（1）${COUNT} &lt; 10</p>
+<p>（2）”${returnVar}”==”<a target="_blank" rel="noopener" href="http://www.baidu.com&quot;/">http://www.baidu.com&quot;</a></p>
+<p>（3）’${returnVar}’==’<a target="_blank" rel="noopener" href="http://www.baidu.com’/">http://www.baidu.com’</a></p>
+<p>（4）${JMeterThread.last_sample_ok}（检查最后的取样器执行是否成功）</p>
+<p>变量表达式作为条件的例子：</p>
+<p>（1）${__jexl(${COUNT} &lt; 10)}</p>
+<p>（2）${RESULT}</p>
+<p><img src="https://pic.imgdb.cn/item/61446be12ab3f51d91f38bb4.jpg"></p>
+<h2 id="3-8-模块控制器"><a href="#3-8-模块控制器" class="headerlink" title="3.8 模块控制器"></a>3.8 模块控制器</h2><p>当有多个Thread Group都要用到登录的transaction，每一个都重新录制很麻烦，而且以后要修改就要同时改好几个，可以使用模块控制器来实现登录模块脚本的重用，使用步骤如下：</p>
+<p>（1）录制一段登录测试步骤，放于一个逻辑控制器中</p>
+<p>（2）在你需要使用登录的thread group中添加模块控制器</p>
+<p>（3）在modele to run的下拉框中选择登录所在的逻辑控制器</p>
+<p><img src="https://pic.imgdb.cn/item/61446c1a2ab3f51d91f3cccc.jpg"></p>
+<h2 id="3-9-include控制器"><a href="#3-9-include控制器" class="headerlink" title="3.9 include控制器"></a>3.9 include控制器</h2><p>如果我们需要写一个登录模块的测试，且这个测试会经常被用到，我们可以先针对登录做一个jmx文件，然后在另一个jmx文件里面，我们可以直接使用include控制器包含进来。</p>
+<p><img src="https://pic.imgdb.cn/item/61446c452ab3f51d91f40379.jpg"></p>
+<p>这里文件名，也可以只输入文件名，但必须设置文件名前缀，配置文件的地址位于JMeter安装目录：D:\Program Files\apache-jmeter-2.9\bin\ jmeter.properties，如下设置：</p>
+<p><img src="https://pic.imgdb.cn/item/61446c5e2ab3f51d91f4223b.jpg"></p>
+<p><img src="https://pic.imgdb.cn/item/61446c6f2ab3f51d91f434b0.jpg"></p>
+<h2 id="3-10-循环控制器"><a href="#3-10-循环控制器" class="headerlink" title="3.10 循环控制器"></a>3.10 循环控制器</h2><p>如果你添加一个loop controller，那么这个控制器下的子节点会根据你指定的次数重复执行，假设你指定了循环次数为2，且线程组的循环次数为2，那么循环控制器下的子节点会重复执行2*2=4次。如下图所示的test plan，最终的执行情况为：home Page-&gt;New Page-&gt; New Page-&gt; home Page-&gt;New Page-&gt; New Page，New Page为loop Controller下的子节点，重复执行了4次。</p>
+<p><img src="https://pic.imgdb.cn/item/61446c932ab3f51d91f46049.jpg"></p>
+<p>有一种情况，线程组设置循环次数为2，而循环控制器设置的循环次数为“永远”，这种情况，循环控制器会一直循环下去，除非人为中断。</p>
+<h2 id="3-11-简单控制器"><a href="#3-11-简单控制器" class="headerlink" title="3.11 简单控制器"></a>3.11 简单控制器</h2><p>简单控制器可以让你组织你的取样器和其它逻辑控制器，不像其它的逻辑控制器，简单控制器只能存储但不提供功能。</p>
+<p><img src="https://pic.imgdb.cn/item/61446cbf2ab3f51d91f49265.jpg"></p>
+<p><img src="https://pic.imgdb.cn/item/61446cd12ab3f51d91f4a986.jpg"></p>
+<h2 id="3-12-仅一次控制器"><a href="#3-12-仅一次控制器" class="headerlink" title="3.12 仅一次控制器"></a>3.12 仅一次控制器</h2><p>登录后，要做一些操作，比如添加，修改，删除，但是登录只需要一次就够了，不需要每次操作都登陆一次。</p>
+<h2 id="3-13-随机控制器"><a href="#3-13-随机控制器" class="headerlink" title="3.13 随机控制器"></a>3.13 随机控制器</h2><p>随机控制器与交替控制器功能类似，不一样的地方主要在于：随机控制器在每次执行中会选择子节点里任意一个请求进行执行。一个页面上有很多链接，模拟用户随机点击页面上的链接。</p>
+<h2 id="3-14-随机顺序控制器"><a href="#3-14-随机顺序控制器" class="headerlink" title="3.14 随机顺序控制器"></a>3.14 随机顺序控制器</h2><p>随机顺序控制器：会以随机的顺序执行子节点里所有的请求。</p>
+<h1 id="四、定时器"><a href="#四、定时器" class="headerlink" title="四、定时器"></a>四、定时器</h1><h2 id="4-1-Constant-Throughput-Timer"><a href="#4-1-Constant-Throughput-Timer" class="headerlink" title="4.1 Constant Throughput Timer"></a>4.1 Constant Throughput Timer</h2><p>这个定时器引入了可变的暂停时长，以保持总的吞吐量（每分钟发出的请求数）尽可能接近一个指定的数字，当然如果服务器无法处理如此数量的请求或是有其它耗时的定时器或测试元件，则有可能达不到指定的数字。</p>
+<p>注意：虽然定时器命名为常量吞吐量定时器，但吞吐量的值是不需要恒定的。这里可以定义成变量或函数调用，并且在测试过程中，该值是可以用不同的方式进行改变。</p>
+<p>（1）使用计数器变量</p>
+<p>（2）使用Javascript或者BeanShell函数提供一个不断变化的值</p>
+<p>（3）使用远程BeanShell服务器改变Jmeter的一个属性</p>
+<p>通过最佳实践证明，吞吐量的值在一个测试过程中不应被经常改变，它将会花费一定的时间让新的值生效。</p>
+<p>下图中Target throughput(in samples per minute)填写的是目标吞吐量（即我们通常所说的tpm）</p>
+<p><img src="https://pic.imgdb.cn/item/61446dea2ab3f51d91f605ee.jpg"></p>
+<p>Calculate Throughput base on提供了5个选项：</p>
+<p>（1）this thread only：每条线程都会试图去保持目标吞吐量，整体的吞吐量将与活动线程数目成正比</p>
+<p>（2）all active threads：目标吞吐量被所有线程组下所有活动的线程均分，每个线程根据所需要时间进行延迟运行，如目标tpm为10，有2个线程组，每个线程组分别有2个线程，那么，线程均在差不多的时间启动，每次启动的间隔时间为60s/（10/2/2）=24s</p>
+<p><img src="https://pic.imgdb.cn/item/61446f352ab3f51d91f79726.jpg"></p>
+<p>（3）all active threads in current thread group：目标吞吐量被所有线程组下所有活动的线程均分，每个线程根据所需要时间进行延迟运行，均基于每个线程各自最后一次的运行时间所定</p>
+<p><img src="https://pic.imgdb.cn/item/61446f4e2ab3f51d91f7b5f8.jpg"></p>
+<p>（4）all active threads (shared)：每个线程根据所需要时间进行延迟运行，基于任意一个线程最后一次的运行时间所定，每个请求无论是哪个线程发起，都与上一次执行时间相差6s</p>
+<p><img src="https://pic.imgdb.cn/item/61446f6d2ab3f51d91f7db0d.jpg"></p>
+<p>（5）all active threads in current thread group (shared)：每个线程根据所需要时间进行延迟运行，基于同一个线程组任意一个线程最后一次的运行时间所定，每个请求无论是哪个线程发起，同一个线程组之间的不同线程执行时间相隔为6s</p>
+<p><img src="https://pic.imgdb.cn/item/61446f842ab3f51d91f7f4cb.jpg"></p>
+<p>这个功能应该会经常用到，与LR中的目标场景设置较为接近，大家在测试中有类似场景要求时，可以考虑使用Constant Throughput Timer做个性化场景设置。</p>
+<h2 id="4-2-Synchronizing-Timer"><a href="#4-2-Synchronizing-Timer" class="headerlink" title="4.2 Synchronizing Timer"></a>4.2 Synchronizing Timer</h2><p>Synchronizing定时器的目标是阻塞线程，直到指定数量的线程数到达此定时器，然后再一起释放掉，从而模拟瞬间大量负载不断地同时发起请求的场景，与LR中的集合点类似。</p>
+<p><img src="https://pic.imgdb.cn/item/61446fd52ab3f51d91f85598.jpg"></p>
+<h2 id="4-3-固定定时器"><a href="#4-3-固定定时器" class="headerlink" title="4.3 固定定时器"></a>4.3 固定定时器</h2><p>如果你需要让每个线程在请求之间按相同的指定时间停顿，那么可以使用这个定时器，这个功能与LR的思考时间类似。</p>
+<p><img src="https://pic.imgdb.cn/item/614470042ab3f51d91f88ddf.jpg"></p>
+<h2 id="4-4-高斯随机定时器"><a href="#4-4-高斯随机定时器" class="headerlink" title="4.4 高斯随机定时器"></a>4.4 高斯随机定时器</h2><p>如果你需要让每个线程在请求之间按随机的时间停顿，那么可以使用这个定时器，下面表示暂停时间会分布在100到400之间，计算公式参考：Math.abs((this.random.nextGaussian() * 300) + 100)。</p>
+<p><img src="https://pic.imgdb.cn/item/614470672ab3f51d91f8fec5.jpg"></p>
+<h1 id="五、前置处理器"><a href="#五、前置处理器" class="headerlink" title="五、前置处理器"></a>五、前置处理器</h1><p>前置处理器用来修改它所作用范围内的取样器发送出去的报文。</p>
+<h2 id="5-1-用户变量"><a href="#5-1-用户变量" class="headerlink" title="5.1 用户变量"></a>5.1 用户变量</h2><p>允许用户指定具体到各个线程的用户变量的值。用户变量也可以在测试计划中被指定，但没有具体到各个线程，这个处理器允许你指定任何用户变量的值，对于每一个线程，变量将会被按下图所示的系列分配值，如果线程数大于下图所示的用户数，则变量将会被从头开始重新使用。例如，这个处理器可以用来给每个线程分配不同的用户id，用户变量可以被任意的jmeter组件中直接引用。</p>
+<p>通过点击面板底部的“添加变量”按钮，在名称所对应的文本框中填入变量名，当需要添加多个用户时，点击“添加用户”按钮，即会新增一列值供用户填写，如果有多个用户变量需要设置，则可以多次点击“添加变量”。</p>
+<p>在这里设置的用户变量，如下图name，可在同一个线程组里的任意测试组件中使用此变量，使用的函数语法为：${name}。</p>
+<p>这里的用法是相对较少参数时可用，如果需要大量参数的话，需要考虑使用CSV Data Set Config。</p>
+<p><img src="https://pic.imgdb.cn/item/614471cc2ab3f51d91fabc2a.jpg"></p>
+<h2 id="5-2-JDBC-PreProcessor"><a href="#5-2-JDBC-PreProcessor" class="headerlink" title="5.2 JDBC PreProcessor"></a>5.2 JDBC PreProcessor</h2><p>JDBC预处理器使你在运行JDBC请求之前先执行一些sql语句，这个功能通常用在JDBC请求前增删改一些必须的数据到数据库中且可独立于线程组之外，也就是在线程开始执行前，数据库初始化的操作已经完成了。这里对应的Variable Name为coupon，其为JDBC Connection Configuration的配置，可参考4.9配置元件-JDBC Connection Configuration一节</p>
+<p>Sql-query语句用法：</p>
+<p><img src="https://pic.imgdb.cn/item/614472582ab3f51d91fb536f.jpg"></p>
+<p>Sql-update语句用法：</p>
+<p><img src="https://pic.imgdb.cn/item/614472812ab3f51d91fb8568.jpg"></p>
+<p>注意到有个Query Type，可选：Select Statement、Update Statement、Callable Statement、Prepared Select Statement、Prepared Update Statement、Commit、Rollback、AutoCommit(false)、AutoCommit(true)，此处的设置可参考4.2.2节的jdbc请求部分的内容。</p>
+<h2 id="5-3-HTTP-URL-重写修饰符（todo）"><a href="#5-3-HTTP-URL-重写修饰符（todo）" class="headerlink" title="5.3 HTTP URL 重写修饰符（todo）"></a>5.3 HTTP URL 重写修饰符（todo）</h2><p><img src="https://pic.imgdb.cn/item/614472ff2ab3f51d91fc18e3.jpg"></p>
+<h1 id="六、后置处理器"><a href="#六、后置处理器" class="headerlink" title="六、后置处理器"></a>六、后置处理器</h1><h2 id="6-1-正则表达式提取器"><a href="#6-1-正则表达式提取器" class="headerlink" title="6.1 正则表达式提取器"></a>6.1 正则表达式提取器</h2><p>允许用户从服务器的响应中通过使用perl的正则表达式提取值。作为一个后置处理器，该元素会作用在指定范围的取样器，应用正则表达式，提取所需要的值，生成模板字符串，并将结果存储到给定的变量名中。</p>
+<p>在此简单地向大家介绍一下常用的perl正则表达式的基础：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">.：匹配任何单个字符。例如Perl正则表达式r.t匹配这些字符串：rat、rut、rt，但是不匹配root</span><br><span class="line">$：匹配行结束符。例如Perl正则表达式weasel$能够匹配字符串&quot;He&#x27;saweasel&quot;的末尾，但是不能匹配字符串&quot;Theyareabunchofweasels.&quot;</span><br><span class="line">^：匹配一行的开始。例如Perl正则表达式^Whenin能够匹配字符串&quot;Wheninthecourseofhumanevents&quot;的开始，但是不能匹配&quot;WhatandWheninthe&quot;</span><br><span class="line">*：匹配0或多个正好在它之前的那个字符。例如Perl正则表达式.*意味着能够匹配任意数量的任何字符</span><br><span class="line">\：这是引用符，用来将这里列出的这些元字符当作普通的字符来进行匹配。例如Perl正则表达式\$被用来匹配美元符号，而不是行尾，类似的，Perl正则表达式\.用来匹配点字符，而不是任何字符的通配符</span><br><span class="line">[]、[c1-c2]、[^c1-c2]：匹配括号中的任何一个字符。例如Perl正则表达式r[aou]t匹配rat、rot和rut，但是不匹配ret。可以在括号中使用连字符-来指定字符的区间，例如Perl正则表达式[0-9]可以匹配任何数字字符；还可以制定多个区间，例如Perl正则表达式[A-Za-z]可以匹配任何大小写字母。另一个重要的用法是“排除”，要想匹配除了指定区间之外的字符——也就是所谓的补集——在左边的括号和第一个字符之间使用^字符，例如Perl正则表达式[^269A-Z]将匹配除了2、6、9和所有大写字母之外的任何字符</span><br><span class="line">|：将两个匹配条件进行逻辑“或”（Or）运算。例如Perl正则表达式(him|her)匹配&quot;itbelongstohim&quot;和&quot;itbelongstoher&quot;，但是不能匹配&quot;itbelongstothem.&quot;。注意：这个元字符不是所有的软件都支持的</span><br><span class="line">+：匹配1或多个正好在它之前的那个字符。例如Perl正则表达式9+匹配9、99、999、98、93dsf、9.....等。注意：这个元字符不是所有的软件都支持的</span><br><span class="line">?：匹配0或1个正好在它之前的那个字符。注意：这个元字符不是所有的软件都支持的</span><br><span class="line">&#123;i&#125;、&#123;i,&#125;、&#123;i,j&#125;：匹配指定数目的字符，这些字符是在它之前的表达式定义的。例如Perl正则表达式A[0-9]\&#123;3\&#125;能够匹配字符&quot;A&quot;后面跟着正好3个数字字符的串，例如A123、A348等，但是不匹配A1234。Perl正则表达式[0-9]\&#123;4,\&#125;匹配连续的任意4个或4个以上数字字符。Perl正则表达式[0-9]\&#123;4,6\&#125;匹配连续的任意4个、5个或者6个数字字符。注意： 这个元字符不是所有的软件都支持的</span><br><span class="line">\d：任意数字 [0-9] </span><br><span class="line">\D：除数字外的任意字符 [^0-9] </span><br><span class="line">\w：任意单词字符 [_0-9a-zA-Z] </span><br><span class="line">\W：任意非单词字符 [^_0-9a-zA-Z] </span><br><span class="line">\s：空白 [ \r\t\n\f] </span><br><span class="line">\S：非空白 [^ \r\t\n\f] </span><br><span class="line">更多的内容可参考：</span><br><span class="line">http://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F（维基百科）</span><br><span class="line">http://jakarta.apache.org/oro/api/org/apache/oro/text/regex/package-summary.html</span><br></pre></td></tr></table></figure>
+
+<p>一般情况下，jmeter的正则表达式语法与perl5的语法相同，但它们之间有一个重要的区别，在perl中你必须使用“//”作为分组符来指定正则表达式，如：~/正则表达式/，此种表达方式Jmeter不支持，它会直接作为字符进行解析，在Jmeter中使用“（）”作为分组符。</p>
+<p><img src="https://pic.imgdb.cn/item/614473512ab3f51d91fc6adf.jpg"></p>
+<p>Apply to选项的含义：</p>
+<p>（1）Main sample only：仅作用于父节点取样器</p>
+<p>（2）Sub-sample only：仅作用于子节点的取样器</p>
+<p>（3）Main sample and Sub-sample：作用于父节点的取样器及对应子节点的取样器</p>
+<p>（4）jmeter variable：作用于指定命名的取样器（todo）</p>
+<p>Response Field to check选项的含义：</p>
+<p>（1）Body：主体，响应的主体内容，一个网页页面的内容，除了信息头以外的内容</p>
+<p>（2）Body（unescaped）：主体，响应的主体内容且替换了所有的htmp转义符，注意html转义符处理时不考虑上下文，因此可能有不正确的转换，不太建议使用</p>
+<p>（3）Body as a Document：从不同类型的文件中提取文本，注意这个选项比较影响性能</p>
+<p>（4）Headers：信息头，非HTTP的请求可能不存在信息头，仅对HTTP请求有作用</p>
+<p>（5）URL</p>
+<p>（6）Response code：如200、403等</p>
+<p>（7）Response Message：如OK等</p>
+<p>下图所示这部分的值填写，也都有其不同的含义：</p>
+<p><img src="https://pic.imgdb.cn/item/6144736b2ab3f51d91fc8709.jpg"></p>
+<p>（1）Reference Name：引用名称，Jmeter变量的名称，存储提取的结果，每个存储组需要使用共结果时，应使用：[refname]_g#，其中[refname]是你输入的名字，#是组号，0是整个匹配结果，而1是指第一组匹配值</p>
+<p>（2）Regular Expression：正则表达式，使用正则表达式解析响应结果，须包含 “（）”去提取字符串中的部分值，请不要使用“||”，除非你本身需要匹配这个字符</p>
+<p>（3）Template：模板，用来从匹配的结果中创建一个字符串，这是通过正则表达式匹配出来的一组值，语法为：$1$指代第一组，$2$指代第二组，$0$指代整个匹配结果</p>
+<p>（4）Match No.：匹配数字，指明哪一个匹配结果值将被使用，正则表达式一般会有多个匹配结果。使用：0，表示Jmeter任选一个匹配值，使用：正整数N，表示Jmeter选择第N个值进行匹配，使用负数表示选取所有的值，一般与ForEach控制器配合使用</p>
+<p>（5）Default Value：缺省值，如果正则表达式没有匹配到数据，引用变量将会返回一个默认值，在调试中此功能很有用，如果没有设置默认值，那么很难分辨出正则表达式是否有匹配到数据或使用是否正确，当然你也可以根据你的测试需求，在调试完成后去掉默认值的设置。</p>
+<p>以下介绍几个从网上找来的例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">（1）找到所有小数的数字，比如10.2</span><br><span class="line">引用名称：aa</span><br><span class="line">正则表达式：([0-9]+\.[0-9]+)</span><br><span class="line">模板：$0$</span><br><span class="line">区配数字: -1</span><br><span class="line">调用：</span><br><span class="line">$&#123;aa_1&#125;:取出第一个满足要求的数字</span><br><span class="line">$&#123;aa_2&#125;:取出第二个满足要求的数字</span><br><span class="line">（2）找到所有小数点后的数字</span><br><span class="line">引用名称：aa</span><br><span class="line">正则表达式：([0-9]+)\.([0-9]+)，必须用括号分组</span><br><span class="line">模板：$2$（第二组）</span><br><span class="line">区配数字: -1 取出所有符合要求的</span><br><span class="line">调用：</span><br><span class="line">$&#123;aa_1&#125;:取出第一个满足要求的数字</span><br><span class="line">$&#123;aa_2&#125;:取出第二个满足要求的数字</span><br><span class="line">（3）找到第一个有小数的数字</span><br><span class="line">引用名称：aa</span><br><span class="line">正则表达式：([0-9]+)\.([0-9]+)，必须用括号分组</span><br><span class="line">模板：不写可以，也可以$2$$1$</span><br><span class="line">区配数字: 1（第一个）</span><br><span class="line">调用：</span><br><span class="line">$&#123;aa_g1&#125;:取出满足要求的第一组数字</span><br><span class="line">$&#123;aa_g2&#125;:取出满足要求的第二组数字</span><br><span class="line">（4）找到所有小数的数字</span><br><span class="line">引用名称：aa</span><br><span class="line">正则表达式：([0-9]+)\.([0-9]+)，必须用括号分组</span><br><span class="line">模板：不写可以，也可以$2$$1$</span><br><span class="line">区配数字: -1  取出所有符合要求的</span><br><span class="line">调用：</span><br><span class="line">$&#123;aa_1_g1&#125;:取出第一个满足要求的第一组数字</span><br><span class="line">$&#123;aa_1_g2&#125;:取出第一个满足要求的第二组数字</span><br><span class="line">$&#123;aa_2_g1&#125;:取出第一个满足要求的第一组数字</span><br><span class="line">$&#123;aa_2_g2&#125;:取出第一个满足要求的第二组数字</span><br><span class="line">原文引用自：http://www.cnblogs.com/quange/archive/2010/06/11/1756260.html</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-2-Xpath-Extractor"><a href="#6-2-Xpath-Extractor" class="headerlink" title="6.2 Xpath Extractor"></a>6.2 Xpath Extractor</h2><p>这个测试元件允许用户从结构化的响应-XML或(X)HTML中提取值。</p>
+<p><img src="https://pic.imgdb.cn/item/614473a82ab3f51d91fcca70.jpg"></p>
+<p>Apply to选项参考上一节正则表达式的介绍，本节不再展开。</p>
+<p>XML parsing Options选项：</p>
+<p>（1）Use Tidy (tolerant parser)，选中时会使用tidy将html响应解析为xhtml，当响应为html报文时需要选中此选项，而响应为xml或xhtml时（如rss）则取消选择此选项，关于tidy方面的了解详见：<a target="_blank" rel="noopener" href="http://jtidy.sf.net/">http://jtidy.sf.net/</a></p>
+<p>Ø Quiet：Sets the Tidy Quiet flag</p>
+<p>Ø Report errors：If a Tidy error occurs, then set the Assertion accordingly</p>
+<p>Ø Show warnings：Sets the Tidy showWarnings option</p>
+<p>（2）Use Namespaces：选中此选项，表示xml解析器将使用命名空间解析，</p>
+<p>（3）Validate XML：根据schema检查xml文档</p>
+<p>（4）Ignore Whitespace：Ignore Element Whitespace.</p>
+<p>（5）Fetch external DTDs：获取外部DTDs（Document Type Definition）</p>
+<p>Return entire XPath fragment instead of text content?选项：选中时，将返回xpath片断而非单纯的元素值，如//title返回“<title>Apache JMeter</title>”，而不返回“Apache JMeter”</p>
+<p><img src="https://pic.imgdb.cn/item/614474352ab3f51d91fd6cad.jpg"></p>
+<p>上图所示值的填写：</p>
+<p>（1）Reference Name：Jmeter变量名，用来存储结果值</p>
+<p>（2）XPath query：XPath语言的元素查询，可以返回多个匹配</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/html/head/title：从响应报文中读取title元素值</span><br><span class="line">/book/page[2]：从book中取page的第二个值</span><br><span class="line">//form[@name=&#x27;countryForm&#x27;]//select[@name=&#x27;country&#x27;]/option[text()=&#x27;Czech Republic&#x27;])/@value</span><br><span class="line">查找的元素位于名为 &#x27;countryForm&#x27;的表单内，元素名为&#x27;country&#x27;选项中，且其文本内容为&#x27;Czech Republic&#x27;的值</span><br><span class="line">此位置串的获取可使用soapui、firefox上的firebugs、ie/chrome上的开发人员工具</span><br></pre></td></tr></table></figure>
+
+<p>（3）Default Value：没有匹配时的默认返回值，当节点没有值且“Return entire XPath fragment instead of text content?”选项没有勾选时也会返回默认值</p>
+<h2 id="6-3-Result-status-Action-Handler"><a href="#6-3-Result-status-Action-Handler" class="headerlink" title="6.3 Result status Action Handler"></a>6.3 Result status Action Handler</h2><p>这个后置处理器允许用户在相关的请求（取样器）失败时，停止线程或停止测试等多种方式。</p>
+<p>在取样器错误后要执行的动作有：</p>
+<p>（1）Continue：继续，忽略错误继续执行测试</p>
+<p>（2）Start Next Thread Loop：不执行发生错误的后续请求，重新启动下个迭代的请求</p>
+<p>（3）Stop Thread：停止线程，退出当前正在执行的线程</p>
+<p>（4）Stop Test：在当前请求执行完成后停止测试执行</p>
+<p>（5）Stop Test Now：直接停止整个测试执行，可能打断正在执行的请求</p>
+<p><img src="https://pic.imgdb.cn/item/614474832ab3f51d91fdee50.jpg"></p>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="C:\hexo\themes\hexo-theme-snippet-master\source\img\33.jpg"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="C:\hexo\themes\hexo-theme-snippet-master\source\img\12.jpg"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        赞赏是不耍流氓的鼓励
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">hujun</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+    <a href="/2021/09/13/Rest%E4%BB%8B%E7%BB%8D%E4%B8%8EDjango-REST-Framework%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="next-post btn btn-default" title='Rest介绍与Django REST Framework环境搭建'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            Rest介绍与Django REST Framework环境搭建</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+    
+<div id="vcomments" class="valine"></div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+<script>
+    new Valine({
+        av: AV,
+        el: '#vcomments',
+        appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+        appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+        placeholder: '说点什么吧',
+        notify: false,
+        verify: true,
+        avatar: 'mm',
+        meta: 'nick,mail'.split(','),
+        pageSize: '10',
+        path: window.location.pathname,
+        lang: 'en'.toLowerCase()
+    })
+    </script>
+
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%BA%BF%E7%A8%8B%E7%BB%84"><span class="toc-text">一、线程组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%8F%96%E6%A0%B7%E5%99%A8"><span class="toc-text">二、取样器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-HTTP%E8%AF%B7%E6%B1%82"><span class="toc-text">2.1 HTTP请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-JDBC%E8%AF%B7%E6%B1%82"><span class="toc-text">2.2  JDBC请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-WebService%E8%AF%B7%E6%B1%82"><span class="toc-text">2.3 WebService请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-java%E8%AF%B7%E6%B1%82%EF%BC%88todo%EF%BC%89"><span class="toc-text">2.4 java请求（todo）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-text">三、逻辑控制器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-ForEach%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-text">3.1 ForEach控制器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-Runtime%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-text">3.2 Runtime控制器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-Switch%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-text">3.3 Switch控制器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-While%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-text">3.4  While控制器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-%E4%BA%A4%E6%9B%BF%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-text">3.5  交替控制器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6-%E5%90%9E%E5%90%90%E9%87%8F%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-text">3.6 吞吐量控制器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-7-%E5%A6%82%E6%9E%9C%EF%BC%88if%EF%BC%89%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-text">3.7 如果（if）控制器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-8-%E6%A8%A1%E5%9D%97%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-text">3.8 模块控制器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-9-include%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-text">3.9 include控制器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-10-%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-text">3.10 循环控制器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-11-%E7%AE%80%E5%8D%95%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-text">3.11 简单控制器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-12-%E4%BB%85%E4%B8%80%E6%AC%A1%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-text">3.12 仅一次控制器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-13-%E9%9A%8F%E6%9C%BA%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-text">3.13 随机控制器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-14-%E9%9A%8F%E6%9C%BA%E9%A1%BA%E5%BA%8F%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-text">3.14 随机顺序控制器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="toc-text">四、定时器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-Constant-Throughput-Timer"><span class="toc-text">4.1 Constant Throughput Timer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-Synchronizing-Timer"><span class="toc-text">4.2 Synchronizing Timer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%E5%9B%BA%E5%AE%9A%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="toc-text">4.3 固定定时器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-%E9%AB%98%E6%96%AF%E9%9A%8F%E6%9C%BA%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="toc-text">4.4 高斯随机定时器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%89%8D%E7%BD%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-text">五、前置处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%E7%94%A8%E6%88%B7%E5%8F%98%E9%87%8F"><span class="toc-text">5.1 用户变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-JDBC-PreProcessor"><span class="toc-text">5.2 JDBC PreProcessor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-HTTP-URL-%E9%87%8D%E5%86%99%E4%BF%AE%E9%A5%B0%E7%AC%A6%EF%BC%88todo%EF%BC%89"><span class="toc-text">5.3 HTTP URL 重写修饰符（todo）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%90%8E%E7%BD%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-text">六、后置处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%8F%90%E5%8F%96%E5%99%A8"><span class="toc-text">6.1 正则表达式提取器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-Xpath-Extractor"><span class="toc-text">6.2 Xpath Extractor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-Result-status-Action-Handler"><span class="toc-text">6.3 Result status Action Handler</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
