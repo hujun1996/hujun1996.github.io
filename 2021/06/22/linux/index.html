@@ -1,0 +1,1261 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="HERO">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://example.com">
+    <!--SEO-->
+
+<meta name="keywords" content="linux" />
+
+
+<meta name="description" content="一、Linux简介Linux 操作系统性能稳定，并且是开源的操作系统软件。它的防火墙相关的组件保证了系统的安全，且配置简单、性能高效。Linux 在很多企业网络中，追求速度和安全，它不仅仅是被网..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    linux |
+    
+    HERO
+</title>
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner3.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='hujun'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                生活如此简单有趣
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://example.com">
+                        HERO</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="linux">
+            
+            linux
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/linux/" rel="tag">linux</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2021/06/22</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="一、Linux简介"><a href="#一、Linux简介" class="headerlink" title="一、Linux简介"></a>一、Linux简介</h1><p>Linux 操作系统性能稳定，并且是<strong>开源的操作系统软件</strong>。它的防火墙相关的组件保证了系统的安全，且<strong>配置简单</strong>、<strong>性能高效</strong>。Linux 在很多企业网络中，追求速度和安全，它不仅仅是被网络运维人员当作服务器使用，也可以作为网络防火墙。Linux 开放源码并且没有版权，技术社区用户多等特点 ，开放源码使得用户可以自由裁剪，灵活性高，功能强大，成本低。尤其系统中内嵌网络协议栈 ，经过适当的配置就可实现路由器的功能。这些特点使得 Linux 成为开发路由交换设备的理想开发平台。</p>
+<h2 id="1-Linux特性"><a href="#1-Linux特性" class="headerlink" title="1.Linux特性"></a>1.Linux特性</h2><h5 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a><strong>基本思想</strong></h5><p>Linux 的基本思想有两点：第一，<strong>一切都是文件</strong>；第二，<strong>每个文件都有确定的用途</strong>。</p>
+<h5 id="完全免费"><a href="#完全免费" class="headerlink" title="完全免费"></a><strong>完全免费</strong></h5><p>Linux 是一款<strong>免费的操作系统</strong>，用户可以通过网络或其他途径免费获得，并可以任意修改其源代码。</p>
+<h5 id="完全兼容-POSIX1-0-标准"><a href="#完全兼容-POSIX1-0-标准" class="headerlink" title="完全兼容 POSIX1.0 标准"></a><strong>完全兼容 POSIX1.0 标准</strong></h5><p>这使得可以在 Linux 下通过相应的模拟器运行常见的 DOS、Windows 操作系统中的软件程序。</p>
+<h5 id="多用户、多任务"><a href="#多用户、多任务" class="headerlink" title="多用户、多任务"></a><strong>多用户、多任务</strong></h5><p>Linux 支持多用户，各个用户对于自己的文件设备有自己特殊的权利，保证了各用户之间互不影响。</p>
+<h5 id="良好的界面"><a href="#良好的界面" class="headerlink" title="良好的界面"></a><strong>良好的界面</strong></h5><p>Linux 同时具有字符界面和图形界面。在字符界面用户可以通过键盘输入相应的指令来进行操作。它同时也提供了类似于 Windows 图形界面的 X-Window 系统，用户可以使用鼠标对其进行操作。在 X-Window 环境中就和在 Windows 中相似，可以说是一个 Linux 版的 Windows 操作系统。</p>
+<h5 id="支持多种平台"><a href="#支持多种平台" class="headerlink" title="支持多种平台"></a><strong>支持多种平台</strong></h5><p>Linux 可以运行在多种硬件平台上，如具有 x86、680x0、SPARC、Alpha 等处理器的平台。此外 Linux 还是一种嵌入式操作系统，可以运行在掌上电脑、机顶盒或游戏机上。</p>
+<h2 id="2-Linux优点"><a href="#2-Linux优点" class="headerlink" title="2.Linux优点"></a>2.Linux优点</h2><p>Linux 由众多微内核组成，其源代码完全开源；</p>
+<p>Linux 继承了 UNIX 的特性，具有非常强大的网络功能，其支持所有的因特网协议，包括 TCP/IPv4、 TCP/IPv6 和链路层拓扑程序等，并且可以利用 UNIX 的网络特性开发出新的协议栈；</p>
+<p>Linux 系统工具链完整，简单操作就可以配置出合适的开发环境，可以简化开发过程，减少开发中仿真工具的障碍，使系统具有较强的移植性；</p>
+<h1 id="二、Linux发行版本"><a href="#二、Linux发行版本" class="headerlink" title="二、Linux发行版本"></a>二、Linux发行版本</h1><h2 id="1-Debian"><a href="#1-Debian" class="headerlink" title="1.Debian"></a>1.Debian</h2><p>Debian 计划是一个致力于创建一个自由操作系统的合作组织。我们所创建的这个操作系统名为 Debian。操作系统是使计算机运行的基本程序和工具的集合，其中最主要的部分称为内核（kernel）。内核是计算机中最重要的程序，负责一切基本的调度工作，并让您运行其他程序。Debian 系统目前采用 Linux 内核或者 FreeBSD 内核。</p>
+<h2 id="2-RedHat"><a href="#2-RedHat" class="headerlink" title="2.RedHat"></a>2.RedHat</h2><p><strong>红帽在 2014 年 6 月发布了最新旗舰版企业操作系统，红帽企业 Linux 7</strong>。基于红帽企业 Linux 7 操作系统，企业可整合裸机服务器、 虚拟机、基础设施即服务（IaaS）和平台即服务（PaaS），以构建一个强大稳健的数据中心环境，满足不断变化的业务需求。红帽卫星是一个综合性解决方案，它通过配置软件分发、补丁和配置管理，以及物理、虚拟和云环境的订阅管理为红帽系统提供完整的生命周期管理，为管理构建、部署、运行和淘汰系统所需的工具提供了单独的管理控制台和方法论。</p>
+<h2 id="3-Centos"><a href="#3-Centos" class="headerlink" title="3.Centos"></a>3.Centos</h2><p>CentOS（Community Enterprise Operating System，中文意思是社区企业操作系统）是 Linux 发行版之一，<strong>它是来自于 Red Hat Enterprise Linux 依照开放源代码规定释出的源代码所编译而成</strong>。由于出自同样的源代码，因此有些要求高度稳定性的服务器以 CentOS 替代商业版的 Red Hat Enterprise Linux 使用。两者的不同，<strong>在于 CentOS 完全开源</strong>。</p>
+<h2 id="4-Slackware"><a href="#4-Slackware" class="headerlink" title="4.Slackware"></a>4.Slackware</h2><p>Slackware Linux 是由 Patrick Volkerding 开发的 GNU/Linux 发行版。<strong>与很多其他的发行版不同</strong>，<strong>它坚持 KISS（Keep It Simple Stupid） 原则</strong>。一开始，配置系统会有一些困难，但是更有经验的用户会喜欢这种方式的透明性和灵活性。 Slackware 的很多特性体现出了 KISS 原则，最为有名的例子就是<strong>不依赖图形界面的文本化系统配置，传统的服务管理方式和不解决依赖的包管理</strong>。</p>
+<h2 id="5-Ubuntu"><a href="#5-Ubuntu" class="headerlink" title="5.Ubuntu"></a>5.Ubuntu</h2><p>Ubuntu 是一个以桌面应用为主的 Linux 操作系统，其名称来自非洲南部祖鲁语或豪萨语的 “ubuntu” 一词，意思是 “人性”、“我的存在是因为大家的存在”，是非洲传统的一种价值观。<strong>Ubuntu 基于 Debian 发行版和 Gnome 桌面环境，而从 11.04 版起，Ubuntu 发行版放弃了 Gnome 桌面环境，改为 Unity</strong>。从前人们认为 <strong>Linux 的难以安装、难以使用，在 Ubuntu 出现后这些都成为了历史</strong>。<strong>Ubuntu 也拥有庞大的社区力量，用户可以方便地从社区获得帮助</strong>。</p>
+<h1 id="三、centos目录介绍"><a href="#三、centos目录介绍" class="headerlink" title="三、centos目录介绍"></a>三、centos目录介绍</h1><table>
+<thead>
+<tr>
+<th><strong>目录名称</strong></th>
+<th><strong>功能与作用描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/bin</td>
+<td><strong>二进制应用程序目录</strong>，其中包含二进制文件 CentOS 系统所有用户使用的命令都在这个目录下。</td>
+</tr>
+<tr>
+<td>/boot</td>
+<td><strong>开机启动引导目录</strong>，启动 (boot) 配置文件，其中包括了 Linux 内核文件与开机所需要的文件。</td>
+</tr>
+<tr>
+<td>/dev</td>
+<td><strong>设备目录</strong>，设备 (device) 相关的文件和目录，其中包含了所有应用程序的配置文件，还包含了启动 / 停止某个程序的 shell 脚本。</td>
+</tr>
+<tr>
+<td>/etc</td>
+<td><strong>配置文件目录</strong>，配置文件、启动脚本等文件。</td>
+</tr>
+<tr>
+<td>/home</td>
+<td><strong>本地用户目录</strong>，所有不同权限的系统用户可在 home 目录分配存储个人用户的文件和资料。</td>
+</tr>
+<tr>
+<td>/lib</td>
+<td><strong>系统使用的函数库的目录</strong>，程序在执行过程中，需要调用一些额外的参数时需要函数库的协助。</td>
+</tr>
+<tr>
+<td>/lost+fount</td>
+<td>系统异常产生错误时，会将一些遗失的片段放置于此目录下，通常这个目录会自动出现在装置目录下。如加载硬盘于 /disk 中，此目录下就会自动产生目录 /disk/lost+found 。</td>
+</tr>
+<tr>
+<td>/media</td>
+<td>**挂载可移动介质 (media)**，诸如 CD、数码相机，软盘，光盘等，可移除设备挂载目录。</td>
+</tr>
+<tr>
+<td>/mnt</td>
+<td><strong>挂载 (mounted) 文件系统</strong>，临时安装目录，系统的管理员可拥有挂载文件系统的权限。</td>
+</tr>
+<tr>
+<td>/opt</td>
+<td><strong>第三方软件安装目录</strong>，第三方应用程序一般放在此目录下，但实际中通常习惯放在 /usr/local 目录下。</td>
+</tr>
+<tr>
+<td>/proc</td>
+<td><strong>特殊的动态信息目录</strong>，此目录的数据都在内存中，如系统核心，外部设备，网络状态，用以维护系统信息和状态，包括当前运行中进程 (processes) 信息。</td>
+</tr>
+<tr>
+<td>/root</td>
+<td><strong>root 用户主文件夹</strong>，读作 “slash-root” ，其他用户均放置在 /home 目录下</td>
+</tr>
+<tr>
+<td>/run</td>
+<td><strong>系统运行的时候所需的文件</strong>，以前在 /var/run 中，后来拆分成独立的 /run 目录，重启后重新生成对应的目录数据。</td>
+</tr>
+<tr>
+<td>/sbin</td>
+<td><strong>重要的系统二进制 (system binaries) 文件</strong>，也是包含的二进制可执行文件。在这个目录下的 linux 命令通常都是由系统管理员使用的，对系统进行维护。</td>
+</tr>
+<tr>
+<td>/srv</td>
+<td>服务启动后需要访问的数据目录。</td>
+</tr>
+<tr>
+<td>/sys</td>
+<td><strong>系统 (system) 文件</strong>，跟 proc 一样虚拟文件系统，记录核心系统硬件信息。</td>
+</tr>
+<tr>
+<td>/tmp</td>
+<td><strong>临时文件目录</strong>，存放临时文件目录，所有用户对该目录均可读写。</td>
+</tr>
+<tr>
+<td>/usr</td>
+<td><strong>应用程序放置目录</strong>，包含绝大部分所有用户 (users) 都能访问的应用程序和文件。</td>
+</tr>
+<tr>
+<td>/var</td>
+<td><strong>经常变化的 (variable) 文件</strong>，存放系统执行过程经常改变的文件，代表变量文件。在这个目录下可以找到内容可能增长的文件。</td>
+</tr>
+</tbody></table>
+<h1 id="四、Linux常用指令"><a href="#四、Linux常用指令" class="headerlink" title="四、Linux常用指令"></a>四、Linux常用指令</h1><h2 id="1、ls查看文件和目录列表"><a href="#1、ls查看文件和目录列表" class="headerlink" title="1、ls查看文件和目录列表"></a>1、ls查看文件和目录列表</h2><p>1.列出目录列表</p>
+<p>ls:列出来的目录排序默认是按字母的列排序</p>
+<p>2.列出有标记的目录列表</p>
+<p>ls -F :列出的文件名称后面会加一个标识，其中 * 表示可执行文件，/ 表示目录，= 表示 socket 文件，@ 表示 软链接，| 表示 FIFOs 文件。</p>
+<p>3.列出包含隐藏文件的列表</p>
+<p>ls -a :列出当前目录包含隐藏文件的所有文件列表</p>
+<p>4.使用多个参数列出文件列表</p>
+<p>ls -F -R -a 或者ls -FRa </p>
+<p>5.使用ll命令显示文件列表详细信息</p>
+<p>ll 命令是 ls -l 的简写，它可以显示出文件的权限、属主、大小、最后修改时间等等信息</p>
+<p><strong>ll后显示信息：</strong></p>
+<p><img src="https://pic.imgdb.cn/item/614aec3e2ab3f51d919a83fb.jpg"></p>
+<p><strong>5.1最左侧一列表示该文件的类型：</strong></p>
+<p>· <strong>“-”</strong> 表示普通文件；</p>
+<p>· <strong>“d”</strong> 表示目录；</p>
+<p>· <strong>“l”</strong> 表示链接文件；</p>
+<p>· <strong>“p”</strong> 表示管理文件；</p>
+<p>· <strong>“b”</strong> 表示块设备文件。</p>
+<p><strong>5.2文件属性：</strong></p>
+<p><img src="https://pic.imgdb.cn/item/614aecbe2ab3f51d919b0c24.jpg"></p>
+<p>这里以 boot 目录为例，r-xr-xr-x 可以分为三部分 [r-x][r-x][r-x]，其中的第一部分表示文件创建者/所有者对该文件所具有的的权限，第二部分表示创建者/所有者所在的组其他用户的权限，第三部分表示其他组的用户的权限。</p>
+<p>· <strong>r（Read，读取权限）</strong>：若是文件，则表示可以读取文件内容，若是目录，则表示可以浏览目录；</p>
+<p>· <strong>w（Write，写入权限）</strong>：若是文件，则表示可以新增、修改内容，若是目录，则表示可以删除、移动目录列表的权限；</p>
+<p><strong>x（Execute，执行权限）</strong>：若是文件，则表示具有执行文件的权限，若是目录，则表示该用户拥有进入目录的权限。</p>
+<p><strong>5.3 目录/链接个数</strong></p>
+<p><img src="https://pic.imgdb.cn/item/614aecf52ab3f51d919b4635.jpg"></p>
+<p>如果是目录那么这里的数量减 2 表示它下级目录或者文件的个数。</p>
+<p>如果是文件则表示指向它的链接文件的数量。</p>
+<p><strong>Tips</strong>：每个目录下面都包含有 . 和 .. 目录，其中 <strong>.</strong> 表示当前目录，.. 表示上级目录。文件链接相当于 windows里面的快捷方式。</p>
+<p><strong>5.4 文件所有者</strong></p>
+<p><img src="https://pic.imgdb.cn/item/614aed912ab3f51d919bf49f.jpg"></p>
+<p>其中 root root 可以分为两部分，[root] [root]，前面的 root 表示该文件或目录的所有者/创建者是 root 用户，后面的 root 表示该文件或目录所在的组是 root。</p>
+<p><strong>5.5 文件的大小</strong></p>
+<p><img src="https://pic.imgdb.cn/item/614aedc02ab3f51d919c23e2.jpg"></p>
+<p>· 如果是则表示该文件的大小，单位是字节(byte)。</p>
+<p>· 如果是目录则表示该目录所占的空间大小，并不是指该目录下所有文件的大小。</p>
+<p><strong>5.6 修改日期</strong></p>
+<p><img src="https://pic.imgdb.cn/item/614aee022ab3f51d919c69b1.jpg"></p>
+<p>表示最后修改的时间，以 boot 目录为例，表示最后修改或者创建时间是 4 月 19 日 12:27。</p>
+<p><strong>5.7 文件名称</strong></p>
+<p><img src="https://pic.imgdb.cn/item/614aee2e2ab3f51d919c974f.jpg"></p>
+<p>表示文件名，其中 bin-&gt;usr/bin 表示软链接。</p>
+<p><strong>5.8 字体颜色</strong></p>
+<p><img src="https://pic.imgdb.cn/item/614aee432ab3f51d919cb5df.jpg"></p>
+<p>· 亮黄色表示设备文件；</p>
+<p>· 亮蓝色表示链接文件；</p>
+<p>· 灰蓝色表示目录；</p>
+<p>· 亮红色表示压缩文件；</p>
+<p>· 亮绿色表示可执行文件；</p>
+<p>· 灰白色表示普通文件。</p>
+<ol start="6">
+<li>ls命令参数介绍</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th><strong>ls 命令参数名称</strong></th>
+<th><strong>功能与作用描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>表示 –all， 列出目录下的所有文件,包括以 . 开头的隐藏文件。</td>
+</tr>
+<tr>
+<td>-A</td>
+<td>表示 -a，但不列出 .(表示当前目录) 和 .. (表示当前目录的上级目录)。</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>表示按照最后更改时间排序,可以使用 -l 显示出时间。</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>对输出的文件不进行排序。</td>
+</tr>
+<tr>
+<td>-g</td>
+<td>类似 -l,列出目录信息。</td>
+</tr>
+<tr>
+<td>-G</td>
+<td>表示 –no-group，不列出任何有关组的信息。</td>
+</tr>
+<tr>
+<td>-h</td>
+<td>表示 –human-readable，与 -l 配合使用，如 ls -lh以容易理解的格式列出文件大小，如 10k、20M、100G。</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>表示 –inode，打印出每个文件的 inode 号。</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>除了文件名之外，还将文件的权限、所有者、文件大小等信息详细列出来，ls -l 可以简写为 ll。</td>
+</tr>
+<tr>
+<td>-L</td>
+<td>表示 –dereference，当显示符号链接的文件信息时，显示符号链接所指示的对象而并非符号链接本身的信息。</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>所有文件或目录以 , 分隔，并填满整行行宽。</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>类似 -l,显示文件的除组信息外的详细信息。</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>表示 –reverse，按照当前排序顺序相反的顺序排列。</td>
+</tr>
+<tr>
+<td>-R</td>
+<td>表示 –recursive，递归出所有子目录层。</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>表示 –size，以块大小为单位列出所有文件的大小。</td>
+</tr>
+<tr>
+<td>-S</td>
+<td>根据文件大小排序。</td>
+</tr>
+</tbody></table>
+<h2 id="2、cd-命令"><a href="#2、cd-命令" class="headerlink" title="2、cd 命令"></a>2、cd 命令</h2><p>1.pwd 查看当前所在目录的绝对路径</p>
+<p><img src="https://pic.imgdb.cn/item/614aef3d2ab3f51d919dcdab.jpg"></p>
+<p>如图所示显示的绝对路径是以 / 开头的，/ 表示根目录</p>
+<p>2.cd 切换至下级目录</p>
+<p>若想要进入当前目录的下一级某个目录，可以使用 cd 跟上相对路径，这里以切换至 usr 目录为例：</p>
+<p>演示执行过程如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614aef872ab3f51d919e2456.jpg"></p>
+<p>cd usr/ 表示切换至当前目录的下级目录 usr，左侧没有 / 表示相对路径，若使用 cd ./usr/，那么其中的 . 表示当前目录，可以通过 ls -a 命令查看到。</p>
+<p>3.cd 切换至上级目录的其他目录</p>
+<p>前面已经切换至 /usr 目录了，若想要切换至 /var 目录则可以使用 ../ 来表示上级目录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pwd</span><br><span class="line">cd ../var/</span><br><span class="line">pwd</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614aefd82ab3f51d919e7d47.jpg"></p>
+<p>如图所示，cd ../var/ 表示切换至当前目录的上级目录下的 var 目录，其中 ../ 表示上级目录，可通过 ls -a 查看到</p>
+<p>4.cd 切换至绝对路径</p>
+<p>可以使用 cd 跟上绝对路径切换至指定的绝对路径，这里以切换至 /etc/sysconfig/network-scripts 为例:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/sysconfig/network-scripts</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如图：</p>
+<p><img src="https://pic.imgdb.cn/item/614af0322ab3f51d919edbcb.jpg"></p>
+<p>5.使用Tab键自动补全</p>
+<p>若每一个目录名称一个个敲出来就会显得有些繁琐，这个时候就可以使用 Tab 键来自动补全了，演示结果如下图所示：</p>
+<p><img src="https://pic.imgdb.cn/item/614af07b2ab3f51d919f3a92.jpg"></p>
+<h2 id="3、创建文件和目录"><a href="#3、创建文件和目录" class="headerlink" title="3、创建文件和目录"></a>3、创建文件和目录</h2><p>1.touch 创建文件</p>
+<p>实际业务中，有些应用程序写入日志时要求需要先存在指定的日志文件，创建文件命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch error.log</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614af0e72ab3f51d919fbf2a.jpg"></p>
+<p>可以看到新建的 error.log 文件大小为 0 (空文件)，文件的属主用户是当前登录的 root 用户,文件默认的权限是 rw-r–r–，关于权限相关的知识，后面小节会详细介绍。</p>
+<p>2.mkdir 创建目录</p>
+<p>若想要创建一个目录，可以使用 mkdir 目录名 来创建一个新的空目录，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir new_dir</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下：</p>
+<p><img src="https://pic.imgdb.cn/item/614af1352ab3f51d91a02e0d.jpg"></p>
+<p>如图所示，新建的 new_dir 目录大小为 0，目录的属主用户是当前登录的 root 用户，目录的默认权限是 rwxr-xr-x，目录中文件或目录的数量是 2（目录中默认会有 . 和 ..，分别表示当前目录、上级目录）。</p>
+<p>3.使用ls命令查看指定文件或目录信息</p>
+<p>上面新创建的文件或目录可以使用 ls -l 命令指定地展示其信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls -l error.log</span><br><span class="line">ls -l new_dir</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/614af1902ab3f51d91a08e2a.jpg"></p>
+<h2 id="4、rm删除文件和目录"><a href="#4、rm删除文件和目录" class="headerlink" title="4、rm删除文件和目录"></a>4、rm删除文件和目录</h2><p>1.删除文件</p>
+<p>使用 rm 文件名 命令可以删除文件，以删除普通文件为例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls -l  # 列出当前目录下的所有文件</span><br><span class="line">rm test.c  # 使用 rm 命令删除 test.c 文件</span><br><span class="line">ls -l # 再次查看当前目录下的所有文件</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614af8562ab3f51d91a7db48.jpg"></p>
+<p>2.强制删除文件</p>
+<p>直接使用 rm 命令删除文件的话会提示你一次是否确定删除文件。使用 rm -f 可以不需要提示强制删除文件，以删除普通文件为例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls -l # 列出当前目录下的所有文件</span><br><span class="line">rm -f a.out # 加上 -f 参数强制删除 a.out 文件</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614af8982ab3f51d91a82130.jpg"></p>
+<p>实际业务中尽量不要使用 -f 删除文件，使用这种方式删除几乎不能恢复，所以删除文件时需要谨慎。</p>
+<p>3.递归删除目录和子目录下所有文件 </p>
+<p>有时候需要删除多层目录以及目录下的文件，可以使用 rm -r 递归删除，以删除 /home/data 目录为例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls -l # 列出当前目录下的所有文件</span><br><span class="line">cd /home/data # 进入 /home/data 目录</span><br><span class="line">ls -l  # 列出当前目录下的所有文件</span><br><span class="line">cd .. # 返回上一级目录</span><br><span class="line">rm -rf data/ # 递归删除 data/ 目录下所有文件</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下：</p>
+<p><img src="https://pic.imgdb.cn/item/614af8ec2ab3f51d91a87d3c.jpg"></p>
+<p>4.rm 删除命令参数介绍</p>
+<p>可以使用 rm –help 命令来查看 rm 相关的参数介绍：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm --help</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614af92d2ab3f51d91a8c4a6.jpg"></p>
+<p>下面列举出 rm 常见的参数和描述：</p>
+<table>
+<thead>
+<tr>
+<th><strong>rm 命令参数名称</strong></th>
+<th><strong>功能与作用描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-f</td>
+<td>表示 –force，忽略不存在的文件和参数，不提示任何信息，强制删除。</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>进行任何删除操作前必须先确认。</td>
+</tr>
+<tr>
+<td>-r/-R</td>
+<td>表示 –recursive，递归删除该目录下的所有目录层。</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>表示 –dir，删除可能包含有数据的目录。</td>
+</tr>
+</tbody></table>
+<h2 id="5、Mv移动文件和目录"><a href="#5、Mv移动文件和目录" class="headerlink" title="5、Mv移动文件和目录"></a>5、Mv移动文件和目录</h2><p>1.移动文件或目录至另外一个目录下</p>
+<p>可以使用 mv file_name 路径 这种格式，移动文件至其他目录下，后面跟的路径可以是相对路径，也可以是绝对路径，这里的路径操作和 cd 命令类似，下面介绍移动文件命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ls -l # 列出当前目录下所有文件</span><br><span class="line">mv test.txt /usr/local # 使用 mv 命令将 text.txt 移动到 /usr/local 路径下</span><br><span class="line">ls -l # 再次查看当前目录下的文件</span><br><span class="line">cd /usr/local # 进入 /usr/local 文件夹下</span><br><span class="line">ls -l # 查看 /usr/local 目录下的文件信息</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614af9c72ab3f51d91a95afb.jpg"></p>
+<p>可以看到 text.txt 文件已经被移动到 /usr/local 目录下了。</p>
+<p><strong>Tips</strong>：注意这里直接移动可能会造成同名文件或目录覆盖。</p>
+<p>2.带有覆盖提示的文件或移动</p>
+<p>如果要移动的目标路径下有同名文件，若不想同名文件被覆盖，可以使用 -i 参数询问是否需要覆盖，这里可以自行在两个目录下创建同名的文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ls -l # 列出当前目录下所有文件</span><br><span class="line">mv -i error.log study/ # 使用 -i 参数询问是否覆盖目标路径下的同名文件</span><br><span class="line">ls -l # 再次查看当前目录下的文件</span><br><span class="line">cd study/ # 进入 study/ 文件夹下</span><br><span class="line">ls -l # 查看 study/ 目录下的文件信息</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614afa212ab3f51d91a9bc4c.jpg"></p>
+<p><strong>Tips</strong>：这里只是演示了移动文件，移动目录和移动文件的操作是一样的，参照上述步骤即可。</p>
+<p>3.mv 移动命令参数介绍</p>
+<p>可以使用 mv –help 命令来查看 mv 相关的参数介绍：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv --help</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614afa5b2ab3f51d91a9f738.jpg"></p>
+<p>下面列举出 mv 常见的参数和描述:</p>
+<table>
+<thead>
+<tr>
+<th><strong>mv 命令参数名称</strong></th>
+<th><strong>功能与作用描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-b</td>
+<td>若有文件覆盖时，则覆盖前先行备份。</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>表示 –force，强制的意思，若目标文件已存在，则不会询问直接覆盖掉。</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>表示 –interactive，若目标文件已经存在时，就会询问是否覆盖。</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>表示 –no-clobber，不会覆盖已经存在的文件。</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>表示 –update，若目标文件已经存在，且 source 比较新，才会更新</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>表示 –target，指定 mv 的目标目录，该选项适用于移动多个源文件到一个目录的情况，此时目标目录在前，源文件在后。</td>
+</tr>
+</tbody></table>
+<h2 id="6、文件压缩与解压"><a href="#6、文件压缩与解压" class="headerlink" title="6、文件压缩与解压"></a>6、文件压缩与解压</h2><p>1.tar命令介绍</p>
+<p>下面列举 tar 命令的参数：</p>
+<table>
+<thead>
+<tr>
+<th><strong>tar 命令参数名称</strong></th>
+<th><strong>功能与作用描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-c</td>
+<td>新建立压缩档案</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>解压缩</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>查看内容</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>更新原压缩包的内容</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>gzip 属性的</td>
+</tr>
+<tr>
+<td>-j</td>
+<td>bz2 属性的</td>
+</tr>
+<tr>
+<td>-Z</td>
+<td>compress 属性的</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示所有过程</td>
+</tr>
+<tr>
+<td>-O</td>
+<td>将文件解压缩成标准输出形式</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>使用档案名字，此参数都是在最后，其后面跟上一个档案的名字</td>
+</tr>
+</tbody></table>
+<p><strong>Tips</strong>：其中 -c、-x、-t、-u 这五个参数是独立的，每次使用选其中一个，-f 是最后一个参数，后面跟上档案名。</p>
+<p>1.1 将指定类型文件打包成 tar 包</p>
+<p>为了演示方便，先切入到 /home 目录下，使用 touch 命令创建几个 .txt 文件，然后使用 tar 命令将其打包，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /home</span><br><span class="line">touch a.txt b.txt c.txt d.txt e.txt</span><br><span class="line">ls -l</span><br><span class="line">tar -cf alltxt.tar *.txt </span><br><span class="line">ls -l</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614afcdd2ab3f51d91acb4e4.jpg"></p>
+<p><strong>Tips</strong>：其中 alltxt.tar 是一个自定义名称，后缀是 tar ,前半部分的名字可自行定义， *.txt 中的 * 表示通配符代表所有的意思。</p>
+<p>1.2 向现有的 tar 包中新增文件</p>
+<p>这里再使用 touch 命令创建一个 g.txt 文件,使用 tar 命令将其新增至 alltxt.tar 中，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch g.txt</span><br><span class="line">tar -rf alltxt.tar g.txt</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614afd0e2ab3f51d91acef30.jpg"></p>
+<p>1.3 更新 原来 tar 包中的文件</p>
+<p>使用 rm 命令删除 /home 目录中的 a.txt ，然后新建一个 a.txt 表示为更新后的 a.txt，使用 tar 命令将 a.txt 更新至 alltxt.tar 中，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rm -f a.txt</span><br><span class="line">touch a.txt</span><br><span class="line">tar -uf alltxt.tar a.txt</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614afd372ab3f51d91ad17ec.jpg"></p>
+<p><strong>Tips</strong>：若 alltxt.tar 中没有 a.txt，那么使用 tar -uf 就会将 a.txt 新增到 alltxt.tar 中。</p>
+<p>1.4 列出 tar 包中打包的所有文件</p>
+<p>这里为了演示方便，将 /home 目录原有的 .txt 文件全都删除掉，然后使用 tar 命令查看 alltxt.tar 中所有文件列表，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br><span class="line">rm -f *.txt</span><br><span class="line">ls</span><br><span class="line">tar -tf alltxt.tar</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614afd672ab3f51d91ad4c7b.jpg"></p>
+<p>1.5 解开 tar 包中所有文件</p>
+<p>接着上面的内容，可以使用 tar 命令将 alltxt.tar 解开把文件释放到当前目录，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br><span class="line">tar -xf alltxt.tar</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614afd9b2ab3f51d91ad82cd.jpg"></p>
+<p>1.6 使用 tar 命令压缩</p>
+<p>上面打包的 alltxt.tar 文件并没有压缩文件，只是把文件都打包在一起，如下命令可以把 alltxt.tar 压缩成为不同格式的压缩包：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br><span class="line">tar -czf alltxt.tar.gz alltxt.tar</span><br><span class="line">ls</span><br><span class="line">tar -cjf alltxt.tar.bz2 alltxt.tar</span><br><span class="line">ls</span><br><span class="line">tar -cZf alltxt.tar.Z alltxt.tar</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614afdc82ab3f51d91adaf28.jpg"></p>
+<p><strong>Tips</strong>：命令中参数的含义可参考前面参数表格中的功能描述。</p>
+<p>1.7 使用 tar 命令解压缩</p>
+<p>为了演示方便，防止读者混淆，先将 alltxt.tar.gz、alltxt.tar.bz2、alltxt.tar.Z 三种格式压缩包移动至 study 目录，然后使用 tar 命令解压，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls </span><br><span class="line">mv alltxt.tar.gz study/</span><br><span class="line">mv alltxt.tar.bz2 study/</span><br><span class="line">mv alltxt.tar.Z study/</span><br><span class="line">cd study/</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+
+<p>移动过程执行如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614afdf42ab3f51d91add99b.jpg"></p>
+<p>如上图所示，将需要解压的三种格式压缩包移动至 /home/study 目录中，下面对其解压缩，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br><span class="line">tar -zxvf alltxt.tar.gz</span><br><span class="line">ls</span><br><span class="line">rm -f alltxt.tar</span><br><span class="line">ls</span><br><span class="line">tar -jxvf alltxt.tar.bz2</span><br><span class="line">ls</span><br><span class="line">rm -f alltxt.tar</span><br><span class="line">ls</span><br><span class="line">tar -Zxvf alltxt.tar.Z</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614afe162ab3f51d91adff9a.jpg"></p>
+<p><strong>Tips</strong>：命令中参数的含义可参考前面参数表格中的功能描述。</p>
+<ol start="2">
+<li>zip 格式压缩与解压</li>
+</ol>
+<p>CentOS 8 系统中自带 zip、unzip 压缩与解压工具，可以使用 zip -v、unzip -v 命令查看当前是否安装 zip、unzip 工具，若是没有安装，则可以使用如下命令安装：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y update</span><br><span class="line">yum -y install zip unzip</span><br></pre></td></tr></table></figure>
+
+<p>安装过程如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614afe452ab3f51d91ae2980.jpg"></p>
+<p>如上图所示，先要更新 yum 源的软件包数据，如下图所示为安装 zip、unzip 的过程执行图：</p>
+<p><img src="https://pic.imgdb.cn/item/614afe592ab3f51d91ae40d3.jpg"></p>
+<p><strong>Tips</strong>：yum 是 Linux 中的一个软件管理仓库，关于 yum 如何安装软件后续小节会详细介绍。</p>
+<p>2.1 使用 zip 压缩文件</p>
+<p>使用 zip 命令可以将 alltxt.tar 包压缩为 .zip 压缩包，命令如下：</p>
+<p>执行结果如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br><span class="line">zip alltxt.zip alltxt.tar</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+
+<p><strong>Tips</strong>：可以使用 zip -r zip包名 目录名 递归压缩目录以及目录中所有文件。</p>
+<p><img src="https://pic.imgdb.cn/item/614afe8c2ab3f51d91ae75eb.jpg"></p>
+<p>2.2 使用 unzip 解压缩</p>
+<p>为了演示方便，先将 alltxt.zip 文件移动至 /home/study 中，然后解压，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br><span class="line">mv alltxt.zip study/</span><br><span class="line">cd study/</span><br><span class="line">ls</span><br><span class="line">unzip alltxt.zip</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614afeb42ab3f51d91aeaa44.jpg"></p>
+<h2 id="7、文件和目录重名"><a href="#7、文件和目录重名" class="headerlink" title="7、文件和目录重名"></a>7、文件和目录重名</h2><p>1.使用mv命令对文件名称</p>
+<p>这里还是以 /home 目录的 alltxt.tar 文件为例，可以使用 mv 命令对其重命名：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br><span class="line">mv alltxt.tar newtxt.tar</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614b064a2ab3f51d91b62579.jpg"></p>
+<p>如上图所示相当于文件移动路径没变，名称变了，还可以在移动文件路径之后修改文件的名称，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br><span class="line">mv newtxt.tar study/home_newtxt.tar</span><br><span class="line">ls</span><br><span class="line">cd study/</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614b081b2ab3f51d91b81416.jpg"></p>
+<p><strong>Tips</strong>：目录的重命名和文件的重命名方法一样。</p>
+<ol start="2">
+<li>使用 rename 命令修改文件名称</li>
+</ol>
+<p>首先下面先列出 rename 参数的功能描述，可以使用 rename –help 命令查看其参数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rename --help</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614b084c2ab3f51d91b84813.jpg"></p>
+<p>下面列举了部分参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>rename 命令参数名称</th>
+<th>功能与作用描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-v</td>
+<td>表示 –verbose，打印修改之后文件的名称</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>表示 –no-act，测试命令，执行之后不会改变任何内容</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>表示 –no-overwrite，表示重命名之后不会覆盖原有文件</td>
+</tr>
+</tbody></table>
+<p>这里还是以 /home/study 目录中的 home_newtxt.tar 为例，使用 rename 命令对其重命名，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /home/study</span><br><span class="line">ls</span><br><span class="line">rename home_newtxt newtxt  home_newtxt.tar</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下：</p>
+<p><img src="https://pic.imgdb.cn/item/614b08b12ab3f51d91b8ac05.jpg"></p>
+<h2 id="8、查找文件和目录"><a href="#8、查找文件和目录" class="headerlink" title="8、查找文件和目录"></a>8、查找文件和目录</h2><ol>
+<li>按照文件类型查找</li>
+</ol>
+<p>使用 -type 参数可以查找不同类型的文件，其可以查找的文件类型如下：</p>
+<table>
+<thead>
+<tr>
+<th>find -type 文件类型介绍</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>f</td>
+<td>普通文件</td>
+</tr>
+<tr>
+<td>d</td>
+<td>目录文件</td>
+</tr>
+<tr>
+<td>l</td>
+<td>符号链接文件</td>
+</tr>
+<tr>
+<td>b</td>
+<td>块设备文件</td>
+</tr>
+<tr>
+<td>c</td>
+<td>字符设备文件</td>
+</tr>
+<tr>
+<td>p</td>
+<td>管道文件</td>
+</tr>
+<tr>
+<td>s</td>
+<td>套接字文件</td>
+</tr>
+</tbody></table>
+<p>这里以查找 /home 目录中的所有目录为例，使用 find 命令跟上 -type 来限制文件类型，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /</span><br><span class="line">find ./home -type d</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614b0a202ab3f51d91ba182e.jpg"></p>
+<p><strong>Tips</strong>：find ./home -type d 其中的 ./home 表示要查找的相对路径的目录， -type d 表示查找文件类型为目录。</p>
+<p>2.按照文件名查找</p>
+<p>使用 -name 参数可以按照文件名来查找，这里以查找 /home 目录下所有的 .txt 文件为例，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /</span><br><span class="line">find ./home -name *.txt</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614b0a642ab3f51d91ba5935.jpg"></p>
+<p><strong>Tips</strong>：find ./home -name <em>.txt 其中的 ./home 表示要查找的相对路径目录，-name 表示按照文件名查找，</em>.txt 表示文件名匹配规则，* 表示通配符，还可以查找指定文件名，如 find ./home -name a.txt。</p>
+<p>3.查找排除指定文件</p>
+<p>可以在查找文件的时候使用 ! 取反来排除指定的文件，例如查找 /home 目录中除了 .txt 文件以外的所有文件，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /</span><br><span class="line">find ./home -name *.txt</span><br><span class="line">find ./home ! -name a.txt</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614b0a642ab3f51d91ba5935.jpg"></p>
+<p><strong>Tips</strong>：find ./home ! -name a.txt 中的 ! 可以理解为排除符合要求的文件。</p>
+<p>4.对查找到的文件执行操作</p>
+<p>有时候需要对查找到的指定文件执行特定的操作：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /</span><br><span class="line">find ./home -name *.txt</span><br><span class="line">find ./home -name *.txt -exec rm &#123;&#125; \;</span><br><span class="line">find ./home -name *.txt</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614b0c662ab3f51d91bc3ef6.jpg"></p>
+<p><strong>Tips</strong>：注意 find ./home -name *.txt -exec rm {} ; 后面的 ; 不要漏掉， -exec 表示执行某个操作，rm 表示删除操作。</p>
+<h2 id="9、查看文件内容"><a href="#9、查看文件内容" class="headerlink" title="9、查看文件内容"></a>9、查看文件内容</h2><p>1.file 查看文件类型</p>
+<p>file 命令可以用来查看文件类型，还能查看文件的编码格式，下面列举一些 file 命令的参数：</p>
+<table>
+<thead>
+<tr>
+<th>file 命令参数名称</th>
+<th>功能与作用描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-b</td>
+<td>表示 –brief，显示查看结果时，不显示文件名</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>表示 –checking-printout，显示指令执行过程</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>表示 –files-from FILE，列出文件中文件名的文件类型</td>
+</tr>
+<tr>
+<td>-F</td>
+<td>表示 –separator STRING，使用指定符号替换输出文件名后的默认的 ：</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>输出 mime 类型的字符串</td>
+</tr>
+<tr>
+<td>-L</td>
+<td>表示 –dereference，查看对应软链接对应文件的文件类型</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>表示 –uncompress，尝试查看压缩文件信息</td>
+</tr>
+</tbody></table>
+<p>1.1 查看文件类型</p>
+<p>这里还是以 /home 目录里面的文件为例，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cd /home</span><br><span class="line">ls</span><br><span class="line">file a.txt</span><br><span class="line">file new_dir</span><br><span class="line">cd study/</span><br><span class="line">file alltxt.tar</span><br><span class="line">file alltxt.tar.gz</span><br><span class="line">file alltxt.tar.bz2</span><br><span class="line">file alltxt.tar.Z</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614b0ceb2ab3f51d91bcd4d9.jpg"></p>
+<p><strong>Tips</strong>：如图所示，使用 file 命令可以看到文件的编码、文件类型。</p>
+<p>1.2 查看文件时不显示文件名称</p>
+<p>在 file 命令后面跟上一个 -b 参数重复一次上面的流程，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cd /home</span><br><span class="line">ls</span><br><span class="line">file -b a.txt</span><br><span class="line">file -b new_dir</span><br><span class="line">cd study/</span><br><span class="line">file -b alltxt.tar</span><br><span class="line">file -b alltxt.tar.gz</span><br><span class="line">file -b alltxt.tar.bz2</span><br><span class="line">file -b alltxt.tar.Z</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/614b0d142ab3f51d91bcfc6b.jpg"></p>
+<p><strong>Tips</strong>：如图所示使用 -b 参数查看的文件信息时没有打印出文件名。</p>
+<p>1.3 查看压缩包信息</p>
+<p>进入到 /home/study，使用 -z 参数去查看压缩包信息，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /home/study</span><br><span class="line">ls</span><br><span class="line">file -z alltxt.tar.gz</span><br><span class="line">file -z alltxt.tar.bz2</span><br><span class="line">file -z alltxt.tar.Z</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614b0d3c2ab3f51d91bd26b6.jpg"></p>
+<p><strong>Tips</strong>：如图所示，展示了压缩包相关的信息。</p>
+<p>2.cat 查看文件内容</p>
+<p>cat 命令可以用来查看文件内容，下面列举一些 cat 命令的参数：</p>
+<table>
+<thead>
+<tr>
+<th>cat 命令参数名称</th>
+<th>功能与作用描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-A</td>
+<td>表示 –show-all，展示所有内容</td>
+</tr>
+<tr>
+<td>-b</td>
+<td>表示 –number-nonblank，对查看的内容的非空行，对其行数编号</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>表示 –number，对查看的内容行数编号输出</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>表示 –show-nonprinting，使用^ 和M- 引用，除了LFD和 TAB 之外</td>
+</tr>
+<tr>
+<td>-E</td>
+<td>表示 –show-ends，在每行的最后展示KaTeX parse error: Expected ‘EOF’, got ‘符’ at position 1: 符̲号；就是无论你输入了什么，屏幕…符号结尾</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>同 -vE</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>表示 –squeeze-blank，抑制空行输入，就是如果你有多行连续的空行，他会压缩成一行输出</td>
+</tr>
+<tr>
+<td>-T</td>
+<td>表示 –show-tabs，将跳格字符显示为^I</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>同 -VT</td>
+</tr>
+</tbody></table>
+<p>2.1 查看文件所有内容</p>
+<p>这里以之前小节配置过的 /etc/sysconfig/network-scripts/ifcfg-ens160 文件为例，使用如下命令查看其中的内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/sysconfig/network-scripts</span><br><span class="line">ls</span><br><span class="line">cat ifcfg-ens160</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/614b0d812ab3f51d91bd6911.jpg"></p>
+<p><strong>Tips</strong>：在输入路径或者文件名称的时候可以使用 Tab 键来补全。</p>
+<p>2.2 对查看内容编排</p>
+<p>命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat -b ifcfg-ens160</span><br><span class="line">cat -n ifcfg-ens160</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614b0da42ab3f51d91bd8a29.jpg"></p>
+<p><strong>Tips</strong>：-b 表示排除掉空行的内容，然后对其输出编号，会后会补上一行空行展示出来。</p>
+<p>3.more 命令查看文件内容</p>
+<p>more 命令也用来查看文件内容，下面列举一些 more 命令的参数：</p>
+<table>
+<thead>
+<tr>
+<th>more 命令参数名称</th>
+<th>功能与作用描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+n</td>
+<td>从第 n 行开始显示</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>定义屏幕大小为 n 行</td>
+</tr>
+<tr>
+<td>+/pattern</td>
+<td>在每个档案显示前搜寻该字串 pattern，然后从该字串前两行之后开始显示</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>从顶部清屏，然后显示</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>提示 Press space to continue，’q’ to quit（按空格键继续，按q键退出），而禁用响铃功能</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>忽略 Ctrl+l（换页） 字符</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>通过清除窗口而不是滚屏来对文件进行换页，与 -c 选项相似</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>把连续的多个空行显示为一行</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>把文件内容中的下画线去掉</td>
+</tr>
+</tbody></table>
+<p>这里以查看 /etc/mtools.conf 文件内容为例，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc</span><br><span class="line">more mtools.conf</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614b0df32ab3f51d91bde19b.jpg"></p>
+<p><strong>Tips</strong> : 如图中所示，可以按空格键继续浏览剩下内容，也可以按 q 键结束浏览。</p>
+<ol start="4">
+<li>tail 命令查看文件内容</li>
+</ol>
+<p>tail 命令也用来查看文件内容，下面列举一些 tail 命令的参数：</p>
+<table>
+<thead>
+<tr>
+<th>tail 命令参数名称</th>
+<th>功能与作用描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-f</td>
+<td>表示 –follow[={name|descriptor}]，该参数用于监听文件新增内容。</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>表示 –bytes=[+]NUM，从 num 字节位置读取指定文件</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>表示 –lines=[+]NUM，从 num 行位置读取指定文件。</td>
+</tr>
+<tr>
+<td>-F</td>
+<td>同 -f</td>
+</tr>
+<tr>
+<td>-q</td>
+<td>表示 –quiet，从不输出给出文件名的首部</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>表示 –sleep-interval=N，与-f合用,表示在每次反复的间隔休眠S秒</td>
+</tr>
+</tbody></table>
+<p>4.1 查看文件最后几行内容</p>
+<p>以 /etc/mtools.conf 文件为例，如要查看最后 6 行内容，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc</span><br><span class="line">tail -5 mtools.conf</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614b0e2d2ab3f51d91be18a7.jpg"></p>
+<p><strong>Tips</strong>：使用如图所示的命令可以查看 mtools.conf 文件的最后 5 行内容。</p>
+<p>4.2 查看指定行数的内容</p>
+<p>以 /etc/mtools.conf 文件为例，如要从第 45 行开始显示内容，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -n +45 mtools.conf</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614b0e542ab3f51d91be418d.jpg"></p>
+<p><strong>Tips</strong>：使用如图所示的命令可以查看 mtools.conf 文件的第 45 行开始的内容。</p>
+<p>4.3 监听日志文件</p>
+<p>在实际工作中，经常会使用 -f 去监听日志新增内容，达到开发者调试的目的，这里为了演示方便，需要打开之前安装过的 MobaXterm</p>
+<p><img src="https://pic.imgdb.cn/item/614b0e702ab3f51d91be5c70.jpg"></p>
+<p>首先进入 /home 目录，新建一个日志文件 access.log，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /home</span><br><span class="line">ls</span><br><span class="line">touch access.log</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614b0e932ab3f51d91be7e81.jpg"></p>
+<p>接下来使用 tail 命令跟上 -f 参数对 access.log 日志文件监听,命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f access.log</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614b0eae2ab3f51d91be9965.jpg"></p>
+<p>接下来在新打开的窗口中，进入 /home 目录，向 access.log 文件写入内容:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /home</span><br><span class="line">echo &quot;这是第一条测试内容(time=2020-05-05 18:00)&quot; &gt;&gt; access.log</span><br><span class="line">echo &quot;这是第二条测试内容(time=2020-05-05 19:00)&quot; &gt;&gt; access.log</span><br><span class="line">echo &quot;这是第三条测试内容(time=2020-05-05 20:00)&quot; &gt;&gt; access.log</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="C:\hexo\source_posts\image-20210922190906370.png" alt="image-20210922190906370"></p>
+<p><strong>Tips</strong>：这种监听日志的方法经常用在后端程序开发调试工作中。</p>
+<p>此时模拟日志数据输入完成，接着打开原来的监听窗口，如下图所示：</p>
+<p><img src="https://pic.imgdb.cn/item/614b0ede2ab3f51d91bec79a.jpg"></p>
+<h2 id="10、VIM编辑器"><a href="#10、VIM编辑器" class="headerlink" title="10、VIM编辑器"></a>10、VIM编辑器</h2><p><strong>1.vim 编辑器用法介绍</strong></p>
+<p>1.1 vim 编辑器三种模式</p>
+<p>· <strong>普通模式</strong>：当你刚开始进入 vim 编辑器的时候默认会进入普通模式；</p>
+<p>· <strong>插入模式</strong>：在 vim 普通模式的时候，按下 i 键就可以进入插入模式，若想从 插入模式 回到 普通模式， 可以按下 ESC 键；</p>
+<p>· <strong>命令模式</strong>：在普通模式下按下 : 键（Shift + ：），若想从 命令模式 回到 普通模式，可以按下 ESC 键。</p>
+<p>Tips：这三种模式其实就是文本编辑器当前的状态，普通模式 可以理解为一般的打开查阅文件，可以查看和查找文件内容，不能修改内容；插入模式 可以理解为编辑状态，能对当前的文件内容修改，但是想要保存就需要当前登录用户拥有该文件的写入权限才能保存成功；命令模式 中的命令操作可以理解为编辑器对编辑后的文件的退出、保存等操作，如 :wq 表示保存退出，:q! 表示不保存强制退出。</p>
+<p>1.2 vim 光标移动键介绍</p>
+<p>· **h(或←)**：光标往左移动一个字符；</p>
+<p>· **j(或↓)**：光标往下移动一行；</p>
+<p>· **k(或↑)**：光标往上移动一行；</p>
+<p>· **l(或→)**：光标往右移动一个字符；</p>
+<p>· **PageDown(或 Ctrl + F)**：光标往下翻动一屏；</p>
+<p>· **PageUp(或 Ctrl + B)**：光标往上翻动一屏；</p>
+<p>· <strong>G</strong>：光标往下移动到最后一行；</p>
+<p>· <strong>n G</strong>：光标移动到缓冲区的第 n 行；</p>
+<p>· <strong>gg</strong>：光标往上移动到第一行。</p>
+<p>1.3 命令行模式下的命令介绍</p>
+<p>· <strong>q</strong>：表示退出，若有修改内容按 q，则会提示 E37: 已修改但尚未保存 (可用 ! 强制执行)；</p>
+<p>· **q!**：表示强制退出，不会保存修改的内容；</p>
+<p>· <strong>w</strong>：表示对修改的内容保存；</p>
+<p>· <strong>wq</strong>：表示保存并退出。</p>
+<p>Tips：输入以上命令后，按回车即可执行命令。</p>
+<p>1..4 普通模式下的命令介绍</p>
+<table>
+<thead>
+<tr>
+<th>命令参数名称</th>
+<th>功能与作用描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x</td>
+<td>删除当前光标所在位置的字符</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>删除当前光标所在行</td>
+</tr>
+<tr>
+<td>dw</td>
+<td>删除当前光标所在位置的单词</td>
+</tr>
+<tr>
+<td>d$</td>
+<td>删除当前光标所在位置至行尾的内容</td>
+</tr>
+<tr>
+<td>J</td>
+<td>删除当前光标所在行行尾的换行符（拼接符）</td>
+</tr>
+<tr>
+<td>u</td>
+<td>撤销前一编辑命令</td>
+</tr>
+<tr>
+<td>a</td>
+<td>在当前光标后追加内容，输入完按 ESC 即可退出 插入模式</td>
+</tr>
+<tr>
+<td>A</td>
+<td>在当前光标所在行行尾追加数据</td>
+</tr>
+<tr>
+<td>r char</td>
+<td>用 char 替换当前光标所在位置的单个字符</td>
+</tr>
+<tr>
+<td>R text</td>
+<td>用 text 覆盖当前光标所在位置的数据，输入完按 ESC 即可退出 插入模式</td>
+</tr>
+</tbody></table>
+<p>2.使用 vim 新建文件</p>
+<p>进入 /home 目录,然后使用 vim 命令新建一个 new.log 文件,命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /homelsvim new.log</span><br></pre></td></tr></table></figure>
+
+
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614b0f9b2ab3f51d91bf925b.jpg"></p>
+<p>如上图所示，建一个文件名为 new.log 的文件，面进入临时文件 new.log 界面，如下图所示：</p>
+<p><img src="https://pic.imgdb.cn/item/614b0fac2ab3f51d91bfa447.jpg"></p>
+<p>Tips：此时的 new.log 文件并没有被保存，vim 编辑器是在内存缓冲区中处理数据的，若在启动 vim 编辑器时没有指定文件名或者文件不存在时，vim 编辑器会开辟一个新的缓冲区。</p>
+<p>3.使用 vim 编辑文件</p>
+<p>在进入 vim 普通模式下，可以按下 i 键进入插入模式来编辑文件内容，如下图所示：</p>
+<p><img src="https://pic.imgdb.cn/item/614b0fd72ab3f51d91bfccd7.jpg"></p>
+<p>4.vim 编辑器保存退出</p>
+<p>编辑完内容之后按下 ESC 键退出插入模式，然后输入 :wq 按回车之后既可以保存退出：</p>
+<p><img src="https://pic.imgdb.cn/item/614b0ff92ab3f51d91bff28c.jpg"></p>
+<ol start="5">
+<li>使用 cat 查看 vim 编辑的文件</li>
+</ol>
+<p>这里可以使用之前学习的 cat 命令查看新建的 new.log 文件内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br><span class="line">cat new.log</span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图：</p>
+<p><img src="https://pic.imgdb.cn/item/614b10272ab3f51d91c01ed8.jpg"></p>
+<p>Tips：也可以使用 vim new.log 打开文件查看内容。</p>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="C:\hexo\themes\hexo-theme-snippet-master\source\img\33.jpg"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="C:\hexo\themes\hexo-theme-snippet-master\source\img\12.jpg"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        赞赏是不耍流氓的鼓励
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">hujun</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2021/07/08/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%85%A5%E9%97%A8/" class="pre-post btn btn-default" title='软件测试入门'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            软件测试入门</span>
+    </a>
+    
+    
+</div>
+
+<div id="comments">
+    
+    
+<div id="vcomments" class="valine"></div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+<script>
+    new Valine({
+        av: AV,
+        el: '#vcomments',
+        appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+        appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+        placeholder: '说点什么吧',
+        notify: false,
+        verify: true,
+        avatar: 'mm',
+        meta: 'nick,mail'.split(','),
+        pageSize: '10',
+        path: window.location.pathname,
+        lang: 'en'.toLowerCase()
+    })
+    </script>
+
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81Linux%E7%AE%80%E4%BB%8B"><span class="toc-text">一、Linux简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Linux%E7%89%B9%E6%80%A7"><span class="toc-text">1.Linux特性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="toc-text">基本思想</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E5%85%8D%E8%B4%B9"><span class="toc-text">完全免费</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E5%85%BC%E5%AE%B9-POSIX1-0-%E6%A0%87%E5%87%86"><span class="toc-text">完全兼容 POSIX1.0 标准</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%9A%E7%94%A8%E6%88%B7%E3%80%81%E5%A4%9A%E4%BB%BB%E5%8A%A1"><span class="toc-text">多用户、多任务</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%89%AF%E5%A5%BD%E7%9A%84%E7%95%8C%E9%9D%A2"><span class="toc-text">良好的界面</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%94%AF%E6%8C%81%E5%A4%9A%E7%A7%8D%E5%B9%B3%E5%8F%B0"><span class="toc-text">支持多种平台</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Linux%E4%BC%98%E7%82%B9"><span class="toc-text">2.Linux优点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Linux%E5%8F%91%E8%A1%8C%E7%89%88%E6%9C%AC"><span class="toc-text">二、Linux发行版本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Debian"><span class="toc-text">1.Debian</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-RedHat"><span class="toc-text">2.RedHat</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Centos"><span class="toc-text">3.Centos</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Slackware"><span class="toc-text">4.Slackware</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Ubuntu"><span class="toc-text">5.Ubuntu</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81centos%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D"><span class="toc-text">三、centos目录介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81Linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="toc-text">四、Linux常用指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81ls%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E5%88%97%E8%A1%A8"><span class="toc-text">1、ls查看文件和目录列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81cd-%E5%91%BD%E4%BB%A4"><span class="toc-text">2、cd 命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-text">3、创建文件和目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81rm%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-text">4、rm删除文件和目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81Mv%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-text">5、Mv移动文件和目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E3%80%81%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B"><span class="toc-text">6、文件压缩与解压</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7%E3%80%81%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E9%87%8D%E5%90%8D"><span class="toc-text">7、文件和目录重名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8%E3%80%81%E6%9F%A5%E6%89%BE%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95"><span class="toc-text">8、查找文件和目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9%E3%80%81%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-text">9、查看文件内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10%E3%80%81VIM%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-text">10、VIM编辑器</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
